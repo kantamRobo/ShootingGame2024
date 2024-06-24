@@ -22,7 +22,7 @@ void Ammo::Update()
 		DrawCircle(position.x, position.y, 5, GetColor(0, 255, 0), TRUE);
 	
 		
-		position.y += AMMOVELOCITY;
+		position.y -= AMMOVELOCITY;
 	
 		
 	
@@ -33,5 +33,26 @@ void Ammo::Update()
 		isActive = false;
 	}
 	
+
+}
+
+
+void Ammo::EnemyUpdate()
+{
+
+	DrawCircle(position.x, position.y, 5, GetColor(0, 255, 0), TRUE);
+
+
+	position.y += AMMOVELOCITY;
+
+
+
+
+	if (position.x < SCREEN_HEIGHT_MAX || SCREEN_HEIGHT_MAX < position.x ||
+		position.y < SCREEN_WIDTH_MIN || SCREEN_WIDTH_MAX < position.y)
+	{
+		isActive = false;
+	}
+
 
 }

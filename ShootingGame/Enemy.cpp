@@ -31,10 +31,10 @@ void Enemy::Move()
 	{
 		position.y = 0;
 	}
-	for (int i = 0; i < MAX_AMMO; i++)
+	for (int i = 0; i < 10; i++)
 	{
 
-		ammo[i].Update();
+		ammo[i].EnemyUpdate();
 
 	}
 
@@ -42,7 +42,7 @@ void Enemy::Move()
 
 void Enemy::Attack(const Player& player)
 {
-	if (position.x == player.position.x) {
+	
 		if (ammo[ammoindex].GetIsActive() == false) {
 			ammo[ammoindex].Shot(this->position.x, this->position.y);
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"’e:%d", ammoindex);
@@ -61,7 +61,7 @@ void Enemy::Attack(const Player& player)
 				//‚»‚ñl‚¦‚é‚ªA”O‚Ì‚½‚ß“ñ•ª’Tõ‚ğ‘‚¯‚é‚æ‚¤—ûK‚µ‚Ä‚¨‚­B
 			}
 		}
-	}
-		
+	
+	
 }
 
