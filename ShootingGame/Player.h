@@ -2,7 +2,8 @@
 #include <DxLib.h>
 #include "Ammo.h"
 #include <memory>
-class Player
+
+class Player:public RootObject
 {public:
 	
 
@@ -12,8 +13,8 @@ class Player
 	int rapid = 0;
 	int Color = GetColor(255, 255, 255);
 	int ammoindex = 0;
-	void Draw();
-	void Create(double xpos, double ypos);
+	void Draw()override;
+	void Create(double xpos, double ypos)override;
 	void Update(char* input);
 	
 };

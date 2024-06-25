@@ -15,6 +15,10 @@ void Enemy::Create(double xpos, double ypos)
  //xpos,yposというのは、「関数(かんすう)の引数(ひきすう)」と言われるもので、
 //この関数を呼び出すときに、ゲームが始まったときに、プレイヤーが出てくる場所
 //はどこにするか？というのを決めるのに使う。
+	for (int i = 0; i < 10; i++)
+	{
+		ammo[i] = std::make_shared<Ammo>();
+	}
 }
 
 void Enemy::Move()
@@ -34,7 +38,7 @@ void Enemy::Move()
 	for (int i = 0; i < 10; i++)
 	{
 
-		ammo[i].EnemyUpdate();
+		ammo[i]->EnemyUpdate();
 
 	}
 
@@ -43,16 +47,16 @@ void Enemy::Move()
 void Enemy::Attack(const Player& player)
 {
 	
-		if (ammo[ammoindex].GetIsActive() == false) {
-			ammo[ammoindex].Shot(this->position.x, this->position.y);
+		if (ammo[ammoindex]->GetIsActive() == false) {
+			ammo[ammoindex]->Shot(this->position.x, this->position.y);
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"弾:%d", ammoindex);
-			ammo[ammoindex].isActive = true;
+			ammo[ammoindex]->isActive = true;
 			ammoindex++;
 			if (ammoindex == MAX_AMMO - 1) {
 				for (int j = 0; j < MAX_AMMO; j++)
 				{
-					if (ammo[j].isActive == true) {
-						ammo[j].isActive = false;
+					if (ammo[j]->isActive == true) {
+						ammo[j]->isActive = false;
 					}
 					ammoindex = 0;
 				}

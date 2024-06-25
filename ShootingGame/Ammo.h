@@ -1,6 +1,7 @@
 #pragma once
 #include <DxLib.h>
-class Ammo
+#include "RootObject.h"
+class Ammo:public RootObject
 {
 public:
 	VECTOR position = VGet(0, 0, 0);
