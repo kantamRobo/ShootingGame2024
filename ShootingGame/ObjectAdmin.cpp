@@ -54,7 +54,7 @@ void ObjectAdmin::judge()
 						(bullet_y - target_y)
 						< (bullet_area + target_area)*(bullet_area + target_area))))
 			{
-
+				//TODO:ƒ^ƒO‚ð•t‚¯‚é
 				//Object[t]->Hit(Object[i]->GetAmmo(b));
 				DrawFormatString(100, 100, GetColor(0, 255, 255), L"HIT");
 				//Object[i]->GetAmmo(b)->DestroyAmmo();
