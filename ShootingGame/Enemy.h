@@ -1,8 +1,9 @@
 #pragma once
 #include <DxLib.h>
-#include "Ammo.h"
-#include "Player.h"
+
+
 #include "RootObject.h"
+class Player;
 class Enemy:public RootObject 
 {
 public:
@@ -12,10 +13,12 @@ public:
 	void Draw()override;
 	void Create(double xpos, double ypos)override;
 	void Move();
-	void Attack(const Player& player);
+	void Update()override;
+	void Attack(const std::shared_ptr<Player> player);
+	void Update(char*)override
+	{}
 	
-	std::shared_ptr<Ammo> ammo[10]; //Ammoが抽象クラスになってしまうので、ポインタにする。
-	Player player;
+	
 	int ammoindex = 0;
 };
 

@@ -1,3 +1,5 @@
+#include "Ammo.h"
+#include "Player.h"
 #include "Enemy.h"
 #include "DEFINE.h"
 
@@ -44,7 +46,11 @@ void Enemy::Move()
 
 }
 
-void Enemy::Attack(const Player& player)
+void Enemy::Update()
+{
+}
+
+void Enemy::Attack(const std::shared_ptr<Player> player)
 {
 	
 		if (ammo[ammoindex]->GetIsActive() == false) {

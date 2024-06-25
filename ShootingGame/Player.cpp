@@ -1,6 +1,9 @@
 #include "DEFINE.h"
 #include "Player.h"
-
+#include "Ammo.h"
+void Player::Update()
+{
+}
 void Player::Draw()
 {
 	DrawCircle(position.x, position.y, radius, Color, TRUE);
@@ -11,7 +14,7 @@ void Player::Create(double xpos, double ypos)
 {
 	position.x = xpos;
 	position.y = ypos;
-	for (int i = 0; i < MAX_AMMO; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		ammo[i] = std::make_shared<Ammo>();
 	}

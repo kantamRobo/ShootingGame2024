@@ -1,6 +1,6 @@
 #include "Ammo.h"
 #include "DEFINE.h"
-
+#include "RootObject.h"
 
 Ammo::Ammo():AMMOVELOCITY(10.0f)
 {

@@ -1,43 +1,71 @@
+
 #include "ObjectAdmin.h"
 #include "Ammo.h"
+#include <DxLib.h>
+
+
+
+void ObjectAdmin::Init()
+{
+
+	object[0] = std::make_shared<Player>();
+	object[0]->Create(320, 240);
+	//ここのやり方を説明する。
+		object[1] = std::make_shared<Enemy>();
+	
+	object[1]->Create(100, 100);
+}
+
+void ObjectAdmin::Update(char* input)
+{
+	object[0]->Update(input);
+	object[1]->Update();
+}
+
+void ObjectAdmin::Draw()
+{
+	object[0]->Draw();
+	object[1]->Draw();
+}
+
 void ObjectAdmin::judge()
 {
-	int bullet_x = Object[i]->GetAmmo(b)->GetPosX();
+	for (int i = 0; i < 2; i++) {
+		for (int t = 0; t < 10; t++) {
+			int bullet_x = object[i]->ammo[t]->position.x;
 
-	int bullet_y = Object[i]->GetAmmo(b)->GetPosY();
+			int bullet_y = object[i]->ammo[t]->position.y;
 
-	double bullet_area = Object[i]->GetAmmo(b)->GetHitZone();
+			double bullet_area = object[i]->ammo[t]->radius;
 
 
-	int target_x = Object[t]->GetPosX();
+			int target_x = object[i]->position.x;
 
-	int target_y = Object[t]->GetPosY();
+			int target_y = object[i]->position.y;
 
-	double target_area = Object[t]->GetHitZone();
-	//弾と被弾するUnitとの距離よりこれらの半径の合計が大きく、タイプが飛行タイプなら被弾している事になる
+			double target_area = object[i]->radius;
+			//弾と被弾するUnitとの距離よりこれらの半径の合計が大きく、タイプが飛行タイプなら被弾している事になる
 
-	//弾のx座標を計算する
-	float bullet_x = ammo[i].position.x;
-	//弾のy座標を計算する
-	float bullet_y = ammo[i].position.y;
-	//弾の半径を計算する
-	float radius = ammo[i].radius;
-	if
-		((bullet_x - target_x)
-			*
-			(bullet_x - ((target_x)+
-				(bullet_y - target_y)
-				*
-				(bullet_y - target_y)
-				< (bullet_area + target_area)
-				*
-				(bullet_area + target_area))
-	{
 
-		Object[t]->Hit(Object[i]->GetAmmo(b));
-		Object[i]->GetAmmo(b)->DestroyAmmo();
-		score += 20;
-		NumofRepeledEnemy += 20;
+
+
+			if((bullet_x - target_x)*(bullet_x - ((target_x)+(bullet_y - target_y)
+						*
+						(bullet_y - target_y)
+						< (bullet_area + target_area)*(bullet_area + target_area))))
+			{
+
+				//Object[t]->Hit(Object[i]->GetAmmo(b));
+				DrawFormatString(100, 100, GetColor(0, 255, 255), L"HIT");
+				//Object[i]->GetAmmo(b)->DestroyAmmo();
+				//score += 20;
+				//NumofRepeledEnemy += 20;
+			}else
+			{
+				return;
+			}
+
+		}
 	}
 
 }

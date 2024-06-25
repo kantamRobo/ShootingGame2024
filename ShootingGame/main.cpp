@@ -1,5 +1,4 @@
-#include "Player.h"
-#include "Enemy.h"
+#include "ObjectAdmin.h"
 int Process(char key[256])
 {
 	if (ScreenFlip() != 0)return false;//表画面と裏画面を入れ替える
@@ -16,8 +15,7 @@ int Process(char key[256])
 int main()
 {
 	char key[256];
-    Player player;
-	Enemy enemy;
+   
     ChangeWindowMode(true);//trueにするとウインドウを表示する
     SetGraphMode(640, 480, 16);//(横の長さ、縦の長さ、カラービット）
   
@@ -29,14 +27,12 @@ int main()
         return -1;    // エラーが起きたら直ちに終了
     }
 
-    player.Create(320, 240);
-	enemy.Create(200, 100);
+	ObjectAdmin objectAdmin;
+	objectAdmin.Init();
 	while (Process(key)) {//メインループ
-		player.Draw();
-		player.Update(key);
-		enemy.Draw();
-		enemy.Move();
-		enemy.Attack(player);
+		objectAdmin.Update(key);
+		objectAdmin.Draw();
+		objectAdmin.judge();
 	}
 
   

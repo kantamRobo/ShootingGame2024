@@ -1,7 +1,6 @@
 #pragma once
 #include <DxLib.h>
-#include "RootObject.h"
-class Ammo:public RootObject
+class Ammo
 {
 public:
 	VECTOR position = VGet(0, 0, 0);
@@ -12,7 +11,7 @@ public:
 	Ammo();
 	bool GetIsActive()const { return isActive; }
 	void Shot(int m_x, int m_y);
-
+	int radius = 10;
 	void Update();
 
 	void EnemyUpdate();
