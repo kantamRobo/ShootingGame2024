@@ -16,6 +16,7 @@ public:
 	virtual void Draw()=0;
 	int rapid = 0;
 	int ammoindex = 0;
+	int health = 10;
 public:
 	virtual void Create(double, double);
 	void Attack();

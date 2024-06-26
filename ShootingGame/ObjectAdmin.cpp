@@ -29,7 +29,7 @@ void ObjectAdmin::Init()
 void ObjectAdmin::Update(char* input)
 {
 	object[0]->Update(input);
-	
+	DrawFormatString(500, 200, GetColor(255, 100, 0), L"HP%d",object[0]->health);
 	for (int i = 1; i < 10; i++) {
 		object[i]->Update();
 		object[i]->EnemyMove();
@@ -82,12 +82,7 @@ void ObjectAdmin::judge()
 									< (r1r2) * (r1r2))
 								{
 									DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
-									/*
-									Object[t]->Hit(Object[i]->GetAmmo(b));
-									Object[i]->GetAmmo(b)->DestroyAmmo();
-									score += 20;
-									NumofRepeledEnemy += 20;
-									*/
+									object[t]->health -= 1;
 								}
 
 								/*
