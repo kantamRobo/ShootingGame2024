@@ -136,6 +136,7 @@
     <ClCompile Include="ObjectAdmin.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RootObject.cpp" />
+    <ClCompile Include="SceneAdmin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ammo.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="ObjectAdmin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RootObject.h" />
+    <ClInclude Include="SceneAdmin.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
