@@ -12,6 +12,7 @@ public:
 	void judge();
 	
 public:
+	int rapid = 0;
 	void Init();
 	void Update(char* input);
 	void Draw();

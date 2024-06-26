@@ -29,8 +29,12 @@ void ObjectAdmin::Init()
 void ObjectAdmin::Update(char* input)
 {
 	object[0]->Update(input);
+	
 	for (int i = 1; i < 10; i++) {
 		object[i]->Update();
+		object[i]->EnemyMove();
+		object[i]->Attack();
+		
 	}
 	
 }

@@ -25,12 +25,13 @@ void Ammo::Update()
 	
 		
 	
-	
+	/*
 	if (position.x < SCREEN_HEIGHT_MAX || SCREEN_HEIGHT_MAX < position.x ||
 		position.y < SCREEN_WIDTH_MIN || SCREEN_WIDTH_MAX < position.y)
 	{
 		isActive = false;
 	}
+	*/
 	
 
 }
@@ -48,12 +49,12 @@ void Ammo::EnemyUpdate()
 
 
 
-	
+	/*
 	if (position.x < SCREEN_HEIGHT_MAX || SCREEN_HEIGHT_MAX < position.x ||
 		position.y < SCREEN_WIDTH_MIN || SCREEN_WIDTH_MAX < position.y)
 	{
 		isActive = false;
 	}
-	
+	*/
 
 }

@@ -4,7 +4,7 @@ class Ammo
 {
 public:
 	VECTOR position = VGet(0, 0, 0);
-	bool isActive = true;
+	bool isActive = false;
 	const int AMMOVELOCITY = 10;
 	
 

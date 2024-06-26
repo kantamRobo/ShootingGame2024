@@ -10,9 +10,9 @@ class Player:public RootObject
 	
 	bool isActive = true;
 	
-	int rapid = 0;
+	
 	int Color = GetColor(255, 255, 255);
-	int ammoindex = 0;
+	
 	void Update()override;
 	void Draw()override;
 	void  Create(double, double);

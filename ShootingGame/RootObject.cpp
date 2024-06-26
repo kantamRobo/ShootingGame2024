@@ -1,6 +1,6 @@
 #include "Ammo.h"
 #include "RootObject.h"
-
+#include "DEFINE.h"
 void RootObject::Create(double in_x, double in_y)
 {
 
@@ -13,5 +13,60 @@ void RootObject::Create(double in_x, double in_y)
 	for (int i = 0; i < 10; i++)
 	{
 		ammo[i] = std::make_shared<Ammo>();
+		ammo[i]->isActive = false;
 	}
+}
+
+void RootObject::Attack()
+{
+
+	rapid++;
+
+	rapid %= RAPID_RATE;
+
+	if (rapid == 1) {
+
+		if (ammo[ammoindex]->isActive == false) {//ammo‚ð‰Šú‰»Žž‚Éfalse‚É‚µ‚½‚Í‚¸‚È‚Ì‚É‚±‚¿‚ç‚Å‚Ítrue‚É‚È‚Á‚Ä‚éB
+			ammo[ammoindex]->Shot(this->position.x, this->position.y - 15);
+			ammo[ammoindex]->isActive = true;
+			DrawFormatString(50, 70, GetColor(0, 255, 0), L"’e:%d", ammoindex);
+			
+			ammoindex++;
+			if (ammoindex == MAX_AMMO - 1) {
+				for (int j = 0; j < MAX_AMMO; j++)
+				{
+					if (ammo[j]->isActive == true) {
+						ammo[j]->isActive = false;
+					}
+					ammoindex = 0;
+				}
+
+				//‚±‚Ì‘S’Tõ‚Å‚ÍŒvŽZ—Ê‚ª“Gƒ†ƒjƒbƒg‚Æ”í‚é‚Æ‚Ç‚¤‚È‚é‚Ì‚©EEEEÅ‘å‚Ån^10?
+				//‚»‚ñŽžl‚¦‚é‚ªA”O‚Ì‚½‚ß“ñ•ª’Tõ‚ð‘‚¯‚é‚æ‚¤—ûK‚µ‚Ä‚¨‚­B
+			}
+		}
+	}
+}
+
+void RootObject::EnemyMove()
+{
+	position.x += 2;
+
+	if (position.x > SCREEN_WIDTH_MAX)
+	{
+		position.x = 0;
+		position.y += 50;
+	}
+
+	if (position.y > SCREEN_HEIGHT_MAX)
+	{
+		position.y = 0;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+
+		ammo[i]->EnemyUpdate();
+
+	}
+
 }

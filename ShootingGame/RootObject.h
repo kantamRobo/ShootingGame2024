@@ -14,9 +14,12 @@ public:
 	//‚É‘Î‚µ‚ÄUŒ‚‚ª—LŒø‚É‚È‚é
 	int radius = 0;
 	virtual void Draw()=0;
-
+	int rapid = 0;
+	int ammoindex = 0;
 public:
 	virtual void Create(double, double);
+	void Attack();
+	void EnemyMove();
 	virtual void Update() = 0;
 	virtual void Update(char* input) = 0;
 };

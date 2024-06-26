@@ -14,7 +14,7 @@ public:
 	 void  Create(double, double);
 	void Move();
 	void Update()override;
-	void Attack(const std::shared_ptr<Player> player);
+	
 	void Update(char*)override
 	{}
 	

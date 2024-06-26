@@ -29,16 +29,16 @@ void Player::Create(double xpos, double ypos)
 
 void  Player::Update(char* input)
 {
-	
+
 	for (int i = 0; i < MAX_AMMO; i++)
 	{
-		
-			ammo[i]->Update();
-		
-	
+
+		ammo[i]->Update();
+
+
 	}
 
-	
+
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		if (position.y > 0)
@@ -73,37 +73,14 @@ void  Player::Update(char* input)
 		}
 	}
 
-	if (input[KEY_INPUT_Z] )
+	if (input[KEY_INPUT_Z])
 	{
 
-		rapid++;
-
-		rapid %= RAPID_RATE;
-		
-		if (rapid == 1) {
-			
-			if (ammo[ammoindex]->GetIsActive() == false) {
-				ammo[ammoindex]->Shot(this->position.x, this->position.y-15);
-				DrawFormatString(50, 70, GetColor(0, 255, 0), L"弾:%d", ammoindex);
-				ammo[ammoindex]->isActive = true;
-				ammoindex++;
-				if (ammoindex == MAX_AMMO - 1) {
-					for (int j = 0; j < MAX_AMMO; j++)
-					{
-						if (ammo[j]->isActive == true) {
-							ammo[j]->isActive = false;
-						}
-						ammoindex = 0;
-					}
-
-					//この全探索では計算量が敵ユニットと被るとどうなるのか・・・・最大でn^10?
-					//そん時考えるが、念のため二分探索を書けるよう練習しておく。
-				}
-			}
-			}
-		}
+		Attack();
 
 
 	}
 
+
+}
 	

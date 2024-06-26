@@ -25,55 +25,10 @@ void Enemy::Create(double xpos, double ypos)
 	radius = 20;
 }
 
-void Enemy::Move()
-{
-	position.x += 2;
-
-	if (position.x > SCREEN_WIDTH_MAX)
-	{
-		position.x = 0;
-		position.y += 50;
-	}
-
-	if (position.y > SCREEN_HEIGHT_MAX)
-	{
-		position.y = 0;
-	}
-	for (int i = 0; i < 10; i++)
-	{
-
-		ammo[i]->EnemyUpdate();
-
-	}
-
-}
 
 void Enemy::Update()
 {
-}
-
-void Enemy::Attack(const std::shared_ptr<Player> player)
-{
-	
-		if (ammo[ammoindex]->GetIsActive() == false) {
-			ammo[ammoindex]->Shot(this->position.x, this->position.y+15);
-			DrawFormatString(50, 70, GetColor(0, 255, 0), L"弾:%d", ammoindex);
-			ammo[ammoindex]->isActive = true;
-			ammoindex++;
-			if (ammoindex == MAX_AMMO - 1) {
-				for (int j = 0; j < MAX_AMMO; j++)
-				{
-					if (ammo[j]->isActive == true) {
-						ammo[j]->isActive = false;
-					}
-					ammoindex = 0;
-				}
-
-				//この全探索では計算量が敵ユニットと被るとどうなるのか・・・・最大でn^10?
-				//そん時考えるが、念のため二分探索を書けるよう練習しておく。
-			}
-		}
-	
 	
 }
+
 
