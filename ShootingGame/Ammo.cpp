@@ -40,7 +40,9 @@ void Ammo::Update()
 void Ammo::EnemyUpdate()
 {
 
-	DrawCircle(position.x, position.y, 5, GetColor(0, 255, 0), TRUE);
+	
+		DrawCircle(position.x, position.y, 5, GetColor(0, 255, 0), TRUE);
+	
 
 
 	position.y += AMMOVELOCITY;

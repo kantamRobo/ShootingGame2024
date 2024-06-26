@@ -54,7 +54,7 @@ void Enemy::Attack(const std::shared_ptr<Player> player)
 {
 	
 		if (ammo[ammoindex]->GetIsActive() == false) {
-			ammo[ammoindex]->Shot(this->position.x, this->position.y);
+			ammo[ammoindex]->Shot(this->position.x, this->position.y+15);
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"’e:%d", ammoindex);
 			ammo[ammoindex]->isActive = true;
 			ammoindex++;

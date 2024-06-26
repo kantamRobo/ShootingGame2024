@@ -30,9 +30,10 @@ int main()
 	ObjectAdmin objectAdmin;
 	objectAdmin.Init();
 	while (Process(key)) {//ƒƒCƒ“ƒ‹[ƒv
+		objectAdmin.judge();
 		objectAdmin.Update(key);
 		objectAdmin.Draw();
-		objectAdmin.judge();
+		
 	}
 
   

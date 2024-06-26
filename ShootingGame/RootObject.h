@@ -8,11 +8,15 @@ class RootObject
 public:
 	VECTOR position = VGet(0, 0, 0);
 	std::shared_ptr<Ammo> ammo[10];
+	bool isActive = true;
+	bool isEnemy;//自機だったらfalse,敵はtrue
+	//立っているフラグが違うオブジェクト同士
+	//に対して攻撃が有効になる
 	int radius = 10;
 	virtual void Draw()=0;
 
-	
-	virtual void Create(double, double) = 0;
+public:
+	virtual void Create(double, double);
 	virtual void Update() = 0;
 	virtual void Update(char* input) = 0;
 };
