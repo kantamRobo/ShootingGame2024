@@ -22,6 +22,8 @@ void Player::Create(double xpos, double ypos)
  //xpos,yposというのは、「関数(かんすう)の引数(ひきすう)」と言われるもので、
 //この関数を呼び出すときに、ゲームが始まったときに、プレイヤーが出てくる場所
 //はどこにするか？というのを決めるのに使う。
+	isEnemy = false;
+	radius = 10;
 }
 
 

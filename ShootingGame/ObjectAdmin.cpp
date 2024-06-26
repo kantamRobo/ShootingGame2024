@@ -49,7 +49,7 @@ void ObjectAdmin::judge()
 	for (int i = 0; i < 10; i++) {
 		if (object[i]->isActive) {
 			for (int b = 0; b < 10; b++) {
-				if (object[i]->ammo[b]->isActive) {
+				
 
 					for (int t = 0; t < 10; t++) {
 						if (object[t]->isActive) {
@@ -60,7 +60,7 @@ void ObjectAdmin::judge()
 								int bullet_y = object[i]->ammo[b]->position.y;
 								double bullet_area = object[i]->ammo[b]->radius;
 
-								int target_x = object[t]->position.x;//初期化値にかかわらず、位置ベクトルがすべて0になっている。おそらくPlayerではなく
+								int target_x = object[t]->position.x;
 								int target_y = object[t]->position.y;
 								double target_area = object[t]->radius;
 
@@ -68,10 +68,16 @@ void ObjectAdmin::judge()
 								//int barrier_y = barrier->GetPosY();
 								//double barrier_area = barrier->GetHitZone();
 
+								double a = bullet_x - target_x;
+								double b = bullet_y - target_y;
+								double r1r2 = bullet_area + target_area;
+							
+								//敵とプレイヤーが接しているときに弾を撃つと衝突判定が起きる
 								//弾と被弾するUnitとの距離よりこれらの半径の合計が大きく
-								if ((bullet_x - target_x) * (bullet_x - target_x) + (bullet_y - target_y) * (bullet_y - target_y)
-									< (bullet_area + target_area) * (bullet_area + target_area)) {
-									DrawFormatString(20, 50, GetColor(255, 100, 0), L"HIT");
+								if ((a * a) + (b * b)
+									< (r1r2) * (r1r2))
+								{
+									DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
 									/*
 									Object[t]->Hit(Object[i]->GetAmmo(b));
 									Object[i]->GetAmmo(b)->DestroyAmmo();
@@ -97,7 +103,7 @@ void ObjectAdmin::judge()
 						}
 					}
 
-				}
+				
 			}
 		}
 	}

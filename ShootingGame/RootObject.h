@@ -12,7 +12,7 @@ public:
 	bool isEnemy;//自機だったらfalse,敵はtrue
 	//立っているフラグが違うオブジェクト同士
 	//に対して攻撃が有効になる
-	int radius = 10;
+	int radius = 0;
 	virtual void Draw()=0;
 
 public:

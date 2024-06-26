@@ -9,7 +9,7 @@ class Player:public RootObject
 
 	
 	bool isActive = true;
-	int radius = 10;
+	
 	int rapid = 0;
 	int Color = GetColor(255, 255, 255);
 	int ammoindex = 0;

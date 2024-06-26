@@ -21,6 +21,8 @@ void Enemy::Create(double xpos, double ypos)
 	{
 		ammo[i] = std::make_shared<Ammo>();
 	}
+	isEnemy = true;
+	radius = 20;
 }
 
 void Enemy::Move()
