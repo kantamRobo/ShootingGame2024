@@ -1,6 +1,6 @@
 
 
-enum class STATUS {
+enum  STATUS {
 	TITLE,
 	CONFIG,
 	GAME,

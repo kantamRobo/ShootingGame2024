@@ -7,6 +7,8 @@
 
 void ObjectAdmin::Init()
 {
+	TITLE = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame\\ShootingGame\\TITLE.png");
+	GAMEOVER = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame\\ShootingGame\\Gameover.png");
 	auto x = 0;
 	object[0] = std::make_shared<Player>();
 	object[0]->Create(320, 240);
@@ -28,17 +30,38 @@ void ObjectAdmin::Init()
 
 void ObjectAdmin::Update(char* input)
 {
-	object[0]->Update(input);
-	DrawFormatString(500, 200, GetColor(255, 100, 0), L"HP%d",object[0]->health);
-	for (int i = 1; i < 10; i++) {
-		object[i]->Update();
-		object[i]->EnemyMove();
-		object[i]->Attack();
-		
-	}
-	
-}
 
+	switch (status)
+	{
+
+	case STATUS::TITLE:
+		DrawGraph(0, 0, TITLE, 0);
+		if (input[KEY_INPUT_SPACE])
+		{
+			status = STATUS::GAME;
+		}
+		break;
+	case STATUS::GAME:
+		object[0]->Update(input);
+		DrawFormatString(500, 200, GetColor(255, 100, 0), L"HP%d", object[0]->health);
+		for (int i = 1; i < 10; i++) {
+			object[i]->Update();
+			object[i]->EnemyMove();
+			object[i]->Attack();
+			if (object[0]->health < 0)
+			{
+				status = STATUS::RESULT;
+			}
+		}
+		break;
+
+	case STATUS::RESULT:
+		DrawGraph(0, 0, GAMEOVER, 0);
+
+		break;
+	}
+
+}
 void ObjectAdmin::Draw()
 {
 	object[0]->Draw();
