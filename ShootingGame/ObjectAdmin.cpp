@@ -43,6 +43,7 @@ void ObjectAdmin::Update(char* input)
 		break;
 	case STATUS::GAME:
 		object[0]->Update(input);
+		Draw();
 		DrawFormatString(500, 200, GetColor(255, 100, 0), L"HP%d", object[0]->health);
 		for (int i = 1; i < 10; i++) {
 			object[i]->Update();

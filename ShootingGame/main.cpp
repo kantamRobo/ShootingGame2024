@@ -32,7 +32,7 @@ int main()
 	while (Process(key)) {//ƒƒCƒ“ƒ‹[ƒv
 		objectAdmin.judge();
 		objectAdmin.Update(key);
-		objectAdmin.Draw();
+		
 		
 	}
 
