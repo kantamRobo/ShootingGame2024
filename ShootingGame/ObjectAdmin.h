@@ -10,6 +10,7 @@ class ObjectAdmin
 public:
 	int TITLE = 0;
 	int GAMEOVER = 0;
+	int CLEAR = 0;
 	std::shared_ptr<RootObject> object[10];
 	void judge();
 	STATUS status = STATUS::TITLE;

@@ -7,8 +7,9 @@
 
 void ObjectAdmin::Init()
 {
-	TITLE = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame\\ShootingGame\\TITLE.png");
-	GAMEOVER = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame\\ShootingGame\\Gameover.png");
+	TITLE = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\TITLE.png");
+	GAMEOVER = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\GAMEOVER.png");
+	CLEAR = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\CLEAR.png");
 	auto x = 0;
 	object[0] = std::make_shared<Player>();
 	object[0]->Create(320, 240);
@@ -53,6 +54,10 @@ void ObjectAdmin::Update(char* input)
 			{
 				status = STATUS::RESULT;
 			}
+			if(object[i]->health <0)
+			{
+				status = STATUS::CLEAR;
+			}
 		}
 		break;
 
@@ -60,6 +65,9 @@ void ObjectAdmin::Update(char* input)
 		DrawGraph(0, 0, GAMEOVER, 0);
 
 		break;
+
+	case STATUS::CLEAR:
+		DrawGraph(0, 0, CLEAR, 0);
 	}
 
 }
