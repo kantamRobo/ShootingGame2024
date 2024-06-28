@@ -7,9 +7,9 @@
 
 void ObjectAdmin::Init()
 {
-	TITLE = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\TITLE.png");
-	GAMEOVER = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\GAMEOVER.png");
-	CLEAR = LoadGraph(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame\\CLEAR.png");
+	TITLE = LoadGraph(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame\\ShootingGame\\TITLE.png");
+	GAMEOVER = LoadGraph(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame\\ShootingGame\\GAMEOVER.png");
+	CLEAR = LoadGraph(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame\\ShootingGame\\CLEAR.png");
 	auto x = 0;
 	object[0] = std::make_shared<Player>();
 	object[0]->Create(320, 240);
