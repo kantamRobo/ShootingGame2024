@@ -117,16 +117,7 @@ void ObjectAdmin::judge()
 									object[t]->health -= 1;
 								}
 
-								/*
-								if (barrier->GetisActive())
-								{
-									if ((bullet_x - barrier_x)*(bullet_x - barrier_x) + (bullet_y - barrier_y)*(bullet_y - barrier_y)
-										<
-										(bullet_area + barrier_area)*(bullet_area + barrier_area))
-									{
-										Object[i]->GetAmmo(b)->DestroyAmmo();
-									}
-								}*/
+								
 
 
 							}
