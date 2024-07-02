@@ -88,21 +88,19 @@ void ObjectAdmin::judge()
 				
 
 					for (int target = 0; target < 10; target++) {
-						if (object[t]->isActive) {
+						if (object[target]->isActive) {
 
-							if (object[i]->isEnemy != object[t]->isEnemy) {
+							if (object[i]->isEnemy != object[target]->isEnemy) {
 
 								int bullet_x = object[i]->ammo[bullet]->position.x;
 								int bullet_y = object[i]->ammo[bullet]->position.y;
 								double bullet_area = object[i]->ammo[bullet]->radius;
 
-								int target_x = object[t]->position.x;
-								int target_y = object[t]->position.y;
-								double target_area = object[t]->radius;
+								int target_x = object[target]->position.x;
+								int target_y = object[target]->position.y;
+								double target_area = object[target]->radius;
 
-								//int barrier_x = barrier->GetPosX();
-								//int barrier_y = barrier->GetPosY();
-								//double barrier_area = barrier->GetHitZone();
+								
 
 								double a = bullet_x - target_x;
 								double b = bullet_y - target_y;
