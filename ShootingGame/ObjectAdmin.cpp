@@ -112,7 +112,7 @@ void ObjectAdmin::judge()
 									< (r1r2) * (r1r2))
 								{
 									DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
-									object[t]->health -= 1;
+									object[target]->health -= 1;
 								}
 
 								
