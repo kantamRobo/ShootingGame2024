@@ -12,7 +12,7 @@ public:
 	
 	void Draw()override;
 	 void  Create(double, double);
-	void Move();
+	
 	void Update()override;
 	
 	void Update(char*)override
