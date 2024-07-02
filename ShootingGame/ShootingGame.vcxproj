@@ -136,7 +136,6 @@
     <ClCompile Include="ObjectAdmin.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RootObject.cpp" />
-    <ClCompile Include="SceneAdmin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ammo.h" />
