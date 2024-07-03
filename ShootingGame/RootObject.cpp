@@ -27,7 +27,7 @@ void RootObject::Attack()
 	if (rapid == 1) {
 
 		if (ammo[ammoindex]->isActive == false) {
-			ammo[ammoindex]->Shot(this->position.x, this->position.y - );
+			ammo[ammoindex]->Shot(this->position.x, this->position.y);
 			ammo[ammoindex]->isActive = true;
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"’e:%d", ammoindex);
 			
