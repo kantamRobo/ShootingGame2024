@@ -16,9 +16,9 @@ public:
 	STATUS status = STATUS::TITLE;
 public:
 	int rapid = 0;
-	void Init();
-	void Update(char* input);
-	void Draw();
+	virtual void Init();
+	virtual void Update(char* input);
+	virtual void Draw();
 	void judge();
 };
 

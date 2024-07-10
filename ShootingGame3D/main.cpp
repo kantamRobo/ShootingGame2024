@@ -1,5 +1,5 @@
 #include <DxLib.h>
-#include "Player3.h"
+#include "ObjectAdmin3D.h"
 int Process(char key[256])
 {
 	if (ScreenFlip() != 0)return false;//表画面と裏画面を入れ替える
@@ -16,7 +16,7 @@ int Process(char key[256])
 int main()
 {
 	char key[256];
-	Player3 player3;
+	ObjectAdmin3D objectadmin3D;
 	ChangeWindowMode(true);//trueにするとウインドウを表示する
 	SetGraphMode(640, 480, 16);//(横の長さ、縦の長さ、カラービット）
 
@@ -27,11 +27,11 @@ int main()
 	{
 		return -1;    // エラーが起きたら直ちに終了
 	}
-	player3.Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
+	objectadmin3D.Init3D();
 	while (Process(key)) {//メインループ
 	
-		player3.Update(VGet(100, 200, 500));
 		
+		objectadmin3D.Update3D(key);
 		// キーの入力待ち
 		WaitKey();
 
