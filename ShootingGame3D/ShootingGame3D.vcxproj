@@ -129,12 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ammo3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player3.cpp" />
     <ClCompile Include="RootObject3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
+    <ClInclude Include="Ammo3D.h" />
     <ClInclude Include="Player3.h" />
     <ClInclude Include="RootObject3D.h" />
   </ItemGroup>
