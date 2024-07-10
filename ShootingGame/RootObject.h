@@ -2,6 +2,7 @@
 //’ŠÛƒNƒ‰ƒX
 
 #include <memory>
+#include <DxLib.h>
 class Ammo;
 class RootObject
 {
