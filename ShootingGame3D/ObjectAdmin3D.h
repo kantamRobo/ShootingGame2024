@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include "SceneAdmin.h"
+#include "SphereCollision.h"
 class RootObject3D;
 class ObjectAdmin3D
 {
@@ -17,6 +18,17 @@ public:
 	virtual void Update3D(char* input);
 	virtual void Draw3D();
 	void judge3D();
+
+	bool Intersect(const Sphere& r1, const Sphere& r2)
+	{
+		if (!(r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x) * (r2.position.x - r1.position.x)
+			<= (r2.radius + r1.radius) * (r2.radius + r1.radius))
+		{
+			return false;
+	    }
+		
+		return true ;
+	}
 	
 };
 

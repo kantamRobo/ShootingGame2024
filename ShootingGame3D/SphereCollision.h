@@ -1,5 +1,12 @@
-#pragma once
-class SphereCollision
+#include <DxLib.h>
+struct Sphere
 {
+	VECTOR position;
+	float radius;
+	
 };
+
+
+
+
 
