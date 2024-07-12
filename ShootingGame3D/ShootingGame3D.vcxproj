@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ammo3D.cpp" />
+    <ClCompile Include="Enemy3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectAdmin3D.cpp" />
     <ClCompile Include="Player3.cpp" />
@@ -139,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
     <ClInclude Include="Ammo3D.h" />
+    <ClInclude Include="Enemy3D.h" />
     <ClInclude Include="ObjectAdmin3D.h" />
     <ClInclude Include="Player3.h" />
     <ClInclude Include="RootObject3D.h" />
