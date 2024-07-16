@@ -11,12 +11,12 @@ void ObjectAdmin3D::Init3D()
 	
 	ammo3d[0] = std::make_shared<Ammo3D>();
     object[0]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1", VGet(100, 200, 500));
-	for (int enemyindex = 0; enemyindex < 10; enemyindex++) {
+	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		object[enemyindex] = std::make_shared<Enemy3D>();
 	
-	object[enemyindex]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1",(VGet(200+x, 200, 500)));
-	x += 20;
+	object[enemyindex]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1",(VGet(200+x, 500, 500)));
+	x += 100;
 	}
 	object[2]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\弾.mv1", (VGet(300, 200, 500)));
 }
