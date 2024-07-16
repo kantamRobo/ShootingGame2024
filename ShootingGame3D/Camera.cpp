@@ -8,6 +8,7 @@ void Camera::Init(const VECTOR& playerpos,const VECTOR& enemypos)
 	SetCameraNearFar(100.0f, 15000.0f);
 	SetCameraPositionAndTarget_UpVecY(position, target);
 
+	//Imgui‚ÌŽÀ‘•
 }
 
 void Camera::Update()
