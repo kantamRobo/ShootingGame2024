@@ -2,10 +2,6 @@
 #include "DEFINE.h"
 #include "RootObject.h"
 
-Ammo::Ammo():AMMOVELOCITY(10.0f)
-{
-
-}
 //Playerから弾を出す(プレイヤーの位置からオフセットを計算し、
 //そこから弾をだす)
 void Ammo::Shot(int m_x, int m_y)

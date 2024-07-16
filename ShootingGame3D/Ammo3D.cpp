@@ -1,2 +1,6 @@
-#include "RootObject3D.h"
+#include "Ammo.h"
 #include "Ammo3D.h"
+
+Ammo3D::Ammo3D()
+{
+}

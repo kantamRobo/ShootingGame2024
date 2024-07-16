@@ -3,14 +3,15 @@
 #include "SceneAdmin.h"
 #include "SphereCollision.h"
 class RootObject3D;
+class Ammo3D;
 class ObjectAdmin3D
 {
 public:
 	int TITLE = 0;
 	int GAMEOVER = 0;
 	int CLEAR = 0;
-	std::shared_ptr<RootObject3D> object[10];
-
+	std::shared_ptr<RootObject3D> object[256];
+	std::shared_ptr<Ammo3D> ammo3d[10];
 	STATUS status = STATUS::TITLE;
 public:
 	int rapid = 0;

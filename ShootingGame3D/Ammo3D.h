@@ -1,6 +1,9 @@
 #pragma once
-class RootObject3D;
-class Ammo3D:public RootObject3D
+class Ammo;
+class Ammo3D:public Ammo
 {
+public:
+	Ammo3D();
+	
 };
 
