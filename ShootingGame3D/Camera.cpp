@@ -27,10 +27,10 @@ void Camera::Update(char* input)
 		// 注視点はキャラクターモデルの座標から CAMERA_LOOK_AT_HEIGHT 分だけ高い位置
 		CameraLookAtPosition = position;
 
-		// カメラの位置はカメラの水平角度と垂直角度から算出
+		
 		VECTOR TempPosition2;
 		TempPosition2 = VGet(200, 200, 500);
-
+		//TempPosiiton2の位置がフレームごとに加算されているので、ここの算出を設計する
 		// 算出した座標に注視点の位置を加算したものがカメラの位置
 		position = VAdd(TempPosition2, CameraLookAtPosition);
 
