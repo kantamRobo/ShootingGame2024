@@ -7,7 +7,7 @@
 
 void ObjectAdmin3D::Init3D()
 {
-	camera.position = VGet(300, 200, 400);
+	
 	object[0] = std::make_shared<Player3>();
 	
 	ammo3d[0] = std::make_shared<Ammo3D>();
@@ -26,15 +26,18 @@ void ObjectAdmin3D::Init3D()
 
 void ObjectAdmin3D::Update3D(char* input)
 {
-	camera.Update(input);
+	
 	object[0]->Update(VGet(100, 200, 500));
+	
+	/*
 	for (int enemyindex = 0; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		object[enemyindex]->Update(VGet(200+x, 200, 500));
 		x += 20;
 	}
 	object[2]->Update(VGet(300, 200, 500));
-	
+	*/
+	camera.Update(input);
 	
 }
 

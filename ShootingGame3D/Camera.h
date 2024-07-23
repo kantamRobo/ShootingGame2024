@@ -16,6 +16,6 @@ public:
 
 	VECTOR CameraLookAtPosition;
 
-	VECTOR temppos;
+	VECTOR temppos =VGet(0,0,0);
 
 };
