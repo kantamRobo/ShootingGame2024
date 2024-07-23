@@ -5,6 +5,7 @@ class Camera {
 public:
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input);
+	
 	//基本は固定カメラとして使う。
 
 	
@@ -13,6 +14,6 @@ public:
 
 	VECTOR target;
 
-	
+	VECTOR CameraLookAtPosition;
 
 };
