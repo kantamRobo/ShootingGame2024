@@ -16,4 +16,6 @@ public:
 
 	VECTOR CameraLookAtPosition;
 
+	VECTOR temppos;
+
 };
