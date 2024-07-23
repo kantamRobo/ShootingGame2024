@@ -5,170 +5,153 @@
 0:		ＤＸライブラリ Ver3.24d
 0:		論理プロセッサの数 : 12
 0:		ＯＳ  Windows10 ( Build 19045  )
-113:		現時点のＣＰＵ動作速度：大体2.48GHz
-113:		ＭＭＸ命令を使用します
-113:		ＳＳＥ命令が使用可能です
-113:		ＳＳＥ２命令が使用可能です
-114:		ＣＰＵベンダ：GenuineIntel
-115:		ＣＰＵ名：12th Gen Intel(R) Core(TM) i5-12400F
-115:	ＣＯＭの初期化... 成功
-117:	非同期読み込み処理の初期化...成功
-117:	ファイルアクセス処理の初期化...成功
-118:	メモリ総量:16220.70MB  空きメモリ領域:7779.12MB 
-118:	タイマーの精度を検査します
-118:	精度結果 更新回数 マルチメディアタイマー：0  パフォーマンスカウンター：60
-118:	 パフォーマンスカウンターを使用します タイマー精度 : 10000.000000 KHz 
-119:	 
-119:	ソフトの二重起動検査... 二重起動はされていませんでした
-119:	ウインドウクラスを登録します... 登録に成功しました
-120:	ウインドウモード起動用のウインドウを作成します
-120:	ディスプレイ情報のセットアップ開始
-120:		モニターの数：2  ディスプレイデバイスの数：4
-121:		No.0  モニター名：\\.\DISPLAY1　1920x1080　32bit　60Hz  96x96dpi
-121:		No.1  モニター名：\\.\DISPLAY2　1050x1680　32bit　59Hz  96x96dpi
-129:	ディスプレイ情報のセットアップ完了
-130:	ウインドウ矩形 ( 624, 249 )-( 1280, 768 )
-132:	ウインドウの作成に成功しました
-132:	ウインドウを表示します
-143:	ＩＭＥを無効にしました
-144:	ウインドウスタイルをウインドウモード用に変更します... 完了
-164:	XInput DLL の読み込み中... 成功
-166:	DirectInput関係初期化処理
-166:		DirectInput8 の取得を試みます...成功
-173:			引き続き初期化処理... 初期化成功
-174:		ジョイパッドの初期化... 
-174:			XInput 対応コントローラーのチェックを開始します
-174:				XInput 対応コントローラー No.0 をチェック
-175:				XInput 対応コントローラー No.0 の接続は確認できませんでした
-175:				XInput 対応コントローラー No.1 をチェック
-175:				XInput 対応コントローラー No.1 の接続は確認できませんでした
-175:				XInput 対応コントローラー No.2 をチェック
-176:				XInput 対応コントローラー No.2 の接続は確認できませんでした
-176:				XInput 対応コントローラー No.3 をチェック
-176:				XInput 対応コントローラー No.3 の接続は確認できませんでした
-176:			XInput 対応コントローラーのチェック完了
-176:			DirectInput 対応ジョイパッドの列挙を開始します
-187:			DirectInput 対応ジョイパッドの列挙終了
-188:		ジョイパッドの初期化は正常に終了しました
-188:		マウスデバイスの初期化... 初期化成功
-188:		キーボードデバイスの初期化... 初期化成功
-191:	DirectInput 関連の初期化は正常に終了しました
-194:	WASAPI の初期化を行います
+115:		現時点のＣＰＵ動作速度：大体2.49GHz
+115:		ＭＭＸ命令を使用します
+115:		ＳＳＥ命令が使用可能です
+115:		ＳＳＥ２命令が使用可能です
+116:		ＣＰＵベンダ：GenuineIntel
+117:		ＣＰＵ名：12th Gen Intel(R) Core(TM) i5-12400F
+117:	ＣＯＭの初期化... 成功
+119:	非同期読み込み処理の初期化...成功
+120:	ファイルアクセス処理の初期化...成功
+120:	メモリ総量:16220.70MB  空きメモリ領域:8377.05MB 
+120:	タイマーの精度を検査します
+121:	精度結果 更新回数 マルチメディアタイマー：0  パフォーマンスカウンター：60
+121:	 パフォーマンスカウンターを使用します タイマー精度 : 10000.000000 KHz 
+121:	 
+122:	ソフトの二重起動検査... 二重起動はされていませんでした
+122:	ウインドウクラスを登録します... 登録に成功しました
+123:	ウインドウモード起動用のウインドウを作成します
+123:	ディスプレイ情報のセットアップ開始
+123:		モニターの数：2  ディスプレイデバイスの数：4
+124:		No.0  モニター名：\\.\DISPLAY1　1920x1080　32bit　60Hz  96x96dpi
+124:		No.1  モニター名：\\.\DISPLAY2　1050x1680　32bit　59Hz  96x96dpi
+132:	ディスプレイ情報のセットアップ完了
+132:	ウインドウ矩形 ( 624, 249 )-( 1280, 768 )
+134:	ウインドウの作成に成功しました
+134:	ウインドウを表示します
+146:	ＩＭＥを無効にしました
+147:	ウインドウスタイルをウインドウモード用に変更します... 完了
+167:	XInput DLL の読み込み中... 成功
+169:	DirectInput関係初期化処理
+170:		DirectInput8 の取得を試みます...成功
+176:			引き続き初期化処理... 初期化成功
+177:		ジョイパッドの初期化... 
+177:			XInput 対応コントローラーのチェックを開始します
+177:				XInput 対応コントローラー No.0 をチェック
+178:				XInput 対応コントローラー No.0 の接続は確認できませんでした
+178:				XInput 対応コントローラー No.1 をチェック
+178:				XInput 対応コントローラー No.1 の接続は確認できませんでした
+178:				XInput 対応コントローラー No.2 をチェック
+179:				XInput 対応コントローラー No.2 の接続は確認できませんでした
+179:				XInput 対応コントローラー No.3 をチェック
+179:				XInput 対応コントローラー No.3 の接続は確認できませんでした
+179:			XInput 対応コントローラーのチェック完了
+179:			DirectInput 対応ジョイパッドの列挙を開始します
+190:			DirectInput 対応ジョイパッドの列挙終了
+190:		ジョイパッドの初期化は正常に終了しました
+190:		マウスデバイスの初期化... 初期化成功
+191:		キーボードデバイスの初期化... 初期化成功
+192:	DirectInput 関連の初期化は正常に終了しました
+195:	WASAPI の初期化を行います
 198:		デバイス名 : BenQ GW2780 (NVIDIA High Definition Audio)
 204:		デフォルト遅延時間 : 10.000 ms
-204:		最小遅延時間       : 3.000 ms
-204:		遅延時間           : 10.000 ms
-206:		チャンネル数  　   : 2 ch
-206:		量子化ビット深度   : 32 bit
-206:		有効ビット深度　   : 32 bit
-207:		サンプリングレート : 48000 Hz
-207:		データ形式         : 浮動小数点型
-252:		動作モード         : 共有モード
-252:	WASAPI の初期化は正常に終了しました
-256:	d3d11.dll の読み込み.... 成功
-258:	dxgi.dll の読み込み.... 成功
-258:	API CreateDXGIFactory2 のアドレスを取得します.... 成功
-259:	IDXGIFactory2 を作成します.... 成功
-261:	API CreateDXGIFactory6 のアドレスを取得します.... 成功
-262:	IDXGIAdapter を列挙
-262:		Adapter No.0 Desc:NVIDIA GeForce RTX 3060  VRAM:12129MB
-262:			Output Device No.0 Name:\\.\DISPLAY1 ( 0, 0 )-( 1920, 1080 )
-262:			Output Device No.1 Name:\\.\DISPLAY2 ( 1920, 20 )-( 2970, 1700 )
-263:		Adapter No.1 Desc:Microsoft Basic Render Driver  VRAM:0MB
-263:	API D3D11CreateDevice のアドレスを取得します.... 成功
-263:	IDXGIAdapter を取得します.... 成功
-264:	IDXGIAdapter1 を取得します.... 成功
-264:	IDXGIAdapter2 を取得します.... 成功
-264:	IDXGIAdapter3 を取得します.... 成功
-265:	IDXGIAdapter4 を取得します.... 成功
-265:	Direct3D 11 FeatureLevel 11_0 以上を対象とします
-265:	ID3D11Device オブジェクトを取得します.... 成功
-402:	IDXGIDevice1 を取得します.... 成功
-402:	IDXGIDevice1->SetMaximunFrameLatency( 1 ); を実行しました
-402:	[ウインドウモード 640x480 ( 640, 291 )-( 1280, 771 )]
-403:	IDXGISwapChain2 を作成します.... 成功
-417:	IDXGIFactory2->CreateSwapChainForHwnd の戻り値：0x00000000
-417:	IDXGIOutput を取得します.... 成功
-418:	Graphics Device:NVIDIA GeForce RTX 3060
-418:	画面のフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
-418:	16bit Zバッファフォーマットは DXGI_FORMAT_D16_UNORM です
-418:	24bit Zバッファフォーマットは DXGI_FORMAT_D24_UNORM_S8_UINT です
-418:	32bit Zバッファフォーマットは DXGI_FORMAT_D32_FLOAT です
-419:	16bit カラーフォーマットは DXGI_FORMAT_B5G6R5_UNORM です
-419:	32bit カラーフォーマットは DXGI_FORMAT_B8G8R8X8_UNORM です
-419:	アルファ付き 16bit カラーフォーマットは DXGI_FORMAT_B4G4R4A4_UNORM です
-419:	アルファ付き 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
-419:	アルファテスト用 16bit カラーフォーマットは DXGI_FORMAT_B5G5R5A1_UNORM です
-420:	アルファテスト用 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
-420:	ＤＸＴ１テクスチャフォーマットは DXGI_FORMAT_BC1_UNORM です
-420:	ＤＸＴ２テクスチャフォーマットは使えません
-420:	ＤＸＴ３テクスチャフォーマットは DXGI_FORMAT_BC2_UNORM です
-420:	ＤＸＴ４テクスチャフォーマットは使えません
-420:	ＤＸＴ５テクスチャフォーマットは DXGI_FORMAT_BC3_UNORM です
-420:	BC7_UNORM テクスチャフォーマットは DXGI_FORMAT_BC7_UNORM です
-421:	BC7_UNORM_SRGB テクスチャフォーマットは DXGI_FORMAT_BC7_UNORM_SRGB です
-421:	ABGR 整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_UNORM です
-421:	ABGR 浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_FLOAT です
-421:	ABGR 浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32B32A32_FLOAT です
-421:	１チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8_UNORM です
-421:	１チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_UNORM です
-422:	１チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_FLOAT です
-422:	１チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32_FLOAT です
-422:	２チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8G8_UNORM です
-422:	２チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_UNORM です
-422:	２チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_FLOAT です
-422:	２チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32_FLOAT です
-423:	描画用 16bit カラーフォーマットは DXGI_FORMAT_B5G6R5_UNORM です
-423:	描画用 32bit カラーフォーマットは DXGI_FORMAT_B8G8R8X8_UNORM です
-423:	描画用アルファ付き 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
-423:	描画用 ABGR 整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_UNORM です
-423:	描画用 ABGR 浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_FLOAT です
-424:	描画用 ABGR 浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32B32A32_FLOAT です
-424:	描画用１チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8_UNORM です
-424:	描画用１チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_UNORM です
-424:	描画用１チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_FLOAT です
-424:	描画用１チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32_FLOAT です
-424:	描画用２チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8G8_UNORM です
-425:	描画用２チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_UNORM です
-425:	描画用２チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_FLOAT です
-425:	描画用２チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32_FLOAT です
-425:	使用する機能レベル:D3D_FEATURE_LEVEL_11_1
-425:	同時にレンダリングできるバッファの数:8
-425:	最大テクスチャサイズ　幅:16384 高さ:16384
-426:	標準描画用の頂点バッファの作成.... 成功
-426:	シェーダーコード関係の初期化.... 成功
-437:	各種シェーダー用定数バッファの作成.... 成功
-438:	各種 ID3D11InputLayout の作成.... 成功
-459:	画像の単純転送処理の初期化... 成功
-461:	深度バッファを作成します.... 成功
-463:	フォントの初期化を行います
-465:	フォントの初期化は正常に終了しました
-546:	文字コードバッファの初期化を行います... 完了しました
-565:ＤＸライブラリの初期化処理終了
-584:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-584:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-585:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-585:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-586:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-586:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-586:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-587:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-587:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
-588:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\弾.mv1
-9149:ウインドウを閉じようとしています
-9151:ウインドウが破棄されようとしています
-9151:ソフトを終了する準備が整いました
-9153:フォントの初期化を行います
-9154:フォントの初期化は正常に終了しました
-9174:d3d11.dll の解放 1
-9174:dxgi.dll の解放 1
-9175:Direct3D11 のオブジェクト数を出力
-9175:Direct3D11 のオブジェクト合計数 : 0
-9175:DirectInput 関連の終了処理... 完了
-9177:サウンド関連の終了処理... 完了
-9185:ウィンドウ関連の終了処理... 完了
-9251:ＣＯＭを終了... 完了
-9251:
-9252:Alloc memory dump
-9252:	Total size:0(0.000kb)  Alloc num:0
-9252:
+205:		最小遅延時間       : 3.000 ms
+205:		遅延時間           : 10.000 ms
+207:		チャンネル数  　   : 2 ch
+207:		量子化ビット深度   : 32 bit
+207:		有効ビット深度　   : 32 bit
+208:		サンプリングレート : 48000 Hz
+208:		データ形式         : 浮動小数点型
+233:		動作モード         : 共有モード
+233:	WASAPI の初期化は正常に終了しました
+237:	d3d11.dll の読み込み.... 成功
+240:	dxgi.dll の読み込み.... 成功
+240:	API CreateDXGIFactory2 のアドレスを取得します.... 成功
+240:	IDXGIFactory2 を作成します.... 成功
+242:	API CreateDXGIFactory6 のアドレスを取得します.... 成功
+242:	IDXGIAdapter を列挙
+243:		Adapter No.0 Desc:NVIDIA GeForce RTX 3060  VRAM:12129MB
+243:			Output Device No.0 Name:\\.\DISPLAY1 ( 0, 0 )-( 1920, 1080 )
+243:			Output Device No.1 Name:\\.\DISPLAY2 ( 1920, 20 )-( 2970, 1700 )
+243:		Adapter No.1 Desc:Microsoft Basic Render Driver  VRAM:0MB
+243:	API D3D11CreateDevice のアドレスを取得します.... 成功
+244:	IDXGIAdapter を取得します.... 成功
+244:	IDXGIAdapter1 を取得します.... 成功
+244:	IDXGIAdapter2 を取得します.... 成功
+245:	IDXGIAdapter3 を取得します.... 成功
+245:	IDXGIAdapter4 を取得します.... 成功
+245:	Direct3D 11 FeatureLevel 11_0 以上を対象とします
+245:	ID3D11Device オブジェクトを取得します.... 成功
+358:	IDXGIDevice1 を取得します.... 成功
+358:	IDXGIDevice1->SetMaximunFrameLatency( 1 ); を実行しました
+359:	[ウインドウモード 640x480 ( 640, 291 )-( 1280, 771 )]
+359:	IDXGISwapChain2 を作成します.... 成功
+363:	IDXGIFactory2->CreateSwapChainForHwnd の戻り値：0x00000000
+363:	IDXGIOutput を取得します.... 成功
+364:	Graphics Device:NVIDIA GeForce RTX 3060
+364:	画面のフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
+364:	16bit Zバッファフォーマットは DXGI_FORMAT_D16_UNORM です
+364:	24bit Zバッファフォーマットは DXGI_FORMAT_D24_UNORM_S8_UINT です
+364:	32bit Zバッファフォーマットは DXGI_FORMAT_D32_FLOAT です
+365:	16bit カラーフォーマットは DXGI_FORMAT_B5G6R5_UNORM です
+365:	32bit カラーフォーマットは DXGI_FORMAT_B8G8R8X8_UNORM です
+365:	アルファ付き 16bit カラーフォーマットは DXGI_FORMAT_B4G4R4A4_UNORM です
+365:	アルファ付き 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
+365:	アルファテスト用 16bit カラーフォーマットは DXGI_FORMAT_B5G5R5A1_UNORM です
+365:	アルファテスト用 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
+366:	ＤＸＴ１テクスチャフォーマットは DXGI_FORMAT_BC1_UNORM です
+366:	ＤＸＴ２テクスチャフォーマットは使えません
+366:	ＤＸＴ３テクスチャフォーマットは DXGI_FORMAT_BC2_UNORM です
+366:	ＤＸＴ４テクスチャフォーマットは使えません
+366:	ＤＸＴ５テクスチャフォーマットは DXGI_FORMAT_BC3_UNORM です
+366:	BC7_UNORM テクスチャフォーマットは DXGI_FORMAT_BC7_UNORM です
+367:	BC7_UNORM_SRGB テクスチャフォーマットは DXGI_FORMAT_BC7_UNORM_SRGB です
+367:	ABGR 整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_UNORM です
+367:	ABGR 浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_FLOAT です
+367:	ABGR 浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32B32A32_FLOAT です
+367:	１チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8_UNORM です
+367:	１チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_UNORM です
+368:	１チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_FLOAT です
+368:	１チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32_FLOAT です
+368:	２チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8G8_UNORM です
+368:	２チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_UNORM です
+368:	２チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_FLOAT です
+368:	２チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32_FLOAT です
+368:	描画用 16bit カラーフォーマットは DXGI_FORMAT_B5G6R5_UNORM です
+369:	描画用 32bit カラーフォーマットは DXGI_FORMAT_B8G8R8X8_UNORM です
+369:	描画用アルファ付き 32bit カラーフォーマットは DXGI_FORMAT_R8G8B8A8_UNORM です
+369:	描画用 ABGR 整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_UNORM です
+369:	描画用 ABGR 浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16B16A16_FLOAT です
+369:	描画用 ABGR 浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32B32A32_FLOAT です
+370:	描画用１チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8_UNORM です
+370:	描画用１チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_UNORM です
+370:	描画用１チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16_FLOAT です
+370:	描画用１チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32_FLOAT です
+370:	描画用２チャンネル整数 8 ビット型カラーフォーマットは DXGI_FORMAT_R8G8_UNORM です
+371:	描画用２チャンネル整数 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_UNORM です
+371:	描画用２チャンネル浮動小数点 16 ビット型カラーフォーマットは DXGI_FORMAT_R16G16_FLOAT です
+371:	描画用２チャンネル浮動小数点 32 ビット型カラーフォーマットは DXGI_FORMAT_R32G32_FLOAT です
+371:	使用する機能レベル:D3D_FEATURE_LEVEL_11_1
+371:	同時にレンダリングできるバッファの数:8
+372:	最大テクスチャサイズ　幅:16384 高さ:16384
+372:	標準描画用の頂点バッファの作成.... 成功
+372:	シェーダーコード関係の初期化.... 成功
+379:	各種シェーダー用定数バッファの作成.... 成功
+380:	各種 ID3D11InputLayout の作成.... 成功
+395:	画像の単純転送処理の初期化... 成功
+396:	深度バッファを作成します.... 成功
+398:	フォントの初期化を行います
+400:	フォントの初期化は正常に終了しました
+472:	文字コードバッファの初期化を行います... 完了しました
+490:ＤＸライブラリの初期化処理終了
+505:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+506:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+506:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+506:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+507:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+507:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+507:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+508:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+508:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\Enemy.mv1
+508:Model File Open Error : C:\Users\hiz108\source\repos\source\repos\ShootingGame2024\ShootingGame3D\モデル\弾.mv1

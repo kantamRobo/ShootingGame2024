@@ -39,8 +39,7 @@ int main()
 	while (Process(key)) {//メインループ
 	
 		objectadmin3D.Update3D(key);
-		// キーの入力待ち
-		WaitKey();
+	
 		
 	
 			
