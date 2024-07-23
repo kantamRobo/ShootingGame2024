@@ -32,35 +32,20 @@ int main()
 		return -1;    // エラーが起きたら直ちに終了
 	}
 	
-	ImGui::CreateContext();
 
-	ImGui_ImplWin32_Init(DxLib::GetMainWindowHandle());
 
 	
-		auto d = static_cast<ID3D11Device*>(const_cast<void*>(GetUseDirect3D11Device()));
-		auto dc = static_cast<ID3D11DeviceContext*>(const_cast<void*>(GetUseDirect3D11DeviceContext()));
-		return ImGui_ImplDX11_Init(d, dc);
-	
-
 	objectadmin3D.Init3D();
 	while (Process(key)) {//メインループ
 	
-		ImGui_ImplDX11_NewFrame();
 		objectadmin3D.Update3D(key);
 		// キーの入力待ち
 		WaitKey();
-		ImGui_ImplWin32_NewFrame();
-		ImGui::NewFrame();
-		{
-			ImGui::Begin("Test Window");
-			ImGui::End();
-			// ImGui関連の描画処理
-			ImGui::EndFrame();
-			ImGui::Render();
-			ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
-			ScreenFlip();
-		}
+		
+	
+			
+			
+		
 	}
 
 	// ＤＸライブラリの後始末

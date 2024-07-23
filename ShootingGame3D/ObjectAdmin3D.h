@@ -2,6 +2,7 @@
 #include <memory>
 #include "SceneAdmin.h"
 #include "SphereCollision.h"
+#include "Camera.h"
 class RootObject3D;
 class Ammo3D;
 class ObjectAdmin3D
@@ -13,6 +14,7 @@ public:
 	std::shared_ptr<RootObject3D> object[256];
 	std::shared_ptr<Ammo3D> ammo3d[10];
 	STATUS status = STATUS::TITLE;
+	Camera camera;
 public:
 	int rapid = 0;
 	virtual void Init3D();
