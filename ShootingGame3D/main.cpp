@@ -37,7 +37,7 @@ int main()
 	
 	objectadmin3D.Init3D();
 	while (Process(key)) {//ƒƒCƒ“ƒ‹[ƒv
-	
+		SetBackgroundColor(0, 0, 255); // Ô0, —Î0, Â255
 		objectadmin3D.Update3D(key);
 	
 		
