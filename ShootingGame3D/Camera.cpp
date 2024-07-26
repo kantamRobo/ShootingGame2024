@@ -11,8 +11,8 @@ void Camera::Init(const VECTOR& playerpos,const VECTOR& enemypos)
 
 void Camera::Update(char* input)
 {
-
-	
+	SetBackgroundColor(0, 0, 255); // ê‘0, óŒ0, ê¬255
+	SetUseZBuffer3D(TRUE);
 
 
 	if (input[KEY_INPUT_UP] == 1)
