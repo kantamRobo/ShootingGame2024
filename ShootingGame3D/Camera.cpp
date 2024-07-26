@@ -14,7 +14,7 @@ void Camera::Update(char* input)
 
 	
 
-
+/*
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		
@@ -44,7 +44,7 @@ void Camera::Update(char* input)
 
 		
 	}
-	
+	*/
 	auto debug = temppos;
 	//TODO: カメラを手動で回転させてオブジェクトのほうを向かせる
 	
