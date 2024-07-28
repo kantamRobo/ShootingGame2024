@@ -33,7 +33,25 @@ void ObjectAdmin3D::Update3D(char* input)
 	for (int enemyindex = 0; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		object[enemyindex]->Update(VGet(200, 200, 500));
-		x += 20;
+		if (input[KEY_INPUT_D] == 1) {
+
+			object[enemyindex]->position.x += 10;
+		}
+
+		if (input[KEY_INPUT_A] == 1) {
+
+			object[enemyindex]->position.x += 10;
+		}
+
+		if (input[KEY_INPUT_W] == 1) {
+
+			object[enemyindex]->position.y += 10;
+		}
+
+		if (input[KEY_INPUT_S] == 1) {
+
+			object[enemyindex]->position.y += 10;
+		}
 	}
 	//object[2]->Update(VGet(300, 200, 500));
 	
