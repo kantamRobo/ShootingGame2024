@@ -30,7 +30,7 @@ void ObjectAdmin3D::Update3D(char* input)
 	object[0]->Update(VGet(100, 200, 500));
 	
 	
-	for (int enemyindex = 0; enemyindex < 10; enemyindex++) {
+	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		object[enemyindex]->Update(VGet(200, 200, 500));
 		if (input[KEY_INPUT_D] == 1) {
