@@ -52,6 +52,17 @@ void ObjectAdmin3D::Update3D(char* input)
 
 			object[enemyindex]->position.y -= 10;
 		}
+
+		if (input[KEY_INPUT_Q] == 1)
+		{
+			object[enemyindex]->position.z += 10;
+		}
+
+		if (input[KEY_INPUT_Z] == 1)
+		{
+			object[enemyindex]->position.z -= 10;
+		}
+
 	}
 	//object[2]->Update(VGet(300, 200, 500));
 	

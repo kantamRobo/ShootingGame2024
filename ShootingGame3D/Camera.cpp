@@ -45,6 +45,18 @@ void Camera::Update(char* input)
 
 		
 	}
+
+	if (input[KEY_INPUT_T] == 1)
+	{
+		temppos.z += 5;
+	}
+
+	if (input[KEY_INPUT_B] == 1)
+	{
+		temppos.z -= 5;
+	}
+
+
 	
 	auto debug = temppos;
 	//TODO: カメラを手動で回転させてオブジェクトのほうを向かせる
