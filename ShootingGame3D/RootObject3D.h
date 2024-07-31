@@ -14,6 +14,6 @@ public:
 
 	
 	virtual void Update(const VECTOR& vec);
-	
+	virtual void Attack3D();
 };
 

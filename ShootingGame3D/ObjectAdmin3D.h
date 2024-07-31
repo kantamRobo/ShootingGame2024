@@ -21,7 +21,7 @@ public:
 	virtual void Update3D(char* input);
 	virtual void Draw3D();
 	void judge3D();
-
+	std::shared_ptr<Ammo3D> ammo[10];
 	bool Intersect(const Sphere& r1, const Sphere& r2)
 	{
 		if (!(r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x) * (r2.position.x - r1.position.x)
