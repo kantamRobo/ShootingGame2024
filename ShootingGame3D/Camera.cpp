@@ -37,7 +37,7 @@ void Camera::Update(char* input)
 		temppos.x -= 5;
 		
 	}
-
+	Å@
 	if (input[KEY_INPUT_RIGHT] == 1)
 	{
 		
