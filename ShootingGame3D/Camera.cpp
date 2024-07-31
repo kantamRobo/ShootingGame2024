@@ -59,16 +59,18 @@ void Camera::Update(char* input)
 
 	
 	auto debug = temppos;
-	//TODO: カメラを手動で回転させてオブジェクトのほうを向かせる
 	
 	
 		position = temppos;
 		CameraLookAtPosition = VGet(position.x, position.y, position.z + 1000); // 注視点をカメラ位置に対して前方に設定
 
 	
+		x += 0.04;
 		
 		// カメラの設定に反映する
 		SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
 	
+		SetCameraPositionAndAngle(position, x,0, 0);
 
+		//TODO:x軸を操作していい感じに見下ろし視点にする
 }
