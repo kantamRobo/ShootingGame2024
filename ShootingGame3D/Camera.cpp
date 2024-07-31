@@ -65,7 +65,15 @@ void Camera::Update(char* input)
 		CameraLookAtPosition = VGet(position.x, position.y, position.z + 1000); // 注視点をカメラ位置に対して前方に設定
 
 	
-		x += 0.04;
+		if (input[KEY_INPUT_R])
+		{
+			x += 0.04;
+		}
+
+		if (input[KEY_INPUT_V])
+		{
+			x -= 0.04;
+		}
 		
 		// カメラの設定に反映する
 		SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
