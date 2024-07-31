@@ -8,7 +8,6 @@ public:
 	void Draw()override;
 	void Update()override;
 	void Update(char* input)override;
-	
-	Sphere playersphere;
+
 };
 

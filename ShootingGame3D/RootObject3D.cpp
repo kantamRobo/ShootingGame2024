@@ -1,7 +1,8 @@
 
+#include "Ammo3D.h"
 #include "RootObject3D.h"
 
-#include "Ammo3D.h"
+
 void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
 {
 	position = in_position;
@@ -21,6 +22,7 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 void RootObject3D::Update(const VECTOR& vec)
 {
 	Draw3D(vec);
+	sphere.DrawDebug(position);
 }
 
 void RootObject3D::Attack3D()

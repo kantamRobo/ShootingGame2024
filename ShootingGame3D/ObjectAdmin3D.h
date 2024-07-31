@@ -5,7 +5,7 @@
 #include "Camera.h"
 class RootObject3D;
 class Ammo3D;
-struct Sphere;
+
 class ObjectAdmin3D
 {
 public:

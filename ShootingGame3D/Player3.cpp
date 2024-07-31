@@ -1,13 +1,11 @@
-#include "SphereCollision.h"
+
 #include "Player3.h"
 
 
 Player3::Player3()
 {
-	playersphere.position = position;
-
-	playersphere.radius = 10;
-
+	sphere.position = position;
+	sphere.radius = 10;
 }
 void Player3::Draw()
 {
@@ -15,7 +13,7 @@ void Player3::Draw()
 
 void Player3::Update()
 {
-
+	
 }
 
 void Player3::Update(char* input)
@@ -27,4 +25,5 @@ void Player3::Update(char* input)
 
 
 	}
+	
 }

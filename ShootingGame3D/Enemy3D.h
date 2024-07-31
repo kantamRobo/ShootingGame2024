@@ -10,6 +10,5 @@ public:
 	void Update()override;
 	void Update(char* input)override;
 
-	Sphere enemyspehere;
 };
 
