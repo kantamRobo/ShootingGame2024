@@ -1,10 +1,11 @@
 #pragma once
 #include <memory>
 #include "SceneAdmin.h"
-#include "SphereCollision.h"
+
 #include "Camera.h"
 class RootObject3D;
 class Ammo3D;
+struct Sphere;
 class ObjectAdmin3D
 {
 public:
@@ -22,16 +23,7 @@ public:
 	virtual void Draw3D();
 	void judge3D();
 	std::shared_ptr<Ammo3D> ammo[10];
-	bool Intersect(const Sphere& r1, const Sphere& r2)
-	{
-		if (!(r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x)* (r2.position.x - r1.position.x) + (r2.position.x - r1.position.x) * (r2.position.x - r1.position.x)
-			<= (r2.radius + r1.radius) * (r2.radius + r1.radius))
-		{
-			return false;
-	    }
-		
-		return true ;
-	}
+	
 	
 };
 

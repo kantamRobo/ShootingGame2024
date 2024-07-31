@@ -1,3 +1,4 @@
+#include "SphereCollision.h"
 #include "Player3.h"
 
 
@@ -22,7 +23,7 @@ void Player3::Update(char* input)
 	if (input[KEY_INPUT_Z])
 	{
 
-		Attack();
+		Attack3D();
 
 
 	}

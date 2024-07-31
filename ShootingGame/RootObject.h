@@ -3,12 +3,12 @@
 
 #include <memory>
 #include <DxLib.h>
-class Ammo;
+class Ammo3D;
 class RootObject
 {
 public:
 	VECTOR position = VGet(0, 0, 0);
-	std::shared_ptr<Ammo> ammo[10];
+	std::shared_ptr<Ammo3D> ammo[10];
 	bool isActive = true;
 	bool isEnemy;//自機だったらfalse,敵はtrue
 	//立っているフラグが違うオブジェクト同士

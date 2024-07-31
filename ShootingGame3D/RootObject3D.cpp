@@ -1,5 +1,7 @@
+
 #include "RootObject3D.h"
-#include "Ammo.h"
+
+#include "Ammo3D.h"
 void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
 {
 	position = in_position;
@@ -30,7 +32,7 @@ void RootObject3D::Attack3D()
 	if (rapid == 1) {
 
 		if (ammo[ammoindex]->isActive == false) {
-			ammo[ammoindex]->Shot(this->position.x, this->position.y);
+			ammo[ammoindex]->Shot3D(this->position.x, this->position.y,this->position.z);
 			ammo[ammoindex]->isActive = true;
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"íe:%d", ammoindex);
 
@@ -63,7 +65,7 @@ void RootObject::Create(double in_x, double in_y)
 //ÇÕÇ«Ç±Ç…Ç∑ÇÈÇ©ÅHÇ∆Ç¢Ç§ÇÃÇåàÇﬂÇÈÇÃÇ…égÇ§ÅB
 	for (int i = 0; i < 10; i++)
 	{
-		ammo[i] = std::make_shared<Ammo>();
+		ammo[i] = std::make_shared<Ammo3D>();
 		ammo[i]->isActive = false;
 	}
 }

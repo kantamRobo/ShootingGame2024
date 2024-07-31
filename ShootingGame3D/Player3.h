@@ -1,10 +1,10 @@
 #pragma once
 #include "RootObject3D.h"
-#include "SphereCollision.h"
+
 class Player3:public RootObject3D
 {
 public:
-	playersphere();
+	Player3();
 	void Draw()override;
 	void Update()override;
 	void Update(char* input)override;

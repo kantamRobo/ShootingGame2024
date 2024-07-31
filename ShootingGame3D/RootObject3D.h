@@ -1,5 +1,9 @@
 #pragma once
+
+#include "DEFINE.h"
 #include "RootObject.h"
+
+
 class RootObject3D:public RootObject
 {
 public:
