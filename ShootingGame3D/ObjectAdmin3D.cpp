@@ -1,8 +1,6 @@
 
 #include "Player3.h"
 #include "Enemy3D.h"
-#include "Ammo.h"
-#include "Ammo3D.h"
 #include "ObjectAdmin3D.h"
 
 
@@ -11,7 +9,7 @@ void ObjectAdmin3D::Init3D()
 	
 	object[0] = std::make_shared<Player3>();
 	
-	ammo3d[0] = std::make_shared<Ammo3D>();
+	
     object[0]->Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\–³‘è.mv1", VGet(100, 200, 500));
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;

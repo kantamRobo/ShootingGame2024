@@ -5,7 +5,7 @@
 Player3::Player3()
 {
 	sphere.position = position;
-	sphere.radius = 10;
+	sphere.radius = 150;
 }
 void Player3::Draw()
 {

@@ -1,8 +1,11 @@
-
+#include "SphereCollision.h"
 #include "Ammo3D.h"
 
 Ammo3D::Ammo3D()
 {
+	sphere.position = position;
+
+	sphere.radius = 50;
 }
 
 void Ammo3D::Shot3D(int m_x, int m_y, int m_z)

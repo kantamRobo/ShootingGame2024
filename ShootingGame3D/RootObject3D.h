@@ -1,9 +1,9 @@
 #pragma once
-
-#include "SphereCollision.h" // Sphere構造体の定義をインクルード
+#include <memory>
 #include "DEFINE.h"
 #include "RootObject.h"
-
+#include "SphereCollision.h"
+#include "Ammo3D.h"
 class RootObject3D:public RootObject
 {
 public:
@@ -13,7 +13,7 @@ public:
 	
 	Sphere sphere;
 	virtual void Init3D(const TCHAR* filepath, const VECTOR& position);
-
+	std::shared_ptr<Ammo3D> ammo[10];
 	virtual void Draw3D(const VECTOR& vector);
 
 	

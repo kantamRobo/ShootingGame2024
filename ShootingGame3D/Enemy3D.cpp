@@ -7,7 +7,8 @@
 Enemy3D::Enemy3D()
 {
 	
-
+	sphere.position = position;
+	sphere.radius = 150;
 	
 }
 void Enemy3D::Draw()
