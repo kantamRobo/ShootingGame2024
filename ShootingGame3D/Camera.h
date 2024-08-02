@@ -8,7 +8,7 @@ public:
 	
 	//基本は固定カメラとして使う。
 
-	float x = 0;
+	float camrot = -5.67999601;
 
 	VECTOR position; //Imguiで調整
 

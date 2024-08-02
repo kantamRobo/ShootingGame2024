@@ -20,4 +20,6 @@ void Ammo3D::Shot3D(int m_x, int m_y, int m_z)
 void Ammo3D::Update3D()
 {
 	sphere.DrawDebug(position);
+
+	position.z -= AMMOVELOCITY;
 }

@@ -6,8 +6,8 @@
 void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
 {
 	position = in_position;
-	position.x += 20;
-	MV1SetPosition(handle, position);
+	
+	
 	handle = MV1LoadModel(filepath);
 	for (int i = 0; i < 10; i++)
 	{
@@ -26,6 +26,7 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 void RootObject3D::Update(const VECTOR& vec)
 {
 	Draw3D(vec);
+	
 	sphere.DrawDebug(position);
 	for (int i = 0; i < 10; i++)
 	{
