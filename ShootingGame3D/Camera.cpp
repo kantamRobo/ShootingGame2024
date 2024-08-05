@@ -17,7 +17,7 @@ void Camera::Update(char* input)
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
 
-
+	/*
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		
@@ -58,7 +58,7 @@ void Camera::Update(char* input)
 		temppos.z -= 5;
 	}
 
-
+	*/
 	
 	auto debug = temppos;
 	

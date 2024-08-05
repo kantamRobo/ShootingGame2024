@@ -16,8 +16,8 @@ public:
 	std::shared_ptr<Ammo3D> ammo[10];
 	virtual void Draw3D(const VECTOR& vector);
 
-	
-	virtual void Update(const VECTOR& vec);
+	virtual void Update(char* input) = 0;
+	virtual void Update()=0;
 	virtual void Attack3D();
 };
 

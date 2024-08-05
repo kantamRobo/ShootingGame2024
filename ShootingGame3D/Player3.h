@@ -7,6 +7,7 @@ public:
 	Player3();
 	void Draw()override;
 	void Update()override;
+
 	void Update(char* input)override;
 
 };

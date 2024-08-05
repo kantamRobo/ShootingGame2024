@@ -23,16 +23,7 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 	MV1DrawModel(handle);
 }
 
-void RootObject3D::Update(const VECTOR& vec)
-{
-	Draw3D(vec);
-	
-	sphere.DrawDebug(position);
-	for (int i = 0; i < 10; i++)
-	{
-		ammo[i] -> Update3D();
-	}
-}
+
 
 void RootObject3D::Attack3D()
 {

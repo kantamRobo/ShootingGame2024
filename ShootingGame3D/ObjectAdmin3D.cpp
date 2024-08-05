@@ -26,43 +26,14 @@ void ObjectAdmin3D::Init3D()
 void ObjectAdmin3D::Update3D(char* input)
 {
 	camera.Update(input);
-	object[0]->Update(VGet(100, 200, 500));
+	object[0]->Update(input);
 	
 	
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		//object[enemyindex]->Update(VGet(200, 200, 500));
-		object[enemyindex]->Update(VGet(150, 580, 3000));
-		if (input[KEY_INPUT_D] == 1) {
-
-			object[enemyindex]->position.x += 10;
-		}
-
-		if (input[KEY_INPUT_A] == 1) {
-
-			object[enemyindex]->position.x -= 10;
-		}
-
-		if (input[KEY_INPUT_W] == 1) {
-
-			object[enemyindex]->position.y += 10;
-		}
-
-		if (input[KEY_INPUT_S] == 1) {
-
-			object[enemyindex]->position.y -= 10;
-		}
-
-		if (input[KEY_INPUT_Q] == 1)
-		{
-			object[enemyindex]->position.z += 10;
-		}
-
-		if (input[KEY_INPUT_Z] == 1)
-		{
-			object[enemyindex]->position.z -= 10;
-		}
-
+		object[enemyindex]->Update();
+	
 	}
 	//object[2]->Update(VGet(300, 200, 500));
 	

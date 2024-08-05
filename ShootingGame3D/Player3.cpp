@@ -18,6 +18,9 @@ void Player3::Update()
 
 void Player3::Update(char* input)
 {
+	Draw3D(position);
+
+	sphere.DrawDebug(position);
 	if (input[KEY_INPUT_Z])
 	{
 
@@ -26,4 +29,8 @@ void Player3::Update(char* input)
 
 	}
 	
+}
+
+void Player3::Update(char* input)
+{
 }
