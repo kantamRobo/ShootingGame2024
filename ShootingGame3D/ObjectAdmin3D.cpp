@@ -2,6 +2,7 @@
 #include "Player3.h"
 #include "Enemy3D.h"
 #include "ObjectAdmin3D.h"
+#include <iostream>
 
 
 void ObjectAdmin3D::Init3D()
@@ -47,4 +48,15 @@ void ObjectAdmin3D::Draw3D()
 
 void ObjectAdmin3D::judge3D()
 {
+	for (int objectindex = 0; objectindex < ENEMY_MAX; objectindex++)
+	{
+
+
+		for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
+			if (Sphere::Intersect(object[objectindex]->ammo[ammoindex]->sphere, object[objectindex]->sphere))
+			{
+				std::cout << "HIT" << std::endl;
+			}
+		}
+	}
 }
