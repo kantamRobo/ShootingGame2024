@@ -25,10 +25,11 @@ void Enemy3D::Update()
 		ammo[i]->Update3D();
 		if (isEnemy)
 		{
-			position.x -= 20;
-			if (this->position.x < X_LIMIT)
+			position.x += 5;
+			if (this->position.x > X_LIMIT)
 			{
-				position.z -= 50;
+				position.z -= 10;
+				position.x = ENEMY_START;
 			}
 		}
 

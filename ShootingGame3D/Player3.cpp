@@ -31,6 +31,3 @@ void Player3::Update(char* input)
 	
 }
 
-void Player3::Update(char* input)
-{
-}
