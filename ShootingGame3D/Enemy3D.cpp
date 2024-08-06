@@ -22,7 +22,7 @@ void Enemy3D::Update()
 	sphere.DrawDebug(position);
 	for (int i = 0; i < 10; i++)
 	{
-		ammo[i]->Update3D();
+		//Attack3D(-10);
 		if (isEnemy)
 		{
 			position.x += 5;

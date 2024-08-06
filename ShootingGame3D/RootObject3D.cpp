@@ -12,6 +12,7 @@ void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
 	for (int i = 0; i < 10; i++)
 	{
 		ammo[i] = std::make_shared<Ammo3D>();
+		ammo[i]->isActive = false;
 	}
 }
 
@@ -28,23 +29,26 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 void RootObject3D::Attack3D()
 {
 	rapid++;
-
+	
 	rapid %= RAPID_RATE;
-
+	//’e‚ğŒ‚‚Á‚½‚ç
 	if (rapid == 1) {
-
-		if (ammo[ammoindex]->isActive == false) {
-			ammo[ammoindex]->Shot3D(this->position.x, this->position.y,this->position.z);
-			ammo[ammoindex]->isActive = true;
+		ammo[ammoindex]->isActive = true;
+		//’e‚ªŒ»‚ê‚é
+		if (ammo[ammoindex]->isActive == true) {
+			//ammo[ammoindex]->Shot3D(this->position.x, this->position.y,this->position.z);
+			
 			DrawFormatString(50, 70, GetColor(0, 255, 0), L"’e:%d", ammoindex);
-
-			ammoindex++;
+					ammoindex++;
+			//ammoindex‚ªŒÀŠE‚Ü‚ÅƒJƒEƒ“ƒg‚³‚ê‚½‚çAŒ»‚ê‚Ä‚¢‚é’e‚ğ’T‚·
 			if (ammoindex == MAX_AMMO - 1) {
 				for (int j = 0; j < MAX_AMMO; j++)
 				{
+					
 					if (ammo[j]->isActive == true) {
-						ammo[j]->isActive = false;
+						ammo[j]->isActive = false;//’e‚ªÁ‚¦‚é
 					}
+					
 					ammoindex = 0;
 				}
 

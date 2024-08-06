@@ -19,7 +19,7 @@ public:
 
 	void EnemyUpdate();
 
+	virtual void Move3D(const float AMMOVELOCITY) = 0;
 	
-
 };
 

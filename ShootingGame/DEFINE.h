@@ -11,3 +11,6 @@ const int MAX_AMMO = 10;
 const int ENEMY_MIN = 1;
 const int ENEMY_MAX = 10;
 const int ENEMY_START = 150;
+
+const int bullet_player_offset = 10;
+const int bullet_enemy_offset = -10;

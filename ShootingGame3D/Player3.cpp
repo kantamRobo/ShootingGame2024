@@ -6,6 +6,8 @@ Player3::Player3()
 {
 	sphere.position = position;
 	sphere.radius = 150;
+
+	
 }
 void Player3::Draw()
 {
@@ -19,23 +21,10 @@ void Player3::Update()
 void Player3::Update(char* input)
 {
 	Draw3D(position);
-
+	ammo[ammoindex]->Update3D(50);
+	
 	sphere.DrawDebug(position);
-	     if (input[KEY_INPUT_UP] == 1)
-		{
-
-			position.y -= 5;
-
-
-		}
-
-		if (input[KEY_INPUT_DOWN] == 1)
-		{
-
-			position.y += 5;
-			//posY += 5;
-
-		}
+	   
 
 		if (input[KEY_INPUT_LEFT] == 1) {
 
@@ -51,19 +40,21 @@ void Player3::Update(char* input)
 
 		}
 
-		if (input[KEY_INPUT_Q] == 1)
+		if (input[KEY_INPUT_UP] == 1)
 		{
 			position.z += 5;
 		}
 
-		if (input[KEY_INPUT_Z] == 1)
+		if (input[KEY_INPUT_DOWN] == 1)
 		{
 			position.z -= 5;
 		}
-		if(input[KEY_INPUT_A] == 1)
-		Attack3D();
-
-
+		if (input[KEY_INPUT_A] == 1) {
+	
+			//Attack3D();
+			
+		}
+		
 	
 	
 }
