@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Ammo.h" />
     <ClInclude Include="DEFINE.h" />
+    <ClInclude Include="DEFINE2D.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="ObjectAdmin.h" />
     <ClInclude Include="Player.h" />

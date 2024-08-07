@@ -150,6 +150,7 @@
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
     <ClInclude Include="Ammo3D.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DEFINE3D.h" />
     <ClInclude Include="Enemy3D.h" />
     <ClInclude Include="Imgui\imconfig.h" />
     <ClInclude Include="Imgui\imgui.h" />

@@ -16,6 +16,9 @@
     <Filter Include="Imgui">
       <UniqueIdentifier>{cb8fa4c2-3724-406e-abe4-8eb3ded6a5f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\DEFINE3D">
+      <UniqueIdentifier>{b4d2a6e2-09c9-452d-b366-afcdf33629af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,9 +71,6 @@
     <ClInclude Include="Player3.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\ShootingGame\DEFINE.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="RootObject3D.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -112,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="Imgui\imstb_truetype.h">
       <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="DEFINE3D.h">
+      <Filter>ヘッダー ファイル\DEFINE3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ShootingGame\DEFINE.h">
+      <Filter>ヘッダー ファイル\DEFINE3D</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

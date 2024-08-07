@@ -8,7 +8,7 @@ public:
 	
 	VECTOR position = VGet(0, 0, 0);
 	bool isActive = false;
-	const int AMMOVELOCITY = 10;
+	const int AMMOVELOCITY = 10;//ハードコードされてしまっている。
 	
 
 	
