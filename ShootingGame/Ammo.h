@@ -1,25 +1,35 @@
 #pragma once
 #include <DxLib.h>
-class Ammo
+#include "DEFINE.h"
+#include "DEFINE2D.h"
+class Ammo2D
 {
 public:
-	Ammo() : AMMOVELOCITY(10.0f)
-	{};
+	Ammo2D() {};
 	
 	VECTOR position = VGet(0, 0, 0);
 	bool isActive = false;
-	const int AMMOVELOCITY = 10;//ハードコードされてしまっている。
-	
-
-	
+	void SetIsActive(bool in_isactive) { isActive = in_isactive; }
 	bool GetIsActive()const { return isActive; }
-	void Shot(int m_x, int m_y);
-	int radius = 10;
-	void Update();
+	virtual void PlayerUpdate()=0;
 
-	void EnemyUpdate();
+	virtual void EnemyUpdate()=0;
+	//ここまでインターフェイスに移動。UpdateとEnemyUpdateは、UpdateはPlayerUpdateに改名したのち、それぞれ純水仮想関数にしてインターフェイスに移動。
+	void Shot2D(int m_x, int m_y);
+	
+	
+	int radius2D = 10;
+	
 
-	virtual void Move3D(const float AMMOVELOCITY) = 0;
+	
+	void SetRadius2D(int in_radius2D)
+	{
+		radius2D = in_radius2D;
+	}
+
+	int GetRadius2D(){
+		return radius2D;
+	}
 	
 };
 

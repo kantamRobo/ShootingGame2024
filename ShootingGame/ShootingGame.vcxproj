@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="Ammo.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="IAmmo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectAdmin.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="DEFINE.h" />
     <ClInclude Include="DEFINE2D.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="IAmmo.h" />
     <ClInclude Include="ObjectAdmin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RootObject.h" />

@@ -3,7 +3,7 @@
 
 class Sphere;
 #include "Ammo.h"
-class Ammo3D:public Ammo
+class Ammo3D
 {
 public:
 	Ammo3D();
@@ -13,7 +13,7 @@ public:
 	
 	void Draw();
 	void Update3D(const float AMMOVELOCITY);
-	virtual void Move3D(const float AMMOVELOCITY)override;
+	void Move3D(const float AMMOVELOCITY);
 	int ammomodel;
 
 
