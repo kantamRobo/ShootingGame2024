@@ -13,7 +13,7 @@ public:
 	
 	Sphere sphere;
 	virtual void Init3D(const TCHAR* filepath, const VECTOR& position);
-	std::shared_ptr<Ammo3D> ammo[10];
+	std::shared_ptr<Ammo3D> ammo[256];
 	virtual void Draw3D(const VECTOR& vector);
 
 	

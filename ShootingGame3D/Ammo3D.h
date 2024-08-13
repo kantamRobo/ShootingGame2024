@@ -8,7 +8,7 @@ class Ammo3D:public IAmmo
 public:
 	Ammo3D();
 	Sphere sphere;
-	void TriggerCheck(const VECTOR& shotpos);
+	
 	void Shot3D(int m_x, int m_y,int m_z);
 	
 	
@@ -16,6 +16,8 @@ public:
 	void Update(const float AMMOVELOCITY);
 	void Move3D(const float AMMOVELOCITY);
 	void Attack3D(const VECTOR& shotpos);
+
+	void Trigger(const VECTOR& shotpos);
 	
 	int ammomodel;
 	bool IsDirty_AmmoTrigger = false;

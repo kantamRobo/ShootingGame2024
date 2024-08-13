@@ -42,30 +42,27 @@ void Ammo3D::Move3D(const float AMMOVELOCITY)
 void Ammo3D::Attack3D(const VECTOR& shotpos)
 {
 	
-		TriggerCheck(shotpos);
+		Trigger(shotpos);
 	
-	//分岐命令が2つなので、これ以上分岐命令は入れない。入れるなら別関数に
+	
 
 }
 
 
 
-void Ammo3D::TriggerCheck(const VECTOR& shotpos)
+void Ammo3D::Trigger(const VECTOR& shotpos)
 {
 
-	//弾がactiveじゃなければ,Shot3Dを呼び出す
-	if (GetIsActive() == false&& GetIsDirty() == false)
-	{
-
+	
 		//ダーティフラグを使う
 		
 			//Attack3Dが毎度呼び出されてしまい、結果位置がプレイヤーの位置に更新されている。
 			//→一回だけ呼ぶ
 			Shot3D(shotpos.x, shotpos.y, shotpos.z);
-			SetIsDirty(true);
-			SetIsActive(true);  // ここで弾をactiveにして、再度呼ばれないようにする
 		
-	}
+			SetIsActive(true);
+			SetIsDirty(true);
+	
 	
 }
 
@@ -77,7 +74,7 @@ void Ammo3D::Shot3D(int m_x, int m_y, int m_z)
 
 		SetPosition(VGet(m_x, m_y, m_z));
 			
-	
+
 
 	
 

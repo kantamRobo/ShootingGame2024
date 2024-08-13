@@ -12,9 +12,16 @@ public:
 	float inputdelta = 0;
 	void Update(char* input)override;
 	void PlayerInput(char* input);
+
+	void Attack3D(int index);
+
 	
-	void Attack3D();
-	bool buttonPressed = false;
+
+	
+	
+	int bulletcounter = 0;
+	int ammoindex = 0;
+
 	
 };
 

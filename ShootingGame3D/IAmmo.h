@@ -3,8 +3,8 @@
 class IAmmo
 {
 public:
-    IAmmo() {};
-    IAmmo(float velocity) : AMMOVELOCITY(velocity), position(VGet(0, 0, 0)), isActive(false){}
+    IAmmo() :  position(VGet(0, 0, 0)), isActive(false) {} ;
+    IAmmo(float velocity) {}
 
     VECTOR GetPosition() const { return position; }
     void SetPosition(const VECTOR & pos) { position = pos; }

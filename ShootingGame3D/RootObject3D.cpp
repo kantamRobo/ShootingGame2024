@@ -9,7 +9,7 @@ void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
 	
 	
 	handle = MV1LoadModel(filepath);
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < MAX_AMMO; i++)
 	{
 		ammo[i] = std::make_shared<Ammo3D>();
 		
