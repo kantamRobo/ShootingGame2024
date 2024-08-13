@@ -13,10 +13,7 @@ public:
 	void Update(char* input)override;
 	void PlayerInput(char* input);
 
-	void Attack3D(int index);
-
 	
-
 	
 	
 	int bulletcounter = 0;

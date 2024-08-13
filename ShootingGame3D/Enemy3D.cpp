@@ -19,10 +19,13 @@ void Enemy3D::Draw()
 void Enemy3D::Update()
 {
 	Draw3D(position);
+	for (int i = 0; i < MAX_AMMO; i++) {
+		ammo[i]->Update(-50);
 
+	}
 	sphere.DrawDebug(position);
-	for (int i = 0; i < 10; i++)
-	{
+	
+		/*
 		//Attack3D(-10);
 		if (isEnemy)
 		{
@@ -33,9 +36,10 @@ void Enemy3D::Update()
 				position.x = ENEMY_START;
 			}
 		}
+		*/
+		AttackTrigger();
 
-
-	}
+	
 }
 
 void Enemy3D::Update(char* input)

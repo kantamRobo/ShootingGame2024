@@ -62,18 +62,10 @@ void Player3::PlayerInput(char* input){
 
 	
 	
-			bulletcounter++;
-			bulletcounter %= 100;
-			if (bulletcounter % 4 == 0) {
-				ammoindex++;
-				Attack3D(ammoindex);
-			}
+		AttackTrigger();
 		
 	}
-	else if (ammoindex == MAX_AMMO)
-	{
-		ammoindex = 0;
-	}
+	
 	
 	
 
@@ -86,21 +78,6 @@ void Player3::PlayerInput(char* input){
 	*/
 	
 
-}
-//一つのメソッドに3つ以上の分岐命令があるだけでも認知負荷に無理がある(疲れる)ので、関数にして分けてしまう
-//PlayerのAttack3D()から、Ammo3DのAttack3D、そこから分岐命令を二つまでにして、それ以上になりそうなら関数を分ける。
-void Player3::Attack3D(int index)
-{
-	
-	
-		
-			ammo[index]->Attack3D(this->position);
-
-		
-	
-		
-	
-		
 }
 
 

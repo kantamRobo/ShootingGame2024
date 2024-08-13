@@ -16,10 +16,10 @@ void ObjectAdmin3D::Init3D()
 		auto x = 0;
 		object[enemyindex] = std::make_shared<Enemy3D>();
 	
-	object[enemyindex]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\Enemy.mv1",(VGet(150.000000 +x, 580.000000, 2270)));
-	x += 100;
-	}
 	
+	}
+	object[1]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\Enemy.mv1", (VGet(150.000000 , 580.000000, 2270)));
+	//x += 100;
 	
 	camera.Init(object[0]->position, object[1]->position);
 }
@@ -27,16 +27,16 @@ void ObjectAdmin3D::Init3D()
 void ObjectAdmin3D::Update3D(char* input)
 {
 	camera.Update(input);
-	object[0]->Update(input);
+	//object[0]->Update(input);
 	
 	
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		//object[enemyindex]->Update(VGet(200, 200, 500));
-		object[enemyindex]->Update();
 	
 	}
-	
+	object[1]->Update();
+
 	
 
 	
