@@ -14,8 +14,10 @@ Ammo3D::Ammo3D(const VECTOR& pos)
 
 void Ammo3D::Draw()
 {
-	if (GetIsActive() == true);
-	MV1DrawModel(ammomodel);
+	if (GetIsActive() == true) {
+		MV1DrawModel(ammomodel);
+		sphere.DrawDebug(position);
+	}
 
 	
 }
