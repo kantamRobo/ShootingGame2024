@@ -6,12 +6,14 @@ class Sphere;
 class Ammo3D:public IAmmo
 {
 public:
-	Ammo3D();
+	Ammo3D() {};
 	Sphere sphere;
 	
 	void Shot3D(int m_x, int m_y,int m_z);
 	
 	
+	Ammo3D(const VECTOR& pos);
+
 	void Draw();
 	void Update(const float AMMOVELOCITY);
 	void Move3D(const float AMMOVELOCITY);

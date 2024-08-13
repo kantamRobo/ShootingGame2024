@@ -1,17 +1,20 @@
 #pragma once
 #include <memory>
 #include "DEFINE.h"
+#include "DEFINE3D.h"
 #include "IRootObject.h"
 #include "SphereCollision.h"
 #include "Ammo3D.h"
 class RootObject3D:public IRootObject
 {
 public:
+	RootObject3D() {};
 	int handle=0;
 	
 	
 	Sphere sphere;
-	virtual void Init3D(const TCHAR* filepath, const VECTOR& position);
+	RootObject3D(const Sphere& in_sphere);
+	void Init3D(const TCHAR* filepath);
 	std::shared_ptr<Ammo3D> ammo[256];
 	virtual void Draw3D(const VECTOR& vector);
 
@@ -27,9 +30,9 @@ public:
 
 	void AttackTrigger()
 	{
-		bulletcounter++;
-		bulletcounter %= 1200;
-		if (bulletcounter % 4 == 0) {
+		bulletcounter+=1;
+		bulletcounter %= 5000;
+		if (bulletcounter % 100== 0) {
 			ammoindex++;
 			Attack3D(ammoindex);
 		}

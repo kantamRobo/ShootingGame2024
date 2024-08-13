@@ -2,16 +2,10 @@
 #include "RootObject3D.h"
 
 #include "Enemy3D.h"
-#include <DEFINE2D.h>
+#include "DEFINE3D.h"
 
 
-Enemy3D::Enemy3D()
-{
-	
-	sphere.position = position;
-	sphere.radius = 150;
-	
-}
+
 void Enemy3D::Draw()
 {
 }

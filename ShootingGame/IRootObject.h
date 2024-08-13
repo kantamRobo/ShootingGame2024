@@ -7,7 +7,8 @@ class Ammo3D;
 class IRootObject
 {
 public:
-	
+	IRootObject() {};
+	IRootObject(const VECTOR& in_position);
 	VECTOR position = VGet(0, 0, 0);
 	std::shared_ptr<Ammo3D> ammo[10];
 	bool isActive = true;

@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\ShootingGame\IRootObject.cpp" />
     <ClCompile Include="Ammo3D.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Enemy3D.cpp" />

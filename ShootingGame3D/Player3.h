@@ -6,7 +6,13 @@
 class Player3:public RootObject3D
 {
 public:
-	Player3();
+	Player3(const VECTOR& in_pos) {
+		position = in_pos;
+		sphere.position = position;
+		sphere.radius = OBJECT_SPHERE_RADIUS;
+
+		ammoindex = 0;
+	}
 	void Draw()override;
 	void Update()override;
 	float inputdelta = 0;

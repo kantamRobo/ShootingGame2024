@@ -2,9 +2,9 @@
 #include "DEFINE.h"
 #include "Ammo3D.h"
 
-Ammo3D::Ammo3D()
+Ammo3D::Ammo3D(const VECTOR& pos)
 {
-	sphere.position = position;
+	sphere.position = pos;
 
 	sphere.radius = 40;
 	ammomodel= MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\’e.mv1");

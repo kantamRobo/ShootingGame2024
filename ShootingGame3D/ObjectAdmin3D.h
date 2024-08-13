@@ -21,7 +21,10 @@ public:
 	virtual void Init3D();
 	virtual void Update3D(char* input);
 	virtual void Draw3D();
-	void judge3D();
+	void Check_ObjectIsActive();
+	void Trigger_Intersect3D();
+	void Test_Intersect3D(int objectindex, int targetindex);
+	
 
 	
 	

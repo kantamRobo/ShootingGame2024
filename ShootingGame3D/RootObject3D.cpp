@@ -3,15 +3,19 @@
 #include "RootObject3D.h"
 
 
-void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& in_position)
+RootObject3D::RootObject3D(const Sphere& in_sphere):sphere(in_sphere)
 {
-	position = in_position;
+}
+
+void RootObject3D::Init3D( const TCHAR* filepath)
+{
+	
 	
 	
 	handle = MV1LoadModel(filepath);
 	for (int i = 0; i < MAX_AMMO; i++)
 	{
-		ammo[i] = std::make_shared<Ammo3D>();
+		ammo[i] = std::make_shared<Ammo3D>(this->position);
 		
 		ammo[i]->SetIsActive(false);
 	}

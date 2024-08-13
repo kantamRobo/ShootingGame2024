@@ -2,13 +2,7 @@
 #include "Player3.h"
 #include "DEFINE3D.h"
 
-Player3::Player3()
-{
-	sphere.position = position;
-	sphere.radius = 150;
 
-	ammoindex = 0;
-}
 void Player3::Draw()
 {
 }

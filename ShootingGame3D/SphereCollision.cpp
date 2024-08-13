@@ -3,18 +3,20 @@
 
 bool Sphere::Intersect(const Sphere& r1, const Sphere& r2)
 {
-    auto r1pos = r1.position;
-    auto r2pos = r2.position;
+    auto x2x1 = (r2.position.x - r1.position.x) * (r2.position.x - r1.position.x);
+    auto y2y1 = (r2.position.y - r1.position.y) * (r2.position.y - r1.position.y);
+    auto z2z1 = (r2.position.z - r1.position.z) * (r2.position.z - r1.position.z);
 
-    // ‹——£‚Ì“ñæ‚ğŒvZ
-    float distanceSquared = (r2pos.x - r1pos.x) * (r2pos.x - r1pos.x) +
-        (r2pos.y - r1pos.y) * (r2pos.y - r1pos.y) +
-        (r2pos.z - r1pos.z) * (r2pos.z - r1pos.z);
+    auto r1radius = r1.radius;
+    auto r2radius = r2.radius;
 
-    // ”¼Œa‚Ì‡Œv‚Ì“ñæ‚ğŒvZ
-    float radiusSumSquared = (r2.radius + r1.radius) * (r2.radius + r1.radius);
+    auto radius2 = (r1radius + r2radius) * (r1radius * r2radius);
+    bool intersect = x2x1 + y2y1 + z2z1 <= radius2;
+    
+    if (!intersect)
+    {
+        return false;
+    }
 
-    // ‹…‘Ì‚ªŒğ·‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğ”»’è
-    bool intersect = distanceSquared <= radiusSumSquared;
-    return intersect;
+    return true;
 }
