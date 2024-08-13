@@ -53,7 +53,7 @@
     <ClInclude Include="ObjectAdmin.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="RootObject.h">
+    <ClInclude Include="IRootObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SceneAdmin.h">

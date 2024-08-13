@@ -4,7 +4,7 @@
 #include <memory>
 #include <DxLib.h>
 class Ammo3D;
-class RootObject
+class IRootObject
 {
 public:
 	VECTOR position = VGet(0, 0, 0);
@@ -16,12 +16,10 @@ public:
 	int radius = 0;
 	virtual void Draw()=0;
 	int rapid = 0;
-	int ammoindex = 0;
+	
 	int health = 10;
 public:
-	virtual void Create(double, double);
-	void Attack();
-	void EnemyMove();
+	
 	virtual void Update() = 0;
 	virtual void Update(char* input) = 0;
 };

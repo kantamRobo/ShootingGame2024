@@ -1,6 +1,8 @@
 #pragma once
 #include "RootObject3D.h"
 
+
+
 class Player3:public RootObject3D
 {
 public:
@@ -9,6 +11,10 @@ public:
 	void Update()override;
 	float inputdelta = 0;
 	void Update(char* input)override;
+	void PlayerInput(char* input);
+	
+	void Attack3D();
 	bool buttonPressed = false;
+	
 };
 

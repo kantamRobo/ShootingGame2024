@@ -2,6 +2,7 @@
 #include "RootObject3D.h"
 
 #include "Enemy3D.h"
+#include <DEFINE2D.h>
 
 
 Enemy3D::Enemy3D()

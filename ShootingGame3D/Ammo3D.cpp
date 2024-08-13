@@ -1,4 +1,5 @@
 #include "SphereCollision.h"
+#include "DEFINE.h"
 #include "Ammo3D.h"
 
 Ammo3D::Ammo3D()
@@ -6,40 +7,81 @@ Ammo3D::Ammo3D()
 	sphere.position = position;
 
 	sphere.radius = 40;
-	ammomodel= MV1LoadModel(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\弾.mv1");
+	ammomodel= MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\弾.mv1");
 }
 
-void Ammo3D::Shot3D(int m_x, int m_y, int m_z)
-{
-	position.x = m_x;
-	position.y = m_y;
-	position.z = m_z;
-	isActive = true;
-}
+
 
 void Ammo3D::Draw()
 {
-	
+	if (GetIsActive() == true);
 	MV1DrawModel(ammomodel);
 
 	
 }
-void Ammo3D::Update3D(const float AMMOVELOCITY)
+void Ammo3D::Update(const float AMMOVELOCITY)
 {
 
 	Draw();
-	/*
-		Move3D(AMMOVELOCITY);
 	
-	sphere.DrawDebug(position);
-	*/
-	MV1SetPosition(ammomodel, position);
 
-	Move3D(AMMOVELOCITY);
+	MV1SetPosition(ammomodel, position);
+	if (GetIsActive() == true) {
+		Move3D(AMMOVELOCITY);
+	}
 	
 }
 
+
+//弾が移動する
 void Ammo3D::Move3D(const float AMMOVELOCITY)
 {
-	position.z = AMMOVELOCITY;
+	position.z += AMMOVELOCITY;
 }
+//まだ撃ってない弾を探索する。
+void Ammo3D::Attack3D(const VECTOR& shotpos)
+{
+	
+		TriggerCheck(shotpos);
+	
+	//分岐命令が2つなので、これ以上分岐命令は入れない。入れるなら別関数に
+
+}
+
+
+
+void Ammo3D::TriggerCheck(const VECTOR& shotpos)
+{
+
+	//弾がactiveじゃなければ,Shot3Dを呼び出す
+	if (GetIsActive() == false&& GetIsDirty() == false)
+	{
+
+		//ダーティフラグを使う
+		
+			//Attack3Dが毎度呼び出されてしまい、結果位置がプレイヤーの位置に更新されている。
+			//→一回だけ呼ぶ
+			Shot3D(shotpos.x, shotpos.y, shotpos.z);
+			SetIsDirty(true);
+			SetIsActive(true);  // ここで弾をactiveにして、再度呼ばれないようにする
+		
+	}
+	
+}
+
+
+//弾を発射する。正確に言うと、弾の位置を引数の位置に更新する。
+void Ammo3D::Shot3D(int m_x, int m_y, int m_z)
+{
+	
+
+		SetPosition(VGet(m_x, m_y, m_z));
+			
+	
+
+	
+
+	
+}
+
+

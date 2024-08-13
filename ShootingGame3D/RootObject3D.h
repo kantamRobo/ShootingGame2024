@@ -1,10 +1,10 @@
 #pragma once
 #include <memory>
 #include "DEFINE.h"
-#include "RootObject.h"
+#include "IRootObject.h"
 #include "SphereCollision.h"
 #include "Ammo3D.h"
-class RootObject3D:public RootObject
+class RootObject3D:public IRootObject
 {
 public:
 	int handle=0;
@@ -16,7 +16,7 @@ public:
 	std::shared_ptr<Ammo3D> ammo[10];
 	virtual void Draw3D(const VECTOR& vector);
 
-	virtual void Attack3D();
+	
 
 	
 
