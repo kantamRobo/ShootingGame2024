@@ -52,11 +52,11 @@ void ObjectAdmin2D::Check_ObjectIsActive()
 	for (int i = 0; i < 2; i++) {
 		if (object[i]->isActive) {
 
-			Trigger_Intersect3D();
+			Trigger_Intersect2D();
 		}
 	}
 }
-void ObjectAdmin2D::Trigger_Intersect3D()
+void ObjectAdmin2D::Trigger_Intersect2D()
 {
 	//objectindex‚Ætargetindex‚ª
 	for (int objectindex = 0; objectindex < 2; objectindex++)

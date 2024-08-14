@@ -2,7 +2,7 @@
 #include <memory>
 #include <DxLib.h>
 #include "SceneAdmin.h"
-
+#include "RootObject2D.h"
 
 
 
@@ -23,7 +23,8 @@ public:
 	void Update2D(char* input);
 	void Draw2D();
 	void Check_ObjectIsActive();
-	void Trigger_Intersect3D();
+	void Trigger_Intersect2D();
+	
 	void Test_Intersect2D(int objectindex, int targetindex);
 	
 

@@ -1,7 +1,9 @@
 #pragma once
 #include <DxLib.h>
 #include <memory>
-class RootObject2D
+#include "IRootObject.h"
+#include "Ammo2D.h"
+class RootObject2D:public IRootObject
 {
 
 
@@ -44,7 +46,7 @@ public:
 
 
 
-		ammo[index]->Attack3D(this->position);
+		ammo[index]->Attack2D(this->position);
 
 
 

@@ -1,4 +1,5 @@
-﻿#include "ObjectAdmin.h"
+﻿#include "ObjectAdmin2D.h"
+#include <DxLib.h>
 int Process(char key[256])
 {
 	if (ScreenFlip() != 0)return false;//表画面と裏画面を入れ替える
@@ -27,11 +28,11 @@ int main()
 		return -1;    // エラーが起きたら直ちに終了
 	}
 
-	ObjectAdmin objectAdmin;
-	objectAdmin.Init();
+	ObjectAdmin2D objectAdmin;
+	objectAdmin.Init2D();
 	while (Process(key)) {//メインループ
 		objectAdmin.judge();
-		objectAdmin.Update(key);
+		objectAdmin.Update2D(key);
 
 
 	}
