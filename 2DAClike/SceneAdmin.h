@@ -1,0 +1,10 @@
+
+
+enum  STATUS {
+	TITLE,
+	CONFIG,
+	GAME,
+	RESULT,
+	CLEAR
+
+};
