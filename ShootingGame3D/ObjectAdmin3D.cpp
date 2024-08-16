@@ -89,3 +89,6 @@ void ObjectAdmin3D::Test_Intersect3D(int objectindex,int targetindex) {
 			}
 		}
 	}
+
+
+//TODO:球体の位置情報の更新処理を、RootObject3Dに組み込む。この際、Update処理としてUpdate_Core関数を作り、そこに実装する。
