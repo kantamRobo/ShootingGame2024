@@ -37,7 +37,8 @@ void ObjectAdmin3D::Update3D(char* input)
 	
 	}
 	object[1]->Update();
-
+	object[0]->Update_Core3D();
+	object[1]->Update_Core3D();
 	Check_ObjectIsActive();
 
 	

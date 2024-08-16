@@ -21,7 +21,7 @@ void Player3::Update(char* input)
 	}
 	
 	sphere.DrawDebug(position);
-	sphere.position = position;
+	
 	PlayerInput(input);
 	
 	

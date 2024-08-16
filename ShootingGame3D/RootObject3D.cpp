@@ -7,6 +7,8 @@ RootObject3D::RootObject3D(const Sphere& in_sphere):sphere(in_sphere)
 {
 }
 
+
+
 void RootObject3D::Init3D( const TCHAR* filepath)
 {
 	
@@ -31,3 +33,9 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 
 
 
+void RootObject3D::Update_Core3D()
+{
+
+	sphere.position = position;
+
+}
