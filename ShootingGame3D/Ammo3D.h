@@ -9,8 +9,7 @@ public:
 	Ammo3D() {};
 	Sphere sphere;
 	
-	void Shot3D(int m_x, int m_y,int m_z);
-	
+	void Shot3D(float m_x, float m_y, float m_z);
 	
 	Ammo3D(const VECTOR& pos);
 
@@ -20,6 +19,8 @@ public:
 	void Attack3D(const VECTOR& shotpos);
 
 	void Trigger(const VECTOR& shotpos);
+
+	
 	
 	int ammomodel;
 	bool IsDirty_AmmoTrigger = false;

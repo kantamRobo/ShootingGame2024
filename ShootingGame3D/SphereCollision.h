@@ -4,7 +4,7 @@ class Sphere
 {
 public:
 	VECTOR position;
-	float radius=0;
+	double radius=0;
 	static    bool Intersect(const Sphere& r1, const Sphere& r2);
 void DrawDebug(const VECTOR& objectpos)
 {

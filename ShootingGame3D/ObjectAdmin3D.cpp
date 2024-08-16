@@ -8,14 +8,14 @@
 void ObjectAdmin3D::Init3D()
 {
 	
-	object[0] = std::make_shared<Player3>(VGet(100, 580.000000, 500));
+	object[0] = std::make_shared<Player3>(VGet(100.0f, 580.0f, 500.0f));
 	
 	
     object[0]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
 	object[0]->isEnemy = false;
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
-		object[enemyindex] = std::make_shared<Enemy3D>((VGet(150.000000, 580.000000, 2270)));
+		object[enemyindex] = std::make_shared<Enemy3D>((VGet(150.0f, 580.0f, 2270.0f)));
 	
 	
 	}
@@ -67,7 +67,7 @@ void ObjectAdmin3D::Trigger_Intersect3D()
 		for (int targetindex = 0; targetindex < 2; targetindex++) {
 			if (object[objectindex]->isEnemy != object[targetindex]->isEnemy) {
 				Test_Intersect3D(objectindex, targetindex);
-			}
+		}
 		}
 		
 	}
@@ -82,9 +82,9 @@ void ObjectAdmin3D::Test_Intersect3D(int objectindex,int targetindex) {
 	//弾を撃つ側の弾と、撃たれる側の球体の衝突判定をおこなう
 	//真ならHITをコンソールに出力する。
 	for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
-		if (Sphere::Intersect(object[objectindex]->ammo[ammoindex]->sphere, object[targetindex]->sphere))
+		if (Sphere::Intersect(object[objectindex]->sphere, object[targetindex]->sphere))
 		{
-			
+	  		
 			std::cout << "HIT" << std::endl;
 			}
 		}

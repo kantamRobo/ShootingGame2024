@@ -1,12 +1,13 @@
 #include "SphereCollision.h"
 #include "DEFINE.h"
+#include "DEFINE3D.h"
 #include "Ammo3D.h"
 
 Ammo3D::Ammo3D(const VECTOR& pos)
 {
 	sphere.position = pos;
 
-	sphere.radius = 40;
+	sphere.radius = AMMO_SPHERE_RADIUS;
 	ammomodel= MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\弾.mv1");
 }
 
@@ -70,7 +71,7 @@ void Ammo3D::Trigger(const VECTOR& shotpos)
 
 
 //弾を発射する。正確に言うと、弾の位置を引数の位置に更新する。
-void Ammo3D::Shot3D(int m_x, int m_y, int m_z)
+void Ammo3D::Shot3D(float m_x, float m_y, float m_z)
 {
 	
 
