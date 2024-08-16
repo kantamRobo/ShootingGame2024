@@ -24,6 +24,20 @@ void RootObject2D::Draw2D(const VECTOR& vector)
 	
 }
 
+
+
+
+void RootObject2D::LockOnMove2D()
+{
+
+Setlockonmove_radius((player.position - enemy.position).magnitude);
+position.x = radius * cos(omega * horizontal);
+
+position.y = radius * sinÅiomegaÅj;
+
+
+}
+
 void RootObject2D::UpdateCore2D()
 {
 

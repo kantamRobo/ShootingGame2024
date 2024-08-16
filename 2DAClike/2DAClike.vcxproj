@@ -131,15 +131,19 @@
   <ItemGroup>
     <ClCompile Include="2DAClike.cpp" />
     <ClCompile Include="Ammo2D.cpp" />
+    <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="IRootObject.cpp" />
     <ClCompile Include="ObjectAdmin2D.cpp" />
+    <ClCompile Include="Player2.cpp" />
     <ClCompile Include="RootObject2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ammo2D.h" />
+    <ClInclude Include="Enemy2.h" />
     <ClInclude Include="IAmmo.h" />
     <ClInclude Include="IRootObject.h" />
     <ClInclude Include="ObjectAdmin2D.h" />
+    <ClInclude Include="Player2.h" />
     <ClInclude Include="RootObject2D.h" />
     <ClInclude Include="SceneAdmin.h" />
   </ItemGroup>
