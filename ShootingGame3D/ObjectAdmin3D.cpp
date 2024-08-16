@@ -52,14 +52,16 @@ void ObjectAdmin3D::Check_ObjectIsActive()
 {
 	for (int i = 0; i < 2; i++) {
 		if (object[i]->isActive) {
-
-			Trigger_Intersect3D();
+			//敵、プレイヤーが描画されている状態なら
+			Trigger_Intersect3D();//衝突判定の第一段階に移る
 		}
 	}
 }
 void ObjectAdmin3D::Trigger_Intersect3D()
 {
-	//objectindexとtargetindexが
+	//objectindexは弾を撃った側のオブジェクトを指す。targetindexは弾が当たった側のオブジェクトを指す。
+	//この二つのオブジェクトの、敵フラグが立っているかを比較して、一致しなければ、つまり敵とプレイヤーに分かれていたら
+	//衝突判定に移動する。
 	for (int objectindex = 0; objectindex < 2; objectindex++)
 	{
 		for (int targetindex = 0; targetindex < 2; targetindex++) {
@@ -72,6 +74,13 @@ void ObjectAdmin3D::Trigger_Intersect3D()
 }
 
 void ObjectAdmin3D::Test_Intersect3D(int objectindex,int targetindex) {
+
+	//Trigger_Intersect3D()の、objectindexとtargetindexを引き継ぐ。
+	//つまりobjectindex側のオブジェクトが弾を撃った側のオブジェクトで、
+	//targetindexは弾が当たった側のオブジェクトになる
+	//Sphere::Intersectで衝突判定を行う。
+	//弾を撃つ側の弾と、撃たれる側の球体の衝突判定をおこなう
+	//真ならHITをコンソールに出力する。
 	for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
 		if (Sphere::Intersect(object[objectindex]->ammo[ammoindex]->sphere, object[targetindex]->sphere))
 		{
