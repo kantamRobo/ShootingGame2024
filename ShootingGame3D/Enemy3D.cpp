@@ -31,6 +31,7 @@ void Enemy3D::Update()
 			}
 		}
 		*/
+	sphere.position = position;
 		AttackTrigger();
 
 	

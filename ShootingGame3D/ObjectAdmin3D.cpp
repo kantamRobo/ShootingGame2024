@@ -2,7 +2,7 @@
 #include "Player3.h"
 #include "Enemy3D.h"
 #include "ObjectAdmin3D.h"
-#include <iostream>
+#include <DxLib.h>
 
 
 void ObjectAdmin3D::Init3D()
@@ -82,10 +82,10 @@ void ObjectAdmin3D::Test_Intersect3D(int objectindex,int targetindex) {
 	//弾を撃つ側の弾と、撃たれる側の球体の衝突判定をおこなう
 	//真ならHITをコンソールに出力する。
 	for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
-		if (Sphere::Intersect(object[objectindex]->sphere, object[targetindex]->sphere))
+		if (Sphere::Intersect(object[objectindex]->ammo[ammoindex]->sphere, object[targetindex]->sphere))
 		{
 	  		
-			std::cout << "HIT" << std::endl;
+			DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
 			}
 		}
 	}

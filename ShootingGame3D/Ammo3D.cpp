@@ -27,7 +27,7 @@ void Ammo3D::Update(const float AMMOVELOCITY)
 
 	Draw();
 	
-
+	sphere.position = position;
 	MV1SetPosition(ammomodel, position);
 	if (GetIsActive() == true) {
 		Move3D(AMMOVELOCITY);

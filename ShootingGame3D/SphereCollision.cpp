@@ -13,7 +13,9 @@ bool Sphere::Intersect(const Sphere& r1, const Sphere& r2)
     double r2radius = r2.radius;
 
   //アンダーフローが起こっている
-    double radius2 = (r1radius + r2radius) * (r1radius + r2radius);
+    double radius2 = (r1radius + r2radius) * r1radius + r2radius;
+
+
     bool intersect = x2x1 + y2y1 + z2z1 <= radius2;
     
     if (!intersect)

@@ -17,10 +17,11 @@ void Player3::Update(char* input)
 	Draw3D(position);
 	for (int i = 0; i < MAX_AMMO; i++) {
 		ammo[i]->Update(50);
-
+		
 	}
+	
 	sphere.DrawDebug(position);
-	   
+	sphere.position = position;
 	PlayerInput(input);
 	
 	
