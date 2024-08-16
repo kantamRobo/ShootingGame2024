@@ -10,14 +10,15 @@ class RootObject2D:public IRootObject
 public:
 	RootObject2D() {};
 	int handle = 0;
-
-
+	float lockonOmega = 0;
+	float lockonradius = 0;
 	Circle sphere;
 	RootObject2D(const Circle& in_sphere);
 	void Init2D(const TCHAR* filepath);
 	std::shared_ptr<Ammo2D> ammo[256];
 	virtual void Draw2D(const VECTOR& vector);
-	virtual void LockOnMove2D();
+	
+	virtual void LockOnMove2D(float vertical, float horizontal);
 	void UpdateCore2D();
 
 
@@ -28,8 +29,10 @@ public:
 	virtual void Update() = 0;
 	int bulletcounter = 0;
 	int ammoindex = 0;
-
-	
+	float GetLockonOmega() { return lockonOmega; }
+	float Getlockonradius() { return lockonradius; }
+	void SetLockonRadius(float radius) { lockonradius = radius; }
+	void SetLockonOmega(float omega) { lockonOmega = omega; }
 };
 
 
