@@ -17,7 +17,7 @@ void Enemy3D::Update()
 		ammo[i]->Update(-50);
 
 	}
-	sphere.DrawDebug(position);
+	
 	
 		/*
 		//Attack3D(-10);

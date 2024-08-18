@@ -37,5 +37,6 @@ void RootObject3D::Update_Core3D()
 {
 
 	sphere.position = position;
+	sphere.DrawDebug(position);
 
 }
