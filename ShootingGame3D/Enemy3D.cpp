@@ -19,18 +19,6 @@ void Enemy3D::Update()
 	}
 	
 	
-		/*
-		//Attack3D(-10);
-		if (isEnemy)
-		{
-			position.x += 5;
-			if (this->position.x > X_LIMIT)
-			{
-				position.z -= 10;
-				position.x = ENEMY_START;
-			}
-		}
-		*/
 	
 		AttackTrigger();
 
