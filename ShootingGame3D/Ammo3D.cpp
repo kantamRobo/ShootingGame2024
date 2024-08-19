@@ -64,7 +64,7 @@ void Ammo3D::Trigger(const VECTOR& shotpos)
 			Shot3D(shotpos.x, shotpos.y, shotpos.z);
 		
 			SetIsActive(true);
-			SetIsDirty(true);
+			
 	
 	
 }
