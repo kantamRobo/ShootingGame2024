@@ -15,8 +15,7 @@ public:
 	
 	void Draw()override;
 	virtual void Update()override;
-	const int ENEMY_X_LIMIT = 200;
-	const int ENEMY_Z_LMIIT = 50;
+	
 	void Update(char* input)override;
 	
 };

@@ -14,7 +14,7 @@ void Enemy3D::Update()
 {
 	Draw3D(position);
 	for (int i = 0; i < MAX_AMMO; i++) {
-		ammo[i]->Update(-50);
+		ammo[i]->Update(ENEMY_BULLET_SPEED);
 
 	}
 	

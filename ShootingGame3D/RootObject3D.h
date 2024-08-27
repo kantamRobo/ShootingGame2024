@@ -20,6 +20,10 @@ public:
 
 	void Update_Core3D();
 
+	void AttackTrigger();
+
+	void Attack3D(int index);
+
 	
 
 	
@@ -30,32 +34,6 @@ public:
 	int ammoindex = 0;
 
 
-	void AttackTrigger()
-	{
-		bulletcounter+=1;
-		bulletcounter %= 5000;
-		if (bulletcounter % 100== 0) {
-			ammoindex++;
-			Attack3D(ammoindex);
-		}
-		else if (ammoindex == MAX_AMMO-1)
-		{
-			ammoindex = 0;
-		}
-	}
-
-	void Attack3D(int index)
-	{
-
-
-
-		ammo[index]->Attack3D(this->position);
-
-
-
-
-
-
-	}
+	
 };
 
