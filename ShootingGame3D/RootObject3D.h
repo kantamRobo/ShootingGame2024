@@ -5,6 +5,7 @@
 #include "IRootObject.h"
 #include "SphereCollision.h"
 #include "Ammo3D.h"
+//class Ammo3D;
 class RootObject3D:public IRootObject
 {
 public:
