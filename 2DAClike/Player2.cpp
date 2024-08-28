@@ -10,3 +10,4 @@ void Player2::Update()
 {
 
 }
+//‚ 
