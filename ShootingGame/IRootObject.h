@@ -3,7 +3,6 @@
 
 #include <memory>
 #include <DxLib.h>
-//class Ammo3D;
 class IRootObject
 {
 public:
