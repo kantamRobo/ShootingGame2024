@@ -8,7 +8,7 @@ class Ammo2D:public IAmmo
 {
 public:
 	Ammo2D() {};
-	void Shot2D(int m_x, int m_y);
+	
 
 
 	Ammo2D(const VECTOR& pos);
@@ -22,9 +22,14 @@ public:
 
 	void Shot2D(int m_x, int m_y);
 
+	
+
 	float radius;
-	bool IsDirty_AmmoTrigger = false;
-	bool GetIsDirty() const { return IsDirty_AmmoTrigger; }
-	void SetIsDirty(bool in_isdirty) { IsDirty_AmmoTrigger = in_isdirty; }
+	void Setradius(float in_radius) { radius = in_radius; }
+	float Getradius() { return radius; }
+	Circle circle;
+
+	
+
 };
 

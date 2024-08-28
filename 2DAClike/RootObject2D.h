@@ -2,7 +2,7 @@
 #include <DxLib.h>
 #include <memory>
 #include "IRootObject.h"
-#include "Ammo2D.h"
+
 class RootObject2D:public IRootObject
 {
 
@@ -12,7 +12,7 @@ public:
 	int handle = 0;
 	float lockonOmega = 0;
 	float lockonradius = 0;
-	Circle sphere;
+	
 	RootObject2D(const Circle& in_sphere);
 	void Init2D(const TCHAR* filepath);
 	std::shared_ptr<Ammo2D> ammo[256];
@@ -23,7 +23,7 @@ public:
 
 
 
-
+	Circle circle;
 
 	virtual void Update(char* input) = 0;
 	virtual void Update() = 0;

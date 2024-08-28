@@ -1,6 +1,7 @@
 
-#include "Player3.h"
-#include "Enemy3D.h"
+#include "Player2.h"
+#include "Enemy2.h"
+
 #include "ObjectAdmin2D.h"
 #include <iostream>
 
@@ -15,7 +16,7 @@ void ObjectAdmin2D::Init2D()
 	object[0]->isEnemy = false;
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
-		object[enemyindex] = std::make_shared<Enemy2D>((VGet(150.000000, 580.000000, 2270)));
+		object[enemyindex] = std::make_shared<Enemy2>((VGet(100,200,0)));
 
 
 	}
@@ -46,7 +47,10 @@ void ObjectAdmin2D::Draw2D()
 {
 }
 
-
+void ObjectAdmin2D::judge()
+{
+	Check_ObjectIsActive();
+}
 void ObjectAdmin2D::Check_ObjectIsActive()
 {
 	for (int i = 0; i < 2; i++) {
@@ -76,53 +80,19 @@ void ObjectAdmin2D::Trigger_Intersect2D()
 void ObjectAdmin2D::Test_Intersect2D(int objectindex,int targetindex)
 {
 
-	for (int i = 0; i < 10; i++) {
-		if (object[i]->isActive) {
-			for (int bullet = 0; bullet < 10; bullet++) {
+	//Trigger_Intersect3D()の、objectindexとtargetindexを引き継ぐ。
+	//つまりobjectindex側のオブジェクトが弾を撃った側のオブジェクトで、
+	//targetindexは弾が当たった側のオブジェクトになる
+	//Sphere::Intersectで衝突判定を行う。
+	//弾を撃つ側の弾と、撃たれる側の球体の衝突判定をおこなう
+	//真ならHITをコンソールに出力する。
+	for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
+		if (Circle::Intersect(object[objectindex]->ammo[ammoindex]->circle, object[targetindex]->circle))
+		{
 
-
-				for (int target = 0; target < 10; target++) {
-					if (object[target]->isActive) {
-
-						if (object[i]->isEnemy != object[target]->isEnemy) {
-
-							int bullet_x = object[i]->ammo[bullet]->position.x;
-							int bullet_y = object[i]->ammo[bullet]->position.y;
-							double bullet_area = object[i]->ammo[bullet]->radius;
-
-							int target_x = object[target]->position.x;
-							int target_y = object[target]->position.y;
-							double target_area = object[target]->radius;
-
-
-
-							double a = bullet_x - target_x;
-							double b = bullet_y - target_y;
-							double r1r2 = bullet_area + target_area;
-
-							//敵とプレイヤーが接しているときに弾を撃つと衝突判定が起きる
-							//弾と被弾するUnitとの距離よりこれらの半径の合計が大きく
-							if ((a * a) + (b * b)
-								< (r1r2) * (r1r2))
-							{
-								DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
-								object[target]->health -= 1;
-							}
-
-
-
-
-						}
-
-					}
-				}
-
-
-			}
+			DrawFormatString(600, 200, GetColor(255, 100, 0), L"HIT");
 		}
 	}
-
-
 
 
 

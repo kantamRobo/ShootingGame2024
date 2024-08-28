@@ -2,7 +2,10 @@
 //抽象クラス
 
 #include <memory>
-#include <DxLib.h>
+
+#include "DEFINE.h"
+#include "DEFINE2D.h"
+#include "Ammo2D.h"
 
 class IRootObject
 {
@@ -15,15 +18,15 @@ public:
 	//立っているフラグが違うオブジェクト同士
 	//に対して攻撃が有効になる
 	int radius = 0;
-	virtual void Draw() = 0;
+	
 	int rapid = 0;
-
+	std::shared_ptr<Ammo2D> ammo[256];
 	int health = 10;
 
 
 	int bulletcounter = 0;
 	int ammoindex = 0;
-
+	Circle circle;
 
 	void AttackTrigger()
 	{
@@ -31,7 +34,7 @@ public:
 		bulletcounter %= 5000;
 		if (bulletcounter % 100 == 0) {
 			ammoindex++;
-			Attack3D(ammoindex);
+			Attack2D(ammoindex);
 		}
 		else if (ammoindex == MAX_AMMO - 1)
 		{
@@ -39,12 +42,13 @@ public:
 		}
 	}
 
-	void Attack3D(int index)
+	void Attack2D(int index)
 	{
 
 
 
-		ammo[index]->Attack3D(this->position);
+		ammo[index]->Attack2D(this->position);
+
 
 
 

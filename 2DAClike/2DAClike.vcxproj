@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\プロジェクトに追加すべきファイル_VC用;C:\Users\hatte\source\repos\ShootingGame2024\ShootingGame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="2DAClike.cpp" />
     <ClCompile Include="Ammo2D.cpp" />
+    <ClCompile Include="CircleColliison.cpp" />
     <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="IRootObject.cpp" />
     <ClCompile Include="ObjectAdmin2D.cpp" />
@@ -138,7 +139,10 @@
     <ClCompile Include="RootObject2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\ShootingGame\DEFINE.h" />
+    <ClInclude Include="..\ShootingGame\DEFINE2D.h" />
     <ClInclude Include="Ammo2D.h" />
+    <ClInclude Include="CircleColliison.h" />
     <ClInclude Include="Enemy2.h" />
     <ClInclude Include="IAmmo.h" />
     <ClInclude Include="IRootObject.h" />

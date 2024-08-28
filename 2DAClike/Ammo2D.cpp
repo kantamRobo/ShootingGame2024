@@ -60,7 +60,7 @@ void Ammo2D::Trigger(const VECTOR& shotpos)
 	Shot2D(shotpos.x, shotpos.y);
 
 	SetIsActive(true);
-	SetIsDirty(true);
+	
 
 
 }

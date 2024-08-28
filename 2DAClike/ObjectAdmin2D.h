@@ -22,6 +22,7 @@ public:
 	void Init2D();
 	void Update2D(char* input);
 	void Draw2D();
+	void judge();
 	void Check_ObjectIsActive();
 	void Trigger_Intersect2D();
 	

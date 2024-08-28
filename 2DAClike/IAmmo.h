@@ -1,5 +1,5 @@
 #include <DxLib.h>
-
+#include "CircleColliison.h"
 class IAmmo
 {
 public:
@@ -18,7 +18,6 @@ public:
     void Draw();
 
     virtual void Update(float AMMOVELOCITY) = 0;
-
 
 protected:
 
