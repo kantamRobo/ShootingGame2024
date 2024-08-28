@@ -14,23 +14,11 @@ void Enemy3D::Update()
 {
 	Draw3D(position);
 	for (int i = 0; i < MAX_AMMO; i++) {
-		ammo[i]->Update(-50);
+		ammo[i]->Update(ENEMY_BULLET_SPEED);
 
 	}
 	
 	
-		/*
-		//Attack3D(-10);
-		if (isEnemy)
-		{
-			position.x += 5;
-			if (this->position.x > X_LIMIT)
-			{
-				position.z -= 10;
-				position.x = ENEMY_START;
-			}
-		}
-		*/
 	
 		AttackTrigger();
 

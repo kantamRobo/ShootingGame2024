@@ -1,7 +1,7 @@
 #pragma once
-#include "RootObject3D.h"
+//#include "RootObject3D.h"
 
-
+class RootObject3D;
 
 class Player3:public RootObject3D
 {

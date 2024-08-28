@@ -57,14 +57,10 @@ void Ammo3D::Trigger(const VECTOR& shotpos)
 {
 
 	
-		//ダーティフラグを使う
-		
-			//Attack3Dが毎度呼び出されてしまい、結果位置がプレイヤーの位置に更新されている。
-			//→一回だけ呼ぶ
 			Shot3D(shotpos.x, shotpos.y, shotpos.z);
 		
 			SetIsActive(true);
-			SetIsDirty(true);
+			
 	
 	
 }

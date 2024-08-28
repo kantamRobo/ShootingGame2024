@@ -23,9 +23,7 @@ public:
 	
 	
 	int ammomodel;
-	bool IsDirty_AmmoTrigger = false;
-	bool GetIsDirty() const{ return IsDirty_AmmoTrigger; }
-	void SetIsDirty(bool in_isdirty) { IsDirty_AmmoTrigger = in_isdirty; }
+	
 	//ダーティフラグ
 };
 

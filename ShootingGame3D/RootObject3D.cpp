@@ -40,3 +40,32 @@ void RootObject3D::Update_Core3D()
 	sphere.DrawDebug(position);
 
 }
+
+
+void RootObject3D::AttackTrigger()
+{
+	bulletcounter += 1;
+	bulletcounter %= 5000;
+	if (bulletcounter % 100 == 0) {
+		ammoindex++;
+		Attack3D(ammoindex);
+	}
+	else if (ammoindex == MAX_AMMO - 1)
+	{
+		ammoindex = 0;
+	}
+}
+
+void RootObject3D::Attack3D(int index)
+{
+
+
+
+	ammo[index]->Attack3D(this->position);
+
+
+
+
+
+
+}

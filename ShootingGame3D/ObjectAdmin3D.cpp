@@ -1,6 +1,7 @@
-
+#include "RootObject3D.h"
 #include "Player3.h"
 #include "Enemy3D.h"
+#include "DEFINE3D.h"
 #include "ObjectAdmin3D.h"
 #include <DxLib.h>
 
@@ -11,15 +12,15 @@ void ObjectAdmin3D::Init3D()
 	object[0] = std::make_shared<Player3>(VGet(100.0f, 580.0f, 500.0f));
 	
 	
-    object[0]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
+    object[0]->Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
 	object[0]->isEnemy = false;
-	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
+	for (int enemyindex = 1; enemyindex < ENEMY_INDICES; enemyindex++) {
 		auto x = 0;
 		object[enemyindex] = std::make_shared<Enemy3D>((VGet(150.0f, 580.0f, 2270.0f)));
 	
 	
 	}
-	object[1]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1");
+	object[1]->Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1");
 	//x += 100;
 	object[1]->isEnemy = true;
 	camera.Init(object[0]->position, object[1]->position);
@@ -31,7 +32,7 @@ void ObjectAdmin3D::Update3D(char* input)
 	object[0]->Update(input);
 	
 	
-	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
+	for (int enemyindex = 1; enemyindex < ENEMY_INDICES; enemyindex++) {
 		auto x = 0;
 		//object[enemyindex]->Update(VGet(200, 200, 500));
 	
@@ -51,7 +52,7 @@ void ObjectAdmin3D::Draw3D()
 
 void ObjectAdmin3D::Check_ObjectIsActive()
 {
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < OBJECT_INDICES; i++) {
 		if (object[i]->isActive) {
 			//敵、プレイヤーが描画されている状態なら
 			Trigger_Intersect3D();//衝突判定の第一段階に移る
@@ -63,9 +64,9 @@ void ObjectAdmin3D::Trigger_Intersect3D()
 	//objectindexは弾を撃った側のオブジェクトを指す。targetindexは弾が当たった側のオブジェクトを指す。
 	//この二つのオブジェクトの、敵フラグが立っているかを比較して、一致しなければ、つまり敵とプレイヤーに分かれていたら
 	//衝突判定に移動する。
-	for (int objectindex = 0; objectindex < 2; objectindex++)
+	for (int objectindex = 0; objectindex < OBJECT_INDICES; objectindex++)
 	{
-		for (int targetindex = 0; targetindex < 2; targetindex++) {
+		for (int targetindex = 0; targetindex < OBJECT_INDICES; targetindex++) {
 			if (object[objectindex]->isEnemy != object[targetindex]->isEnemy) {
 				Test_Intersect3D(objectindex, targetindex);
 		}
@@ -82,7 +83,7 @@ void ObjectAdmin3D::Test_Intersect3D(int objectindex,int targetindex) {
 	//Sphere::Intersectで衝突判定を行う。
 	//弾を撃つ側の弾と、撃たれる側の球体の衝突判定をおこなう
 	//真ならHITをコンソールに出力する。
-	for (int ammoindex = 0; ammoindex < 10; ammoindex++) {
+	for (int ammoindex = 0; ammoindex < AMMO_INDICES; ammoindex++) {
 		if (Sphere::Intersect(object[objectindex]->ammo[ammoindex]->sphere, object[targetindex]->sphere))
 		{
 	  		
