@@ -2,6 +2,7 @@
 
 void Enemy2::Update()
 {
+	Draw2D(this->position);
 }
 
 void Enemy2::Update(char* input)

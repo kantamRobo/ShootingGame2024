@@ -5,9 +5,9 @@
 
 Ammo2D::Ammo2D(const VECTOR& pos)
 {
-	//sphere.position = pos;
+	circle.position = pos;
 
-	//sphere.radius = 40;
+	circle.radius = 40;
 	//ammomodel = MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\’e.mv1");
 }
 

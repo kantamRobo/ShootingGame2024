@@ -12,7 +12,7 @@ void ObjectAdmin2D::Init2D()
 	object[0] = std::make_shared<Player2>(VGet(100, 580.000000, 500));
 
 
-	//object[0]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
+	object[0]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1");
 	object[0]->isEnemy = false;
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
@@ -20,7 +20,7 @@ void ObjectAdmin2D::Init2D()
 
 
 	}
-//	object[1]->Init3D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1");
+object[1]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1");
 	//x += 100;
 	//object[1]->isEnemy = true;
 }
@@ -95,5 +95,5 @@ void ObjectAdmin2D::Test_Intersect2D(int objectindex,int targetindex)
 	}
 
 
-
+	
 }
