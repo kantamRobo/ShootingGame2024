@@ -22,6 +22,9 @@ void Player2::Update(char* input)
 
 		
 	}
+
+	
+
 	LockOnMove2D(VGet(100,200,0), lockontheta,distance);
 }
 
