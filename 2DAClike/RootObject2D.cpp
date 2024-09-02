@@ -10,7 +10,7 @@ void RootObject2D::Init2D(const TCHAR* filepath)
 
 
 
-	handle = MV1LoadModel(filepath);
+	//handle = MV1LoadModel(filepath);
 	for (int i = 0; i < MAX_AMMO; i++)
 	{
 		ammo[i] = std::make_shared<Ammo2D>(this->position);
@@ -27,23 +27,14 @@ void RootObject2D::Draw2D(const VECTOR& vector)
 
 
 
-
-void RootObject2D::LockOnMove2D(float vertical,float horizontal)
+void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical,float horizontal)
 {
+	
+	
+position.x = enemypos.x +distance* cos( vertical);
 
-SetLockonRadius(horizontal);
-position.x = radius * cos( vertical);
+position.y = enemypos.y+distance * sin(vertical);
 
-position.y = radius * sin(vertical);
-//テンプレート
-/*
-player.Setlockonmove_radius((player.position-enemy.position).magnitude*vertical);
-player.position.x =radius*cos（omega*horizontal）
-
-player.position.y =radius*sin（omega*horizontal）
-
-
-*/
 }
 
 void RootObject2D::UpdateCore2D()

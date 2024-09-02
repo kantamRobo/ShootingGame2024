@@ -9,7 +9,7 @@
 void ObjectAdmin2D::Init2D()
 {
 
-	object[0] = std::make_shared<Player2>(VGet(100, 580.000000, 500));
+	object[0] = std::make_shared<Player2>(VGet(320,240,0));
 
 
 	object[0]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\–³‘è.mv1");
@@ -29,7 +29,7 @@ void ObjectAdmin2D::Update2D(char* input)
 {
 	
 	object[0]->Update(input);
-
+	object[0]->Update();
 
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;

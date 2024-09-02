@@ -76,11 +76,11 @@ void  Player::Update(char* input)
 	if (input[KEY_INPUT_Z])
 	{
 
-		Attack();
 
 
 	}
 
+		Attack();
 
 }
 	

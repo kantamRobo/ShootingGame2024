@@ -12,13 +12,14 @@ public:
 	int handle = 0;
 	float lockonOmega = 0;
 	float lockonradius = 0;
-	
+	float lockontheta = 0;
 	RootObject2D(const Circle& in_sphere);
 	void Init2D(const TCHAR* filepath);
 	std::shared_ptr<Ammo2D> ammo[256];
 	virtual void Draw2D(const VECTOR& vector);
 	
-	virtual void LockOnMove2D(float vertical, float horizontal);
+	
+	virtual void LockOnMove2D(VECTOR enemypos, float vertical, float horizontal);
 	void UpdateCore2D();
 
 

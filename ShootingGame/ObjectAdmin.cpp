@@ -1,6 +1,7 @@
 
 #include "ObjectAdmin.h"
 #include "Ammo.h"
+#inc
 #include <DxLib.h>
 
 
