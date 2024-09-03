@@ -14,7 +14,7 @@ void RootObject2D::Init2D(const TCHAR* filepath)
 	for (int i = 0; i < MAX_AMMO; i++)
 	{
 		ammo[i] = std::make_shared<Ammo2D>(this->position);
-
+		ammo[i]->Setradius(10);
 		ammo[i]->SetIsActive(false);
 	}
 }

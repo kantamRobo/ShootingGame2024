@@ -11,13 +11,13 @@ public:
 
     bool GetIsActive() const { return isActive; }
     void SetIsActive(bool active) { isActive = active; }
-
+    bool isDirty = false;
 
     IAmmo(const VECTOR& pos);
 
     void Draw();
 
-    virtual void Update(float AMMOVELOCITY) = 0;
+    virtual void Update(const float AMMOVELOCITY, const VECTOR& objectpos, float objectangle) = 0;
 
 protected:
 

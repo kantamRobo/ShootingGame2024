@@ -14,15 +14,24 @@ public:
 	Ammo2D(const VECTOR& pos);
 
 	void Draw();
-	void Update(const float AMMOVELOCITY);
-	void Move2D(const float AMMOVELOCITY);
-	void Attack2D(const VECTOR& shotpos);
+	void Update(const float AMMOVELOCITY, const VECTOR& objectpos, float objectangle)override;
+	
+	
+	VECTOR ammodistance;
+	
+	void Move2D(const float AMMOVELOCITY, const VECTOR& objectpos, float objectangle);
+	void Attack2D(const VECTOR& shotpos, float objectangle);
+	
 
-	void Trigger(const VECTOR& shotpos);
-
-	void Shot2D(int m_x, int m_y);
+	void Trigger(const VECTOR& shotpos, float objectangle);
 
 	
+
+	void Shot2D(int m_x, int m_y, float angle);
+
+	
+
+	float m_angle=0;
 
 	float radius;
 	void Setradius(float in_radius) { radius = in_radius; }

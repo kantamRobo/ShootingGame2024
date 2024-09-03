@@ -32,7 +32,11 @@ void Player2::Update(char* input)
 
 		
 	}
+	if (input[KEY_INPUT_A] == 1)
+	{
 
+		AttackTrigger();
+	}
 	
 
 	LockOnMove2D(VGet(100,200,0), lockontheta,distance);

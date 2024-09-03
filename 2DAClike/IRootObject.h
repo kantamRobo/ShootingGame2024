@@ -23,7 +23,7 @@ public:
 	std::shared_ptr<Ammo2D> ammo[256];
 	int health = 10;
 
-
+	float lockontheta = 0;
 	int bulletcounter = 0;
 	int ammoindex = 0;
 	Circle circle;
@@ -47,7 +47,7 @@ public:
 
 
 
-		ammo[index]->Attack2D(this->position);
+		ammo[index]->Attack2D(this->position,lockontheta);
 
 
 

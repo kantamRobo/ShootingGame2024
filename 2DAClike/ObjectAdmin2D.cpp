@@ -27,7 +27,10 @@ object[1]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingG
 
 void ObjectAdmin2D::Update2D(char* input)
 {
-	
+	for (int i = 0; i < MAX_AMMO; i++)
+	{
+		object[0]->ammo[i]->Update(10, object[0]->position, object[0]->lockontheta);
+	}
 	object[0]->Update(input);
 	object[0]->Update();
 
