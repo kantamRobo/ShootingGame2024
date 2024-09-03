@@ -1,5 +1,5 @@
 #include <DxLib.h>
-#include "CircleColliison.h"
+#include "Circle.h"
 class IAmmo
 {
 public:

@@ -133,7 +133,7 @@
   <ItemGroup>
     <ClCompile Include="2DAClike.cpp" />
     <ClCompile Include="Ammo2D.cpp" />
-    <ClCompile Include="CircleColliison.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="IRootObject.cpp" />
     <ClCompile Include="ObjectAdmin2D.cpp" />
@@ -144,7 +144,7 @@
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
     <ClInclude Include="..\ShootingGame\DEFINE2D.h" />
     <ClInclude Include="Ammo2D.h" />
-    <ClInclude Include="CircleColliison.h" />
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Enemy2.h" />
     <ClInclude Include="IAmmo.h" />
     <ClInclude Include="IRootObject.h" />
