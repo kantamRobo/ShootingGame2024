@@ -19,7 +19,8 @@ public:
 	virtual void Draw2D(const VECTOR& vector);
 	
 	
-	virtual void LockOnMove2D(VECTOR enemypos, float vertical, float horizontal);
+	
+	virtual  void LockOnMove2D(VECTOR enemypos, float vertical, double horizontal);
 	void UpdateCore2D();
 
 

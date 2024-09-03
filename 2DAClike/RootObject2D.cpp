@@ -21,13 +21,13 @@ void RootObject2D::Init2D(const TCHAR* filepath)
 
 void RootObject2D::Draw2D(const VECTOR& vector)
 {
-	DrawCircle(position.x, position.y, radius, GetColor(255, 255, 255), TRUE);
+	DrawCircle(static_cast<int>(position.x), static_cast<int>(position.y), radius, GetColor(255, 255, 255), TRUE);
 	
 }
 
 
 
-void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical,float horizontal)
+void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical,double horizontal)
 {
 	
 	
