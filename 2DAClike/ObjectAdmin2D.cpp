@@ -21,6 +21,7 @@ void ObjectAdmin2D::Init2D()
 
 	}
 object[1]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\Enemy.mv1");
+
 	//x += 100;
 	//object[1]->isEnemy = true;
 }
