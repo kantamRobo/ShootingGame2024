@@ -9,12 +9,13 @@ void Player2::Update(char* input)
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		distance += 0.5f;
+		DrawFormatString(320, 240, GetColor(0, 255, 0), L" %f ", distance);
 	}
 
 	if (input[KEY_INPUT_DOWN] == 1)
 	{
-		distance += 0.5f;
-
+		distance -= 0.5f;
+		DrawFormatString(320, 240, GetColor(0, 255, 0), L" %f ", distance);
 	}
 
 	if (input[KEY_INPUT_LEFT] == 1) {
