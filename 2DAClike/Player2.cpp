@@ -3,10 +3,19 @@
 void Player2::Update(char* input)
 {
 
-	auto radius = 1.0f;
-
-
 	
+
+
+	if (input[KEY_INPUT_UP] == 1)
+	{
+		distance += 0.5f;
+	}
+
+	if (input[KEY_INPUT_DOWN] == 1)
+	{
+		distance += 0.5f;
+
+	}
 
 	if (input[KEY_INPUT_LEFT] == 1) {
 		

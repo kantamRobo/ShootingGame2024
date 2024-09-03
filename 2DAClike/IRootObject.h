@@ -17,7 +17,7 @@ public:
 	bool isEnemy;//自機だったらfalse,敵はtrue
 	//立っているフラグが違うオブジェクト同士
 	//に対して攻撃が有効になる
-	int distance = 50;
+	int distance = 0;
 	int radius = 10;
 	int rapid = 10;
 	std::shared_ptr<Ammo2D> ammo[256];
