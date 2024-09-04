@@ -17,7 +17,7 @@ public:
 	void Update(const float AMMOVELOCITY, const VECTOR& objectpos, float objectangle)override;
 	
 	
-	VECTOR ammodistance;
+	
 	
 	void Move2D(const float AMMOVELOCITY, const VECTOR& objectpos, float objectangle);
 	void Attack2D(const VECTOR& shotpos, float objectangle);
