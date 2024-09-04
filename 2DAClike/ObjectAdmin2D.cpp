@@ -31,6 +31,7 @@ void ObjectAdmin2D::Update2D(char* input)
 	for (int i = 0; i < MAX_AMMO; i++)
 	{
 		object[0]->ammo[i]->Update(10, object[0]->position, object[0]->lockontheta);
+		object[1]->ammo[i]->Update(-10, object[1]->position, object[1]->lockontheta);
 	}
 	object[0]->Update(input);
 	object[0]->Update();
@@ -41,7 +42,7 @@ void ObjectAdmin2D::Update2D(char* input)
 
 	}
 	object[1]->Update();
-
+	
 	Check_ObjectIsActive();
 
 
