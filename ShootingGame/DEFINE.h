@@ -1,6 +1,6 @@
 #pragma once
 
-
+const double RAD_TO_DEG = 57.3248407643;
 const int RAPID_RATE = 10;
 const int SHOT_OFFSET = 15;
 const int MAX_AMMO = 256;

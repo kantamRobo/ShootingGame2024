@@ -24,6 +24,27 @@ public:
 	void UpdateCore2D();
 
 
+	//敵とプレイヤーの角度を計算する。
+	static double Angle2D(const VECTOR& from, const VECTOR& to)
+	{
+
+		double dot = VDot(from, to);
+
+
+		auto Amag = VSquareSize(from);
+
+		auto Bmag = VSquareSize(to);
+		double cos = dot / (Amag * Bmag);
+
+		double radian = acos(cos);
+		double degree = radian * RAD_TO_DEG;
+
+		return degree;
+
+	}
+
+
+
 
 	Circle circle;
 
