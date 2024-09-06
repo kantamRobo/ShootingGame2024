@@ -25,7 +25,7 @@ public:
 
 
 	//敵とプレイヤーの角度を計算する。
-	static double Angle2D(const VECTOR& from, const VECTOR& to)
+	inline static double Angle2D(const VECTOR& from, const VECTOR& to)
 	{
 
 		double dot = VDot(from, to);
