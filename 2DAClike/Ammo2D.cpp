@@ -8,7 +8,7 @@ Ammo2D::Ammo2D(const VECTOR& pos)
 {
 	circle.position = pos;
 
-	circle.radius = 40;
+	circle.radius = 5;
 	//ammomodel = MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\’e.mv1");
 }
 
@@ -26,7 +26,7 @@ void Ammo2D::Update(const float AMMOVELOCITY,const VECTOR& objectpos,float objec
 	Draw();
 
 
-	
+	circle.position = this->position;
 	if (GetIsActive() == true) {
 		Move2D(AMMOVELOCITY,objectpos,objectangle);
 	}

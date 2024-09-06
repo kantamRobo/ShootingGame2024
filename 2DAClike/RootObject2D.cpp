@@ -8,8 +8,8 @@ RootObject2D::RootObject2D(const Circle& in_circle) :circle(in_circle)
 void RootObject2D::Init2D(const TCHAR* filepath)
 {
 
-
-
+	circle.radius = 10;
+	
 	//handle = MV1LoadModel(filepath);
 	for (int i = 0; i < MAX_AMMO; i++)
 	{

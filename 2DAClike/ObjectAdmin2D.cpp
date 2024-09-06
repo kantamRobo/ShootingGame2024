@@ -14,6 +14,7 @@ void ObjectAdmin2D::Init2D()
 
 	object[0]->Init2D(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\–³‘è.mv1");
 	object[0]->isEnemy = false;
+	
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		object[enemyindex] = std::make_shared<Enemy2>((VGet(100,200,0)));
@@ -35,14 +36,14 @@ void ObjectAdmin2D::Update2D(char* input)
 	}
 	object[0]->Update(input);
 	object[0]->Update();
-
+	object[0]->UpdateCore2D();
 	for (int enemyindex = 1; enemyindex < 10; enemyindex++) {
 		auto x = 0;
 		//object[enemyindex]->Update(VGet(200, 200, 500));
 
 	}
 	object[1]->Update();
-	
+	object[1]->UpdateCore2D();
 	Check_ObjectIsActive();
 
 
