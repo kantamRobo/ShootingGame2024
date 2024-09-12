@@ -32,7 +32,7 @@ public:
 	float previousTime = currentTime;  // 前回のフレームの時間
 	float deltaTime = 0.0f;          // 経過時間
 	int quick_boostguage = 0;
-	const float boost = 10;
+	const float boost = 5;
 	float acceleration = 0;
 	//敵とプレイヤーの角度を計算する。
 	inline static double Angle2D(const VECTOR& from, const VECTOR& to)

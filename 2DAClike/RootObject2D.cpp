@@ -32,9 +32,8 @@ float f(float x)
 void RootObject2D::QuickBoost2DRight(VECTOR enemypos,float& vertical)
 {
 	
-	auto temp = vertical;
 		
-	 acceleration += f(deltaTime*10);
+	 acceleration += f(deltaTime);
 
 	 if (acceleration > boost)
 	 {
@@ -57,8 +56,8 @@ void RootObject2D::QuickBoost2DRight(VECTOR enemypos,float& vertical)
 
 	
 
-	position.x = enemypos.x +distance * cos(vertical);
-	position.y = enemypos.y + distance * sin(vertical);
+	position.x = static_cast<float>(enemypos.x +distance * cos(vertical));
+	position.y = static_cast<float>(enemypos.y + distance * sin(vertical));
 	deltaTime = 0;
 	acceleration = 0;
 	
@@ -68,9 +67,9 @@ void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical)
 {
 	
 	DrawFormatString(320, 160, GetColor(0, 255, 0), L"‰Á‘¬: %f ", acceleration);
-position.x = enemypos.x +distance* cos( vertical);
+position.x = static_cast<float>(enemypos.x +distance* cos( vertical));
 
-position.y = enemypos.y+distance * sin(vertical);
+position.y = static_cast<float>(enemypos.y+distance * sin(vertical));
 
 }
 
