@@ -20,7 +20,7 @@ public:
 	
 	
 	
-	virtual  void LockOnMove2D(VECTOR enemypos, float vertical, double horizontal);
+	void LockOnMove2D(VECTOR enemypos, float vertical);
 	void UpdateCore2D();
 
 

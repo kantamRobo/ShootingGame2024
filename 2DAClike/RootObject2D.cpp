@@ -27,7 +27,7 @@ void RootObject2D::Draw2D(const VECTOR& vector)
 
 
 
-void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical,double horizontal)
+void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical)
 {
 	
 	
