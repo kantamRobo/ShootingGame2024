@@ -17,13 +17,23 @@ public:
 	void Init2D(const TCHAR* filepath);
 	
 	virtual void Draw2D(const VECTOR& vector);
+
 	
 	
 	
+	
+
+	void QuickBoost2DRight(VECTOR enemypos, float& vertical);
+
 	void LockOnMove2D(VECTOR enemypos, float vertical);
 	void UpdateCore2D();
 
-
+	// DeltaTimeの初期化
+	int currentTime =0; // 現在の時間（ミリ秒）
+	int previousTime = currentTime;  // 前回のフレームの時間
+	float deltaTime = 0.0f;          // 経過時間
+	int quick_boostguage = 0;
+	const float boost = 10;
 	//敵とプレイヤーの角度を計算する。
 	inline static double Angle2D(const VECTOR& from, const VECTOR& to)
 	{
