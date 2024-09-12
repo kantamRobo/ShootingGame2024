@@ -8,5 +8,9 @@ public:
 	virtual void  Update(char* input)override;
 	
 	void Update()override;
+	float boostlimit = 10;
+	// ボタンの状態を記録する変数
+	bool isButtonPressed = false;
+	bool isButtonReleased = true; // 初期状態ではボタンは離されている
 };
 

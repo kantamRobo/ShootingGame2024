@@ -4,27 +4,42 @@ void Player2::Update(char* input)
 {
 	DrawFormatString(320, 200, GetColor(0, 255, 0), L"角度 %f ", lockontheta);
 	DrawFormatString(320, 180, GetColor(0, 255, 0), L"デルタタイム: %f ", deltaTime);
-	
+	DrawFormatString(320, 120, GetColor(0, 255, 0), L"クイックブースト: % f ", quick_boostguage);
+
+
+
 
 	LockOnMove2D(VGet(100, 200, 0), lockontheta);
 	
-	if (input[KEY_INPUT_Z] == 1)
+	if (input[KEY_INPUT_Z] == 1&&isButtonPressed ==false) 
 	{
-		currentTime = GetNowCount();
-		deltaTime = (currentTime - previousTime) / 1000.0f; // ミリ秒から秒に変換
+		
 
-		quick_boostguage += 1;
-		quick_boostguage %= 100;
+		//Zを一瞬だけ押すと、テレポートする。
+		currentTime = static_cast<float>(GetNowCount());
+		deltaTime = static_cast<float>(currentTime - previousTime)/4000; // ミリ秒から秒に変換
+
+		quick_boostguage += 5;
+		
 		previousTime = GetNowCount();
-		if (quick_boostguage % 100 > 0 && quick_boostguage % 100 < 10) {
-			
+
+	if (quick_boostguage > 10) {
 			QuickBoost2DRight(VGet(100, 200, 0), lockontheta);
-
+			isButtonPressed = true;
+			isButtonReleased = false;
+			quick_boostguage = 0;
+		}
 
 			
-
-		}
+        //if (quick_boostguage % 100 > 1 && quick_boostguage % 100 < 15) {
+		//}
 		currentTime = 0;
+		
+	}
+	else
+	{
+		isButtonReleased = true;
+		isButtonPressed = false;
 	}
 	
 

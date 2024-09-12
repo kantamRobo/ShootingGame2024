@@ -27,28 +27,47 @@ void RootObject2D::Draw2D(const VECTOR& vector)
 
 float f(float x)
 {
-	return 2*x;
+	return 5*x*x;
 }
 void RootObject2D::QuickBoost2DRight(VECTOR enemypos,float& vertical)
 {
 	
 	auto temp = vertical;
 		
-	auto currentacceleration = vertical - temp;
+	 acceleration += f(deltaTime*10);
 
-	DrawFormatString(320, 160, GetColor(0, 255, 0), L"‰Á‘¬: %f ", currentacceleration);
+	 if (acceleration > boost)
+	 {
 
-		vertical += f(deltaTime*boost);
+		 acceleration = boost;
+		
+		
+		 vertical += acceleration;
+		 acceleration = 0;
+		
+	 }
+	 else
+	 {
+		 vertical += acceleration;
+		 acceleration = 0;
+	 }
+	 
+	
+
+
+	
 
 	position.x = enemypos.x +distance * cos(vertical);
 	position.y = enemypos.y + distance * sin(vertical);
 	deltaTime = 0;
+	acceleration = 0;
+	
 }
 
 void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical)
 {
 	
-	
+	DrawFormatString(320, 160, GetColor(0, 255, 0), L"‰Á‘¬: %f ", acceleration);
 position.x = enemypos.x +distance* cos( vertical);
 
 position.y = enemypos.y+distance * sin(vertical);
