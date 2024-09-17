@@ -30,7 +30,16 @@ void ObjectAdmin3D::Update3D(char* input)
 {
 	camera.Update(input);
 	object[0]->Update(input);
+
+	//プレイヤーモデルをカメラの座標空間に変換
 	
+	
+	auto ModelScale = MGetScale(VGet(0.1f, 0.1f, 0.1f));
+	auto Modelrotworld = MGetRotY(DX_PI_F / 4.0f);
+	auto translation = MGetTranslate(object[0]->position);
+	MATRIX ModelWorld = MMult(MMult(ModelScale, Modelrotworld), translation);
+	
+	auto out = MMult(ModelWorld, camera.GetViewMatrix());
 	
 	for (int enemyindex = 1; enemyindex < ENEMY_INDICES; enemyindex++) {
 		auto x = 0;
@@ -42,7 +51,7 @@ void ObjectAdmin3D::Update3D(char* input)
 	object[1]->Update_Core3D();
 	Check_ObjectIsActive();
 
-	
+
 }
 
 void ObjectAdmin3D::Draw3D()

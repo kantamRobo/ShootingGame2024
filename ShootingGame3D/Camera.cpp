@@ -22,10 +22,31 @@ void Camera::Update(char* input)
 		position = temppos;
 		CameraLookAtPosition = VGet(position.x, position.y, position.z + 1000); // 注視点をカメラ位置に対して前方に設定
 
-		
+	
 		// カメラの設定に反映する
 		SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
 	
 		SetCameraPositionAndAngle(position, camrot,0, 0);
+
+		/*
+		//カメラを、マウスのXY軸で回転させる
+		if (input[mouse] == 1)
+		{
+		rotation.x+= 0.1;
+		}
+		if (input[KEY_INPUT_DOWN] == 1)
+		{
+			rotation.x-= 0.1;
+		}
+		if (input[KEY_INPUT_LEFT] == 1)
+		{
+			rotation.y+= 0.1;
+		}
+		if (input[KEY_INPUT_RIGHT] == 1)
+		{
+			rotation.y-= 0.1;
+		}
+		*/
+		
 
 }
