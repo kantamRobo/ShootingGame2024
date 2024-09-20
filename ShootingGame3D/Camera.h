@@ -17,7 +17,7 @@ public:
 	
 	//基本は固定カメラとして使う。
 
-	float camrot = -5.67999601;
+	
 
 
 	VECTOR position; //Imguiで調整
@@ -33,6 +33,8 @@ public:
 	}
 
 public:
+
+
 	VECTOR GetCameraRight() {
 		return Camera_Right;
 	}
@@ -40,7 +42,10 @@ public:
 		return Camera_FORWARD;
 	}
 	private:
-	const VECTOR Camera_Right = right;
-	const VECTOR Camera_FORWARD = forward;
+	 VECTOR Camera_Right = right;
+	 VECTOR Camera_FORWARD = forward;
 	
+private:
+	// カメラの向きを更新する (例えば回転行列を使って計算する)
+	void UpdateDirection(float angleX, float angleY);
 };
