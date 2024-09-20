@@ -1,5 +1,7 @@
-#include <DxLib.h>
+#pragma once
 
+#include <DxLib.h>
+#include "VECTORUTIL.h"
 class Camera {
 
 public:
@@ -28,5 +30,15 @@ public:
 		return GetCameraViewMatrix();
 	}
 
-
+public:
+	VECTOR GetCameraRight() {
+		return Camera_Right;
+	}
+	VECTOR GetCameraForward() {
+		return Camera_FORWARD;
+	}
+	private:
+	const VECTOR Camera_Right = right;
+	const VECTOR Camera_FORWARD = forward;
+	
 };

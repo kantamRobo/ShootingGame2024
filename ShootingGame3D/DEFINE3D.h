@@ -1,5 +1,5 @@
 #pragma once
-
+#include <DxLib.h>
 
 const int PLAYER_AMMO_VELOCITY_3D_DEFAULT = 20;
 const int ENEMY_AMMO_VELOCITY_3D_DEFAULT = -20;//è„Ç∆ìØÇ∂ÅB

@@ -128,5 +128,8 @@
     <ClInclude Include="IAmmo.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="VECTORUTIL.h">
+      <Filter>ヘッダー ファイル\DEFINE3D</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

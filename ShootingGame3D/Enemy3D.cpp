@@ -1,8 +1,8 @@
-
+#include "DEFINE3D.h"
 #include "RootObject3D.h"
 
 #include "Enemy3D.h"
-#include "DEFINE3D.h"
+
 
 
 

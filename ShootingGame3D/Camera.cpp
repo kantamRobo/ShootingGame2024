@@ -1,3 +1,4 @@
+
 #include "Camera.h"
 
 void Camera::Init(const VECTOR& playerpos,const VECTOR& enemypos)
