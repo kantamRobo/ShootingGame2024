@@ -28,7 +28,7 @@ void ObjectAdmin3D::Init3D()
 
 void ObjectAdmin3D::Update3D(char* input)
 {
-	camera.Update(input);
+	camera.Update(input,object[0]->position);
 	object[0]->Update(input);
 
 	//プレイヤーモデルをカメラの座標空間に変換
