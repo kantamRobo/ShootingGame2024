@@ -12,8 +12,8 @@ public:
 	VECTOR rotation;
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input, VECTOR targetpos);
-	float movetempx = 0;
-	float movetempy = 0;
+	int movetempx = 0;
+	int movetempy = 0;
 	
 	//基本は固定カメラとして使う。
 

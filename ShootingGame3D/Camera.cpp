@@ -17,17 +17,21 @@ void Camera::Update(char* input,VECTOR targetpos)
 	SetWriteZBuffer3D(TRUE);
 	//マウスの動きを基準に動く
 	
-	movetempx += 0.01;
-	movetempy += 0.01;
-	auto moveX = 100 * sin(movetempy) * cos(movetempx);
-	auto moveY = 100 * sin(movetempy) * cos(movetempx);
-	auto moveZ = 100 * cos(movetempy);
+	 
+	GetMousePoint(&movetempx, &movetempy);
+	auto mouseX_F = movetempx * 0.001;
+	auto mouseY_F = movetempy * 0.001;
+	
+	
+	auto moveX = 2000 * sin(mouseX_F) * cos(mouseY_F);
+	auto moveY = 2000 * sin(mouseY_F); // Y軸方向の移動
+	auto moveZ = 2000 * cos(mouseX_F) * cos(mouseY_F);
 
 
 	
 	auto debug = temppos;
 	
-	temppos = VGet(moveX, moveY, moveZ);
+	temppos = VGet(targetpos.x+moveX, targetpos.y+moveY, targetpos.z+moveZ);
 		position = temppos;
 		CameraLookAtPosition = targetpos;
 
@@ -38,8 +42,7 @@ void Camera::Update(char* input,VECTOR targetpos)
 		// カメラの設定に反映する
 		SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
 	
-		SetCameraPositionAndAngle(position, camrot,0, 0);
-		
+	
 		/*
 		//カメラを、マウスのXY軸で回転させる
 		if (input[mouse] == 1)
