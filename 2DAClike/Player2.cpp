@@ -9,41 +9,35 @@ void Player2::Update(char* input)
 	coolingtime /= 10000;
 	//Zを一瞬だけ押すと、テレポートする。
 	currentTime = static_cast<float>(GetNowCount());
-	deltaTime = static_cast<float>(currentTime - previousTime) / 4000; // ミリ秒から秒に変換
-	
+	deltaTime = (currentTime - moveStartTime) / 1000.0f;
 
 
 
 	LockOnMove2D(VGet(100, 200, 0), lockontheta);
 
-	if (input[KEY_INPUT_Z] == 1)
+	// Zキーを押したときに0.2秒間移動
+	if (input[KEY_INPUT_Z] == 1 && !isMoving)
 	{
-		
+		isMoving = true;
+		moveStartTime = GetNowCount(); // 移動を開始した時間を記録
+	}
 
-		previousTime = static_cast<float>(GetNowCount());
-		
-		
-		ControlBoosting_Cooling();
-
-
-		//Boostingがfalseで、coolingtimeが0でなければ、Boostingはfalseのまま
-
-		if (Boosting && !Cooling)
+	// 移動が有効な場合
+	if (isMoving)
+	{
+		// 現在の時間と移動開始時間を比較して、移動時間が0.2秒未満なら移動
+		float currentTime = GetNowCount();
+		if (deltaTime< moveDuration)
 		{
-			
-
-			lockontheta += 0.3f;
+			// ここで移動処理を実行します
+			lockontheta += 0.2f*deltaTime;  // 例: 5ピクセル右に移動
 		}
 		else
 		{
-			
+			// 移動時間が過ぎたら停止
+			isMoving = false;
 		}
-		
-		
-		
-		
 	}
-
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		distance += 0.5;

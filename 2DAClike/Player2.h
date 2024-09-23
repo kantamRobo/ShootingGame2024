@@ -7,6 +7,9 @@ public:
 		position = vector;
 		distance = 10;
 		boostlimit = EditableBoostLimitParam;
+		// コンストラクタで初期化
+		moveDuration = 0.2f;  // 0.2秒間移動
+		isMoving = false;
 	};
 	virtual void  Update(char* input)override;
 	float inputdelta = 0;
@@ -16,5 +19,10 @@ public:
 	// ボタンの状態を記録する変数
 	bool isButtonPressed = false;
 	bool isButtonReleased = true; // 初期状態ではボタンは離されている
+
+private:
+	bool isMoving;          // プレイヤーが移動中かどうか
+	float moveDuration;     // 移動する時間（秒）
+	float moveStartTime;    // 移動を開始した時間
 };
 
