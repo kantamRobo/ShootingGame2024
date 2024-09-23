@@ -19,21 +19,42 @@ public:
 
 	
 	
-	
+	// Lerp関数
+	float Lerp(float a, float b, float t) {
+		return a + (b - a) * t;
+	}
 	
 
-	void QuickBoost2DRight(VECTOR enemypos, float& vertical);
+	
 
 	void LockOnMove2D(VECTOR enemypos, float vertical);
 	void UpdateCore2D();
+
+	void ControlBoosting_Cooling();
+
+	
 
 	// DeltaTimeの初期化
 	float currentTime =0; // 現在の時間（ミリ秒）
 	float previousTime = currentTime;  // 前回のフレームの時間
 	float deltaTime = 0.0f;          // 経過時間
-	int quick_boostguage = 0;
-	const float boost = 5;
-	float acceleration = 0;
+	
+	//クイックブーストパラメータ
+	float boostlimit = 0;//boostの制限時間
+	float acceleration = 0.0f;//加速度
+	float distance = 20.0f;//プレイヤーと敵の距離
+	float radius = 5.0f;//プレイヤーの半径
+	float coolingtime = 0.0f;//クールダウン時間
+	bool isButtonPressed = false;
+	bool isButtonReleased = true; // 初期状態ではボタンは離されている
+	
+//加速中
+	bool Boosting = false;
+	//冷却中
+public:
+	bool Cooling = false;
+	
+	
 	//敵とプレイヤーの角度を計算する。
 	inline static double Angle2D(const VECTOR& from, const VECTOR& to)
 	{

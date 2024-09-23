@@ -23,7 +23,10 @@ public:
 
 	void Move(char* input);
 
-	
+	// LerpŠÖ”
+	float Lerp(float a, float b, float t) {
+		return a + (b - a) * t;
+	}
 
 	
 	

@@ -29,39 +29,6 @@ float f(float x)
 {
 	return 5*x*x;
 }
-void RootObject2D::QuickBoost2DRight(VECTOR enemypos,float& vertical)
-{
-	
-		
-	 acceleration += f(deltaTime);
-
-	 if (acceleration > boost)
-	 {
-
-		 acceleration = boost;
-		
-		
-		 vertical += acceleration;
-		 acceleration = 0;
-		
-	 }
-	 else
-	 {
-		 vertical += acceleration;
-		 acceleration = 0;
-	 }
-	 
-	
-
-
-	
-
-	position.x = static_cast<float>(enemypos.x +distance * cos(vertical));
-	position.y = static_cast<float>(enemypos.y + distance * sin(vertical));
-	deltaTime = 0;
-	acceleration = 0;
-	
-}
 
 void RootObject2D::LockOnMove2D(VECTOR enemypos,float vertical)
 {
@@ -78,5 +45,34 @@ void RootObject2D::UpdateCore2D()
 
 
 	circle.position = position;
+}
+
+void RootObject2D::ControlBoosting_Cooling()
+{
+	
+	//Coolingがtrueの場合、coolingtimeが0になるまで減少する。
+	if (coolingtime > 0)
+	{
+		coolingtime -= deltaTime;
+	}
+	else
+	{
+		coolingtime += deltaTime;
+		Cooling = false;
+	}
+
+
+	if (coolingtime < boostlimit)//boostlimitまで達していない場合、Boostingはtrueとなる
+	{
+		Boosting = true;
+	}
+	else
+	{
+		Boosting = false;
+		if (coolingtime > 0)
+		{
+			Cooling = true;
+		}
+	}
 }
 

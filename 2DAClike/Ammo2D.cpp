@@ -17,7 +17,7 @@ Ammo2D::Ammo2D(const VECTOR& pos)
 void Ammo2D::Draw()
 {
 	if (isActive) {
-		DrawCircle(position.x, position.y, static_cast<int>(radius), GetColor(0, 255, 0), TRUE);
+		DrawCircle(static_cast<float>(position.x), static_cast<float>(position.y), static_cast<int>(radius), GetColor(0, 255, 0), TRUE);
 	}
 }
 void Ammo2D::Update(const float AMMOVELOCITY,const VECTOR& objectpos,float objectangle)

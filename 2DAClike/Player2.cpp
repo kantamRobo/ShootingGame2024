@@ -5,44 +5,42 @@ void Player2::Update(char* input)
 	DrawFormatString(320, 200, GetColor(0, 255, 0), L"角度 %f ", lockontheta);
 	DrawFormatString(320, 180, GetColor(0, 255, 0), L"デルタタイム: %f ", deltaTime);
 	DrawFormatString(320, 120, GetColor(0, 255, 0), L"ブーストリミット: % f ", boostlimit);
-
+	DrawFormatString(320, 220, GetColor(0, 255, 0), L"クーリングゲージ: % f ", coolingtime);
+	coolingtime /= 10000;
+	//Zを一瞬だけ押すと、テレポートする。
+	currentTime = static_cast<float>(GetNowCount());
+	deltaTime = static_cast<float>(currentTime - previousTime) / 4000; // ミリ秒から秒に変換
+	
 
 
 
 	LockOnMove2D(VGet(100, 200, 0), lockontheta);
 
-	if (input[KEY_INPUT_Z] == 1 && isButtonReleased == true)
+	if (input[KEY_INPUT_Z] == 1)
 	{
-		isButtonPressed = true;
-		isButtonReleased = false;
-		//Zを一瞬だけ押すと、テレポートする。
-		currentTime = static_cast<float>(GetNowCount());
-		deltaTime = static_cast<float>(currentTime - previousTime) / 4000; // ミリ秒から秒に変換
-
-
-
-		previousTime = static_cast<float>(GetNowCount());
-
-		if (boostlimit < 0.1) {
-			QuickBoost2DRight(VGet(100, 200, 0), lockontheta);
-			boostlimit = EditableBoostLimitParam;
-		}
-
-
-
-		currentTime = 0;
-		deltaTime = 0;
-		quick_boostguage = 0;
-	}else if (input[KEY_INPUT_Z] ==0)
-	{
-		isButtonReleased = true;
-		isButtonPressed = false;
 		
 
-		boostlimit -= static_cast<float>(0.1);
+		previousTime = static_cast<float>(GetNowCount());
+		
+		
+		ControlBoosting_Cooling();
 
+
+		//Boostingがfalseで、coolingtimeが0でなければ、Boostingはfalseのまま
+
+		if (Boosting && !Cooling)
+		{
 			
 
+			lockontheta += 0.3f;
+		}
+		else
+		{
+			
+		}
+		
+		
+		
 		
 	}
 
