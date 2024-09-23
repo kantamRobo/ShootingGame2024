@@ -15,6 +15,10 @@ void Player2::Update(char* input)
 
 	LockOnMove2D(VGet(100, 200, 0), lockontheta);
 
+
+
+
+	//ここは迷走したのでchatgptに助けを借りた。
 	// Zキーを押したときに0.2秒間移動
 	if (input[KEY_INPUT_Z] == 1 && !isMoving)
 	{
@@ -38,6 +42,40 @@ void Player2::Update(char* input)
 			isMoving = false;
 		}
 	}
+
+
+	/*
+	chatgpt案
+
+	// Zキーを押したときに0.2秒間移動
+	if (input[KEY_INPUT_Z] == 1 && !isMoving)
+	{
+		isMoving = true;
+		moveStartTime = GetNowCount(); // 移動を開始した時間を記録
+	}
+
+	// 移動が有効な場合
+	if (isMoving)
+	{
+		// 現在の時間と移動開始時間を比較して、移動時間が0.2秒未満なら移動
+		float currentTime = GetNowCount();
+		if ((currentTime - moveStartTime) / 1000.0f < moveDuration)
+		{
+			// ここで移動処理を実行します
+			position.x += 5.0f;  // 例: 5ピクセル右に移動
+		}
+		else
+		{
+			// 移動時間が過ぎたら停止
+			isMoving = false;
+		}
+	}
+	
+	
+	*/
+
+
+
 	if (input[KEY_INPUT_UP] == 1)
 	{
 		distance += 0.5;
