@@ -2,15 +2,21 @@
 
 #include <DxLib.h>
 #include "VECTORUTIL.h"
-class Camera {
+
+class Camera{
 
 public:
 	Camera()
 	{
-		movetempx = 0;
-		movetempy = 0;
+		movetempx = 180;
+		movetempy = 180;
 		forward = VGet(0.0f, 0.0f, 1.0f);
 		right = VGet(1.0f, 0.0f, 0.0f);
+		const float CAMERA_LOOK_AT_HEIGHT = 400.0f;
+
+		CameraLookAtPosition = VGet(0, 0, 0);
+		position = VGet(0, 0, 0);
+		temppos = position;
 	}
 	MATRIX View;
 	MATRIX Projection;
@@ -18,9 +24,10 @@ public:
 	VECTOR rotation;
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input, VECTOR targetpos);
-	void UpdateDirection();
-	int movetempx = 0;
-	int movetempy = 0;
+	void UpdateDirection(float in_x, float in_y);
+	
+	int movetempx = 180;
+	int movetempy = 180;
 	
 	float moveX = 0;
 	float moveY = 0;

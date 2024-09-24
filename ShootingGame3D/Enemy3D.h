@@ -14,10 +14,11 @@ public:
 	}
 	
 	void Draw()override;
-	
-	void Update();
 
-	void Update(Camera* camera, char* input)override;
+	void Update(const MATRIX& RotY,Camera* camera=nullptr, char* input=nullptr)override;
+	
+
+
 	
 	
 	

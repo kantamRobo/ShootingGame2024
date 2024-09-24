@@ -12,7 +12,7 @@ void Enemy3D::Draw()
 }
 
 
-void Enemy3D::Update(Camera* camera,char* input)
+void Enemy3D::Update(const MATRIX& RotY,Camera* camera,char* input)
 {
 	Draw3D(position);
 	for (int i = 0; i < MAX_AMMO; i++) {

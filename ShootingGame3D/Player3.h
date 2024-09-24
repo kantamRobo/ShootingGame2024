@@ -16,14 +16,22 @@ public:
 
 	VECTOR move;
 	void Draw()override;
+
 	
-	void Update(Camera* camera=nullptr, char* input=nullptr)override;
+
+
+	void Update(const MATRIX& rotY, Camera* camera, char* input)override;
+	
+	
 	float inputdelta = 0;
 	
 	void PlayerInput(char* input);
 
-	void Move(Camera* camera, char* input);
+	void Move(const MATRIX& playerRotationY, Camera* camera, char* input);
 
+	
+	
+	
 	
 	// Lerpä÷êî
 	float Lerp(float a, float b, float t) {

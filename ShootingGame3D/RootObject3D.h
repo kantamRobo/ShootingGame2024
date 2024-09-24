@@ -19,7 +19,7 @@ public:
 	void Init3D(const TCHAR* filepath);
 	std::shared_ptr<Ammo3D> ammo[256];
 	virtual void Draw3D(const VECTOR& vector);
-
+	virtual void Update(const MATRIX& transform,Camera* camera = nullptr, char* input = nullptr) = 0;
 	void Update_Core3D();
 
 	void AttackTrigger();
@@ -30,7 +30,6 @@ public:
 
 	
 
-	virtual void Update(Camera* camera = nullptr, char* input=nullptr) = 0;
 	
 	int bulletcounter = 0;
 	int ammoindex = 0;
