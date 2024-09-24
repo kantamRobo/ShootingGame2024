@@ -1,10 +1,7 @@
 #pragma once
 #include <memory>
 #include "SceneAdmin.h"
-
-#include "Camera.h"
-class RootObject3D;
-
+#include "RootObject3D.h"
 
 class ObjectAdmin3D
 {
@@ -13,9 +10,9 @@ public:
 	int GAMEOVER = 0;
 	int CLEAR = 0;
 	std::shared_ptr<RootObject3D> object[256];
-	
-	STATUS status = STATUS::TITLE;
 	Camera camera;
+	STATUS status = STATUS::TITLE;
+	
 public:
 	int rapid = 0;
 	virtual void Init3D();

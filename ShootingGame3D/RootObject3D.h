@@ -5,6 +5,7 @@
 #include "IRootObject.h"
 #include "SphereCollision.h"
 #include "Ammo3D.h"
+#include "Camera.h"
 //class Ammo3D;
 class RootObject3D:public IRootObject
 {
@@ -29,8 +30,8 @@ public:
 
 	
 
-	virtual void Update(char* input) = 0;
-	virtual void Update()=0;
+	virtual void Update(Camera* camera = nullptr, char* input=nullptr) = 0;
+	
 	int bulletcounter = 0;
 	int ammoindex = 0;
 

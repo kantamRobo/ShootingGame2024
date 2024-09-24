@@ -1,6 +1,6 @@
 #pragma once
 //#include "RootObject3D.h"
-#include "Camera.h"
+
 class RootObject3D;
 
 class Player3:public RootObject3D
@@ -13,16 +13,18 @@ public:
 
 		ammoindex = 0;
 	}
-	Camera camera;
+
 	VECTOR move;
 	void Draw()override;
-	void Update()override;
+	
+	void Update(Camera* camera=nullptr, char* input=nullptr)override;
 	float inputdelta = 0;
-	void Update(char* input)override;
+	
 	void PlayerInput(char* input);
 
-	void Move(char* input);
+	void Move(Camera* camera, char* input);
 
+	
 	// Lerpä÷êî
 	float Lerp(float a, float b, float t) {
 		return a + (b - a) * t;

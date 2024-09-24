@@ -1,6 +1,6 @@
-#include "Camera.h"
-#include "RootObject3D.h"
 
+#include "RootObject3D.h"
+#include "Camera.h"
 #include "Player3.h"
 
 
@@ -9,12 +9,8 @@ void Player3::Draw()
 {
 }
 
-void Player3::Update()
-{
-	
-}
 
-void Player3::Update(char* input)
+void Player3::Update(Camera* camera,char* input)
 {
 	Draw3D(position);
 	for (int i = 0; i < MAX_AMMO; i++) {
@@ -24,7 +20,7 @@ void Player3::Update(char* input)
 	
 	sphere.DrawDebug(position);
 	
-Move(input);
+Move(camera,input);
 	
 	
 }
@@ -47,24 +43,36 @@ void Player3::PlayerInput(char* input){
 
 }
 
-void Player3::Move(char* input)
+void Player3::Move(Camera* camera,char* input)
 {
 
-
-	auto forward = camera.GetCameraForward(); // カメラの前方向ベクトル
-	auto right = camera.GetCameraRight();     // カメラの右方向ベクトル
-
+	
+	
+	DrawFormatString(320, 180, GetColor(0, 255, 0), L"前方ベクトルz %f ", camera->GetCameraForward().z);
+	DrawFormatString(320, 160, GetColor(0, 255, 0), L"前方ベクトルx %f ", camera->GetCameraForward().x);
+	DrawFormatString(320, 200, GetColor(0, 255, 0), L"右ベクトルx %f ", camera->GetCameraRight().x);
+	DrawFormatString(320, 220, GetColor(0, 255, 0), L"右ベクトルz %f ", camera->GetCameraRight().z);
 	// forwardとrightの初期化 (Y成分を0にして正規化)
-	forward.y = 0;  // 地面に沿った移動を考慮してY軸を0に
-	forward = VNorm(forward); // 正規化
-	right.y = 0;
-	right = VNorm(right);     // 正規化
+	  // 地面に沿った移動を考慮してY軸を0に
+	camera->SetForward(VGet(camera->GetCameraForward().x, 0, camera->GetCameraForward().z));
+	camera->SetForward(VNorm(camera->GetCameraForward())); // 正規化
+
+	 
+	camera->SetRight(VGet(camera->GetCameraRight().x, 0, camera->GetCameraRight().z));
+	camera->SetRight(VNorm(camera->GetCameraRight())); // 正規化
 
 	// 水平方向と垂直方向の移動をリセット
 	VECTOR move = VGet(0.0f, 0.0f, 0.0f);
 	int move_horizontal = 0;
 	int move_vertical = 0;
-
+	// プレイヤーの向きにカメラの向きを反映させる
+   // forwardベクトルに基づいてY軸回転角度を計算
+	float playerRotationY = atan2(camera->GetCameraForward().z, camera->GetCameraForward().x);
+	
+	// プレイヤーの回転行列を設定
+	MATRIX rotationMatrix = MGetRotY(playerRotationY);
+	DrawFormatString(320, 240, GetColor(0, 255, 0), L"PlayerRotation %f ", playerRotationY);
+	MV1SetRotationXYZ(handle, VGet(0, playerRotationY, 0));
 	// 入力に応じて移動量を設定
 	if (input[KEY_INPUT_UP] == 1) {
 		move_vertical = 1; // 前進
@@ -80,8 +88,8 @@ void Player3::Move(char* input)
 	}
 
 	// カメラ基準での移動ベクトルを計算
-	VECTOR moveH = VScale(right, move_horizontal * 5);  // 右方向に移動
-	VECTOR moveV = VScale(forward, move_vertical * 5);  // 前方向に移動
+	VECTOR moveH = VScale(camera->GetCameraRight(), move_horizontal * 5);  // 右方向に移動
+	VECTOR moveV = VScale(camera->GetCameraForward(), move_vertical * 5);  // 前方向に移動
 
 	// 最終的な移動ベクトルを計算
 	move = VAdd(moveH, moveV);

@@ -14,9 +14,12 @@ public:
 	}
 	
 	void Draw()override;
-	virtual void Update()override;
 	
-	void Update(char* input)override;
+	void Update();
+
+	void Update(Camera* camera, char* input)override;
+	
+	
 	
 };
 

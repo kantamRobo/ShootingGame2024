@@ -19,32 +19,31 @@ void Camera::Update(char* input, VECTOR targetpos)
 
 	if (input[KEY_INPUT_A] == 1)
 	{
-		movetempx -= 1;
+		movetempx -= 10;
 	}
 
 	if (input[KEY_INPUT_D] == 1)
 	{
-		movetempx += 1;
+		movetempx += 10;
 	}
 
 	if (input[KEY_INPUT_W] == 1)
 	{
-		movetempy -= 1;
+		movetempy -= 10;
 	}
 
 	if (input[KEY_INPUT_S] == 1)
 	{
-		movetempy += 1;
+		movetempy += 10;
 	}
 	auto mouseX_F = movetempx * 0.001;
 	auto mouseY_F = movetempy * 0.001;
 
 
-	auto moveX = 2000 * sin(mouseX_F) * cos(mouseY_F);
-	auto moveY = 2000 * sin(mouseY_F); // Y軸方向の移動
-	auto moveZ = 2000 * cos(mouseX_F) * cos(mouseY_F);
-	UpdateDirection(mouseX_F, mouseY_F);
-
+	 moveX = 2000 * sin(mouseX_F) * cos(mouseY_F);
+	 moveY = 2000 * sin(mouseY_F); // Y軸方向の移動
+	 moveZ = 2000 * cos(mouseX_F) * cos(mouseY_F);
+	
 
 	auto debug = temppos;
 
@@ -52,49 +51,37 @@ void Camera::Update(char* input, VECTOR targetpos)
 	position = temppos;
 	CameraLookAtPosition = targetpos;
 
-	//カメラの向きを決定する
 
-
+	UpdateDirection();
 
 	// カメラの設定に反映する
 	SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
 
 
-	/*
-	//カメラを、マウスのXY軸で回転させる
-	if (input[mouse] == 1)
-	{
-	rotation.x+= 0.1;
-	}
-	if (input[KEY_INPUT_DOWN] == 1)
-	{
-		rotation.x-= 0.1;
-	}
-	if (input[KEY_INPUT_LEFT] == 1)
-	{
-		rotation.y+= 0.1;
-	}
-	if (input[KEY_INPUT_RIGHT] == 1)
-	{
-		rotation.y-= 0.1;
-	}
-	*/
+
+	
+
 
 }
 
-void Camera::UpdateDirection(float angleX, float angleY)
+void Camera::UpdateDirection()
 {
+	DrawFormatString(320, 250, GetColor(0, 255, 0), L"movetempy %f ", movetempy);
+	DrawFormatString(320, 270, GetColor(0, 255, 0), L"movetempx %f ", movetempx);
+	forward = VGet(
+		cos(movetempy) * sin(movetempx),
+		sin(movetempy),
+		cos(movetempy) * cos(movetempx)
+	);
+
+	right = VGet(
+		cos(movetempx),
+		0.0f,
+		-sin(movetempx)
+	);
 	
-		// カメラの向きに応じて forward と right を更新
-		Camera_FORWARD = VGet(
-			cos(angleY) * sin(angleX),
-			0.0f,
-			cos(angleY) * cos(angleX)
-		);
-		Camera_Right = VGet(
-			cos(angleX),
-			0.0f,
-			-sin(angleX)
-		);
-	
+		
+		//Camera_FORWARD = VGet(View.m[2][0], View.m[2][1], View.m[2][2]);
+		//Camera_Right = VGet(View.m[0][0], View.m[0][1], View.m[0][2]);
+
 }

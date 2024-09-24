@@ -1,3 +1,4 @@
+
 #include "RootObject3D.h"
 #include "Player3.h"
 #include "Enemy3D.h"
@@ -29,7 +30,7 @@ void ObjectAdmin3D::Init3D()
 void ObjectAdmin3D::Update3D(char* input)
 {
 	camera.Update(input,object[0]->position);
-	object[0]->Update(input);
+	object[0]->Update(&camera,input);
 
 	//プレイヤーモデルをカメラの座標空間に変換
 	
@@ -46,7 +47,7 @@ void ObjectAdmin3D::Update3D(char* input)
 		//object[enemyindex]->Update(VGet(200, 200, 500));
 	
 	}
-	object[1]->Update();
+	object[1]->Update(nullptr,nullptr);
 	object[0]->Update_Core3D();
 	object[1]->Update_Core3D();
 	Check_ObjectIsActive();
