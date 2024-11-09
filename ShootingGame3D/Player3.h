@@ -1,6 +1,7 @@
 #pragma once
 //#include "RootObject3D.h"
 #include "Camera.h"
+#include "Bullet.h"
 class RootObject3D;
 
 class Player3:public RootObject3D
@@ -15,6 +16,7 @@ public:
 	}
 	Camera camera;
 	VECTOR move;
+	
 	void Draw()override;
 	void Update()override;
 	float inputdelta = 0;

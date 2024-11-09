@@ -131,5 +131,8 @@
     <ClInclude Include="VECTORUTIL.h">
       <Filter>ヘッダー ファイル\DEFINE3D</Filter>
     </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
