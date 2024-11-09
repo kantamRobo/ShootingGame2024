@@ -2,9 +2,9 @@
 #include <DxLib.h>
 
 
-#include "RootObject.h"
+#include "IRootObject.h"
 class Player;
-class Enemy:public RootObject 
+class Enemy:public IRootObject
 {
 public:
 	
@@ -13,9 +13,9 @@ public:
 	void Draw()override;
 	 void  Create(double, double);
 	
-	void Update()override;
 	
-	void Update(char*)override
+	
+	void Update(ICamera* camera=nullptr,char* input =nullptr)override
 	{}
 	
 	

@@ -14,17 +14,27 @@ public:
 
 		ammoindex = 0;
 	}
-	Camera camera;
+
 	VECTOR move;
 	
 	void Draw()override;
-	void Update()override;
+
+	
+
+
+	void Update(const MATRIX& rotY, Camera* camera, char* input)override;
+	
+	
 	float inputdelta = 0;
-	void Update(char* input)override;
+	
 	void PlayerInput(char* input);
 
-	void Move(char* input);
+	void Move(const MATRIX& playerRotationY, Camera* camera, char* input);
 
+	
+	
+	
+	
 	// Lerpä÷êî
 	float Lerp(float a, float b, float t) {
 		return a + (b - a) * t;

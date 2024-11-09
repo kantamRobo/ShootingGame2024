@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <DxLib.h>
+#include "ICamera.h"
 class IRootObject
 {
 public:
@@ -21,7 +22,7 @@ public:
 	int health = 10;
 public:
 	
-	virtual void Update() = 0;
-	virtual void Update(char* input) = 0;
+	
+	
 };
 

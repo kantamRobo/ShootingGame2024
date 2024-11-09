@@ -1,3 +1,4 @@
+
 #include "RootObject3D.h"
 #include "Player3.h"
 #include "Enemy3D.h"
@@ -28,25 +29,33 @@ void ObjectAdmin3D::Init3D()
 
 void ObjectAdmin3D::Update3D(char* input)
 {
-	camera.Update(input,object[0]->position);
-	object[0]->Update(input);
-
+	
+	
+	
 	//プレイヤーモデルをカメラの座標空間に変換
 	
 	
 	auto ModelScale = MGetScale(VGet(0.1f, 0.1f, 0.1f));
-	auto Modelrotworld = MGetRotY(DX_PI_F / 4.0f);
+	float playerRotationY = atan2(camera.GetCameraForward().z, camera.GetCameraForward().x);
+	
+	// プレイヤーの回転行列を設定
+	MATRIX rotationMatrix = MGetRotY(playerRotationY);
 	auto translation = MGetTranslate(object[0]->position);
-	MATRIX ModelWorld = MMult(MMult(ModelScale, Modelrotworld), translation);
+	MATRIX ModelWorld = MMult(MMult(ModelScale, rotationMatrix), translation);
 	
 	auto out = MMult(ModelWorld, camera.GetViewMatrix());
-	
+
+
+	DrawFormatString(320, 240, GetColor(0, 255, 0), L"PlayerRotation %f ", playerRotationY);
 	for (int enemyindex = 1; enemyindex < ENEMY_INDICES; enemyindex++) {
 		auto x = 0;
 		//object[enemyindex]->Update(VGet(200, 200, 500));
 	
 	}
-	object[1]->Update();
+	camera.Update(input, object[0]->position);
+	object[0]->Update(rotationMatrix,&camera, input);
+	
+	object[1]->Update(MGetIdent(), nullptr, nullptr);
 	object[0]->Update_Core3D();
 	object[1]->Update_Core3D();
 	Check_ObjectIsActive();

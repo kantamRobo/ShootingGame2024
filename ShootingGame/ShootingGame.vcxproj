@@ -145,6 +145,7 @@
     <ClInclude Include="DEFINE2D.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="IAmmo.h" />
+    <ClInclude Include="ICamera.h" />
     <ClInclude Include="ObjectAdmin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="IRootObject.h" />

@@ -1,9 +1,9 @@
 #pragma once
 #include <DxLib.h>
-#include "RootObject.h"
+#include "IRootObject.h"
 #include <memory>
 
-class Player:public RootObject
+class Player:public IRootObject
 {public:
 	
 
