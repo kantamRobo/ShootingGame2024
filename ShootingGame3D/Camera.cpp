@@ -65,9 +65,9 @@ void Camera::Update(char* input, VECTOR targetpos)
 	SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
 
 
-
 	
-
+	right = VSet(m_viewMatrixInv.m[2][0], m_viewMatrix.m[2][1], m_viewMatrxInvm[2][2]);
+	forward =VSet(m_viewMatrix.m[0][0], m_viewMatrixInv.m[0][1], m_viewMatrixInv.m[0][2])
 
 }
 
@@ -98,4 +98,20 @@ void Camera::UpdateDirection(float yaw, float pitch)
 	DrawFormatString(100, 140, GetColor(0, 255, 0), L"カメラ右方ベクトル: x=%f, y=%f, z=%f", right.x, right.y, right.z);
 }
 
+void Camera::Update_New()
+{
+	//ビュー行列の位置を算出
+	CreateLookAtMatrix();
 
+	//ビュープロジェクション行列の作成
+	CreatePerspectiveFovMatrix(60.0f, 1.0f, 1.0f, 10000.0f);
+
+	//ビュープロジェクション行列の逆行列を計算
+	MInverse(ViewProjection);
+
+	//プロジェクション行列の逆行列を計算
+	MInverse(Projection);
+
+
+	
+}

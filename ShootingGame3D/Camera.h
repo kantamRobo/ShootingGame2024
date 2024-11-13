@@ -25,6 +25,8 @@ public:
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input, VECTOR targetpos);
 	void UpdateDirection(float in_x, float in_y);
+
+	void Update_New();
 	
 	int movetempx = 180;
 	int movetempy = 180;
