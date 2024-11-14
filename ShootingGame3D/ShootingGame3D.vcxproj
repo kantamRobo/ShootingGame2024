@@ -134,6 +134,7 @@
     <ClCompile Include="Ammo3D.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Enemy3D.cpp" />
+    <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IAmmo.cpp" />
     <ClCompile Include="Imgui\imgui.cpp" />
     <ClCompile Include="Imgui\imgui_demo.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DEFINE3D.h" />
     <ClInclude Include="Enemy3D.h" />
+    <ClInclude Include="Ground.h" />
     <ClInclude Include="IAmmo.h" />
     <ClInclude Include="Imgui\imconfig.h" />
     <ClInclude Include="Imgui\imgui.h" />
