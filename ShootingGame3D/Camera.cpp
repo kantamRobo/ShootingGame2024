@@ -61,14 +61,16 @@ void Camera::Update(char* input, VECTOR targetpos)
 
 	
 
+	
+
+	View = GetCameraViewMatrix();
+	
+	right = VSet(View.m[2][0], View.m[2][1], MInverse(View).m[2][2]);
+	forward = VSet(View.m[0][0], View.m[0][1], MInverse(View).m[2][2]);
+	up = VCross(right, forward);
+
 	// カメラの設定に反映する
 	SetCameraPositionAndTarget_UpVecY(position, CameraLookAtPosition);
-
-
-	
-	right = VSet(m_viewMatrixInv.m[2][0], m_viewMatrix.m[2][1], m_viewMatrxInvm[2][2]);
-	forward =VSet(m_viewMatrix.m[0][0], m_viewMatrixInv.m[0][1], m_viewMatrixInv.m[0][2])
-
 }
 
 void Camera::UpdateDirection(float yaw, float pitch)
@@ -79,17 +81,21 @@ void Camera::UpdateDirection(float yaw, float pitch)
 	if (pitch > pitchLimit) pitch = pitchLimit;
 	if (pitch < -pitchLimit) pitch = -pitchLimit;
 	
-	// 前方向ベクトルの計算（カメラの向き）
-	forward = VNorm(VGet(
-		cos(pitch) * sin(yaw),  // X
-		sin(pitch),             // Y
-		cos(pitch) * cos(yaw)   // Z
-	));
 
-	// 右方向ベクトルの計算（カメラの右方向、前方向と上ベクトルの外積）
-	VECTOR up = VGet(0.0f, 1.0f, 0.0f);  // 上方向ベクトル
+	
+
+	
+	{
+
+
+
+	}
+
+
 	right = VNorm(VCross(up, forward));   // 前方向ベクトルと上方向ベクトルから右方向ベクトルを計算
 
+	
+	
 	// デバッグ用表示
 	DrawFormatString(100, 80, GetColor(0, 255, 0), L"pitch=%f",  pitch);
 	DrawFormatString(100, 100, GetColor(0, 255, 0), L"Yaw: x = % f", yaw);
@@ -101,13 +107,14 @@ void Camera::UpdateDirection(float yaw, float pitch)
 void Camera::Update_New()
 {
 	//ビュー行列の位置を算出
-	CreateLookAtMatrix();
+	auto eye = VSub(CameraLookAtPosition, this->position);
+	CreateLookAtMatrix(&LookAt,&eye,&CameraLookAtPosition,&up);
 
 	//ビュープロジェクション行列の作成
 	CreatePerspectiveFovMatrix(60.0f, 1.0f, 1.0f, 10000.0f);
 
 	//ビュープロジェクション行列の逆行列を計算
-	MInverse(ViewProjection);
+	MInverse(MMult(View,Projection));
 
 	//プロジェクション行列の逆行列を計算
 	MInverse(Projection);

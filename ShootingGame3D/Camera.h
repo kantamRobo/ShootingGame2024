@@ -21,6 +21,7 @@ public:
 	MATRIX View;
 	MATRIX Projection;
 	MATRIX Modelmat;
+	MATRIX LookAt;
 	VECTOR rotation;
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input, VECTOR targetpos);
@@ -62,6 +63,10 @@ public:
 		return forward;
 	}
 
+	VECTOR GetCameraUp() {
+		return up;
+	}
+
 	void SetForward(const VECTOR& in)
 	{
 		forward = in;
@@ -72,8 +77,10 @@ public:
 		right = in;
 	}
 	private:
-		VECTOR forward;
-		VECTOR right;
+		VECTOR forward= VNorm(VScale(VGet(0,0,-1), this->position.z));//zはグローバル座標、12時方向を正面とすると後ろ向きになるのでマイナスにして反転させないといけない
+		VECTOR right= VNorm(VScale(VGet(1,0,0),this->position.x));
+		VECTOR up =VNorm(VScale(VGet(0,1,0),this->position.y));
+		//単にグローバル座標系を記述するだけじゃ意味がない。カメラの座標系を使って計算する必要がある。
 private:
 	// カメラの向きを更新する (例えば回転行列を使って計算する)
 	
