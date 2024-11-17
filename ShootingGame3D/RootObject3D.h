@@ -29,7 +29,7 @@ public:
 
 	
 
-
+	//ƒ[ƒJƒ‹À•W‚ğ‹‚ß‚é
 	void SetLocalPosition(const VECTOR& origin)
 	{
 

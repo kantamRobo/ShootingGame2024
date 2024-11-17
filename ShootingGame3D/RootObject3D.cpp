@@ -27,11 +27,14 @@ void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& InitPos,const VEC
 
 void RootObject3D::Draw3D(const VECTOR& vector)
 {
+	//親がいなければ、指定したグローバル座標でそのまま描画する
 	if (parent != nullptr) {
 		MV1SetPosition(handle, position);
 	}
 	else {
-		MV1SetPosition(handle, localPosition);
+		//親がいれば、親の座標を基準にしてグローバル座標を求めたいので、親のグローバル座標を基準にしてローカル座標を
+		//グローバル座標に変換する。
+		MV1SetPosition(handle, VAdd(position,localPosition));
 	}
 	MV1DrawModel(handle);
 }
