@@ -21,7 +21,11 @@ public:
 	
 	int health = 10;
 public:
-	
+	void SetPosition(const VECTOR& v)
+	{
+		position = v;
+	}
+
 	
 	
 };
