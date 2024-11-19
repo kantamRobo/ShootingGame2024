@@ -15,18 +15,18 @@ public:
 	}
 	void Draw() override
 	{
-		DrawPolygon3D(vertex, 2, GetColor(255, 255, 255), TRUE);
+		DrawTriangle3D(vertex[0].pos, vertex[1].pos, vertex[2].pos, DX_NONE_GRAPH, true);
+		DrawTriangle3D(vertex[1].pos, vertex[2].pos, vertex[3].pos, DX_NONE_GRAPH, true);
 	}
 
-	VECTOR position;
-
+	
 	void Set()
 	{
 
 		//’¸“_‚ğposition‚ÉæZ‚µ‚ÄApositionŠî€‚ÉGround‚ğˆÚ“®
 		for (int i = 0; i < 4; i++)
 		{
-			vertex[i].pos = (vertex[i].pos, position);
+			vertex[i].pos = (vertex[i].pos, localPosition);
 		}
 	}
 
