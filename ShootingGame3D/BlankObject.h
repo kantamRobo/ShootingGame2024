@@ -1,6 +1,6 @@
 #pragma once
 
-class RootObject3D;
+#include "RootObject3D.h"
 class BlankObject:public RootObject3D
 {
 
@@ -12,4 +12,4 @@ public:
 		//TODO:“–‚½‚è”»’è
 	}
 };
-
+	

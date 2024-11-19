@@ -1,12 +1,12 @@
 #pragma once
-#include "RootObject3D.h"
+#include "BlankObject.h"
 class Ground :public RootObject3D
 {
 public:
 	VERTEX3D vertex[4];
-	Ground(float scale)
+	Ground(float scale,std::shared_ptr<RootObject3D> in_parent)
 	{
-		this->parent =
+		this->parent = in_parent;
 		//ê≥ï˚å`ÇÃçÏê¨
 		vertex[0].pos = VGet(-scale, 0, -scale);
 		vertex[1].pos = VGet(-scale, 0, scale);
@@ -28,6 +28,7 @@ public:
 		{
 			vertex[i].pos = (vertex[i].pos, position);
 		}
+	}
 
 };
 
