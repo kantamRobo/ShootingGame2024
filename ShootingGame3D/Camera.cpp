@@ -111,7 +111,7 @@ void Camera::Update_New()
 	CreateLookAtMatrix(&LookAt,&eye,&CameraLookAtPosition,&up);
 
 	//ビュープロジェクション行列の作成
-	CreatePerspectiveFovMatrix(60.0f, 1.0f, 1.0f, 10000.0f);
+	CreatePerspectiveFovMatrix(&View, 1.0f, 1.0f, 10000.0f);
 
 	//ビュープロジェクション行列の逆行列を計算
 	MInverse(MMult(View,Projection));

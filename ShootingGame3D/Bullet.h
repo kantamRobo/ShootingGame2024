@@ -1,6 +1,9 @@
 #include <DxLib.h>
-#include "../src/btBulletDynamicsCommon.h"
-#include"../src/LinearMath/btTransformUtil.h"
+
+
+#include "../bullet_lib/src/src/btBulletDynamicsCommon.h"
+
+#include "../bullet_lib/src/src/LinearMath/btTransformUtil.h"
 #pragma once
 
 

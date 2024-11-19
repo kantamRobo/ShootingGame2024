@@ -32,7 +32,8 @@ void RootObject3D::Draw3D(const VECTOR& vector)
 		MV1SetPosition(handle, position);
 	}
 	else {
-		//親がいれば、親の座標を基準にしてグローバル座標を求めたいので、親のグローバル座標を基準にしてローカル座標を
+		//親がいれば、親の座標を基準にしてグローバル座標を求めたいので、
+		// 親のグローバル座標を基準にしてローカル座標を
 		//グローバル座標に変換する。
 		MV1SetPosition(handle, VAdd(position,localPosition));
 	}

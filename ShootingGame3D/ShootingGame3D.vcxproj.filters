@@ -66,9 +66,6 @@
     <ClCompile Include="Imgui\imgui_widgets.cpp">
       <Filter>Imgui</Filter>
     </ClCompile>
-    <ClCompile Include="IAmmo.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="..\ShootingGame\IRootObject.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>

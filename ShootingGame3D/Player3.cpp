@@ -86,8 +86,7 @@ void Player3::Move(const MATRIX& transform, Camera* camera, char* input)
 
 	// 最終的な移動ベクトルを計算
 	move = VAdd(moveH, moveV);  // 水平方向と垂直方向の移動ベクトルを合成
-	move.y = 0;  // 地面に沿った移動とするためY成分は0
-	　
+	move.y = 0;  // 地面に沿った移動とするためY成分は0　
 	// プレイヤーの位置を更新
 	position = VAdd(position, move);
 

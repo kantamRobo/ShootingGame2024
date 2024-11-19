@@ -13,9 +13,9 @@ public:
     void SetIsActive(bool active) { isActive = active; }
 
      
-    IAmmo(const VECTOR& pos);
+    IAmmo(const VECTOR& pos) :position(pos) {};
 
-    void Draw();
+    virtual void Draw()=0;
 
     virtual void Update(float AMMOVELOCITY) = 0;
     

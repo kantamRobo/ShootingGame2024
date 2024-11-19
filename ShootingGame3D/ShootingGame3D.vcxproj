@@ -104,13 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)プロジェクトに追加すべきファイル_VC用;$(SolutionDir)ShootingGame;C:\Users\hatte\source\repos\ShootingGame2024\bullet_lib\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)プロジェクトに追加すべきファイル_VC用;$(SolutionDir)ShootingGame;C:\Users\hiz108\source\repos\ShootingGame2024\bullet_lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories);C:\Users\hatte\source\repos\ShootingGame2024\x64\Debug;C:\Users\hatte\source\repos\ShootingGame2024\bullet_lib\lib\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories);C:\Users\hatte\source\repos\ShootingGame2024\x64\Debug;C:\Users\hiz108\source\repos\ShootingGame2024\bullet_lib\dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,7 +136,6 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Enemy3D.cpp" />
     <ClCompile Include="Ground.cpp" />
-    <ClCompile Include="IAmmo.cpp" />
     <ClCompile Include="Imgui\imgui.cpp" />
     <ClCompile Include="Imgui\imgui_demo.cpp" />
     <ClCompile Include="Imgui\imgui_draw.cpp" />
