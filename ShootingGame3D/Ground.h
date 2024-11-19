@@ -7,7 +7,7 @@ public:
 	Ground(float scale,std::shared_ptr<RootObject3D> in_parent)
 	{
 		this->parent = in_parent;
-		//正方形の作成
+		//三角形を二つ作成して、四角形を作成
 		vertex[0].pos = VGet(-scale, 0, -scale);
 		vertex[1].pos = VGet(-scale, 0, scale);
 		vertex[2].pos = VGet(scale, 0, -scale);
