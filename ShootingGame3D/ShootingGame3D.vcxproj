@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="..\ShootingGame\IRootObject.cpp" />
     <ClCompile Include="Ammo3D.cpp" />
+    <ClCompile Include="BlankObject.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Enemy3D.cpp" />
     <ClCompile Include="Ground.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
     <ClInclude Include="Ammo3D.h" />
+    <ClInclude Include="BlankObject.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DEFINE3D.h" />

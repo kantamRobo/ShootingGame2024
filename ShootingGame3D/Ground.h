@@ -6,6 +6,7 @@ public:
 	VERTEX3D vertex[4];
 	Ground(float scale)
 	{
+		this->parent =
 		//³•ûŒ`‚Ìì¬
 		vertex[0].pos = VGet(-scale, 0, -scale);
 		vertex[1].pos = VGet(-scale, 0, scale);
@@ -25,7 +26,7 @@ public:
 		//’¸“_‚ğposition‚ÉæZ‚µ‚ÄApositionŠî€‚ÉGround‚ğˆÚ“®
 		for (int i = 0; i < 4; i++)
 		{
-			vertex[i].pos = VAdd(vertex[i].pos, position);
+			vertex[i].pos = (vertex[i].pos, position);
 		}
 
 };
