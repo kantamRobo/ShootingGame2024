@@ -148,6 +148,7 @@
     <ClCompile Include="Player3.cpp" />
     <ClCompile Include="RootObject3D.cpp" />
     <ClCompile Include="SphereCollision.cpp" />
+    <ClCompile Include="VECTORUTIL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ShootingGame\DEFINE.h" />
