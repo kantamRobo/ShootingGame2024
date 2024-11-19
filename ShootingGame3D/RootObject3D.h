@@ -16,7 +16,7 @@ public:
 	std::shared_ptr<RootObject3D> parent;
 	Sphere sphere;
 	RootObject3D(const Sphere& in_sphere);
-	void Init3D(const TCHAR* filepath);
+	
 	std::shared_ptr<Ammo3D> ammo[256];
 	void Init3D(const TCHAR* filepath, const VECTOR& InitPos, const VECTOR& InitLocalPos);
 	virtual void Draw3D(const VECTOR& vector);
