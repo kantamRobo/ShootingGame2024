@@ -22,6 +22,11 @@ public:
 	
 	void Set()
 	{
+	
+		if(VSquareSize(parent->position)>VSquareSize(localPosition))
+		{
+			position = parent->position;
+		}
 
 		//’¸“_‚ğposition‚ÉæZ‚µ‚ÄApositionŠî€‚ÉGround‚ğˆÚ“®
 		for (int i = 0; i < 4; i++)
