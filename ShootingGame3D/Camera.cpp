@@ -65,8 +65,8 @@ void Camera::Update(char* input, VECTOR targetpos)
 
 	View = GetCameraViewMatrix();
 	
-	right = VSet(View.m[2][0], View.m[2][1], MInverse(View).m[2][2]);
-	forward = VSet(View.m[0][0], View.m[0][1], MInverse(View).m[2][2]);
+	Set(VGet(View.m[2][0], View.m[2][1], MInverse(View).m[2][2]));
+	Set(VGet(View.m[0][0], View.m[0][1], MInverse(View).m[2][2]));
 	up = VCross(right, forward);
 
 	// ƒJƒƒ‰‚Ìİ’è‚É”½‰f‚·‚é
