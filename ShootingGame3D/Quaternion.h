@@ -7,6 +7,41 @@ typedef struct
 	double x;//x
 	double y;//y
 	double z;//z
+
+    void Set(int modelhandle)
+    {
+        MATRIX mat;
+        MATRIX matRot;
+        MATRIX matTrans;
+        float yaw, pitch, roll;
+        yaw = pitch = roll = 0.0f;
+
+        VECTOR xAxis, yAxis, zAxis;
+
+        Quaternion quaternion;  //クォータニオン定義
+        quaternion.x = quaternion.y = quaternion.z = 0.0f;
+        quaternion.t = 1.0f;
+
+        //ロール
+        zAxis = VGet(mat.m[2][0], mat.m[2][1], mat.m[2][2]);
+        quaternion = quaternion * CreateRotationQuaternion(roll, zAxis);
+        //ピッチ
+        xAxis = VGet(mat.m[0][0], mat.m[0][1], mat.m[0][2]);
+        quaternion = quaternion * CreateRotationQuaternion(pitch, xAxis);
+        //ヨー
+        yAxis = VGet(mat.m[1][0], mat.m[1][1], mat.m[1][2]);
+        quaternion = quaternion * CreateRotationQuaternion(yaw, yAxis);
+
+        matRot = QuaternionToMatrix(quaternion);
+        mat = MMult(mat, matRot);     	//回転×スケール
+
+        matTrans = MGetTranslate(VGet(0, 0, 0));
+        mat = MMult(mat, matTrans);   	//移動×回転×スケール
+
+        MV1SetMatrix(modelhandle, mat);     	//行列セット
+        MV1DrawModel(modelhandle);
+
+    }
 }Quaternion;
 
 //クォータニオンの計算
