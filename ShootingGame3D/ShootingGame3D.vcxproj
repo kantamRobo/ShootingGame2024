@@ -146,6 +146,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectAdmin3D.cpp" />
     <ClCompile Include="Player3.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="RootObject3D.cpp" />
     <ClCompile Include="SphereCollision.cpp" />
     <ClCompile Include="VECTORUTIL.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Imgui\imstb_truetype.h" />
     <ClInclude Include="ObjectAdmin3D.h" />
     <ClInclude Include="Player3.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="RootObject3D.h" />
     <ClInclude Include="SphereCollision.h" />
     <ClInclude Include="VECTORUTIL.h" />
