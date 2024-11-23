@@ -1,17 +1,19 @@
 #pragma once
 #include <DxLib.h>
 #include <math.h>
-typedef struct
+
+
+typedef struct Quaternion
 {
 	double t;//real
 	double x;//x
 	double y;//y
 	double z;//z
 
-    void Set(int modelhandle)
+    void Set(VECTOR translate, MATRIX& matRot)
     {
         MATRIX mat;
-        MATRIX matRot;
+        
         MATRIX matTrans;
         float yaw, pitch, roll;
         yaw = pitch = roll = 0.0f;
@@ -33,35 +35,100 @@ typedef struct
         quaternion = quaternion * CreateRotationQuaternion(yaw, yAxis);
 
         matRot = QuaternionToMatrix(quaternion);
-        mat = MMult(mat, matRot);     	//回転×スケール
+        
+       
 
-        matTrans = MGetTranslate(VGet(0, 0, 0));
-        mat = MMult(mat, matTrans);   	//移動×回転×スケール
+       
+       
 
-        MV1SetMatrix(modelhandle, mat);     	//行列セット
-        MV1DrawModel(modelhandle);
+      
+        //カメラの行列に回転行列を乗算する
+
+
+       // MV1DrawModel(modelhandle);
 
     }
+
+
+
+    //回転クォータニオン
+    Quaternion CreateRotationQuaternion(double radian, VECTOR Axis)
+    {
+        Quaternion ans;
+        double norm;
+        double ccc, sss;
+
+        ans.t = ans.x = ans.y = ans.z = 0.0;
+
+        norm = Axis.x * Axis.x + Axis.y * Axis.y + Axis.z * Axis.z;
+
+        if (norm < 0.0001)
+        {
+            return ans;
+        }
+
+        norm = 1.0f / sqrt(norm);
+        Axis.x *= norm;
+        Axis.y *= norm;
+        Axis.z *= norm;
+
+        ccc = cos(radian / 2);
+        sss = sin(radian / 2);
+
+        ans.t = ccc;
+        ans.x = sss * Axis.x;
+        ans.y = sss * Axis.y;
+        ans.z = sss * Axis.z;
+
+        return ans;
+    }
+
+    //位置クォータニオン
+    Quaternion CreateXYZToQuaternion(double PosX, double PosY, double PosZ)
+    {
+        Quaternion ans;
+
+        ans.t = 0.0;
+        ans.x = PosX;
+        ans.y = PosY;
+        ans.z = PosZ;
+
+        return ans;
+    }
+
+    //クォータニオンから回転行列へ
+    MATRIX QuaternionToMatrix(Quaternion q)
+    {
+        MATRIX mat = MGetIdent();
+        //X軸
+        mat.m[0][0] = 1.0f - 2.0f * q.y * q.y - 2.0f * q.z * q.z;
+        mat.m[0][1] = 2.0f * q.x * q.y + 2.0f * q.t * q.z;
+        mat.m[0][2] = 2.0f * q.x * q.z - 2.0f * q.t * q.y;
+
+        //Y軸
+        mat.m[1][0] = 2.0f * q.x * q.y - 2.0f * q.t * q.z;
+        mat.m[1][1] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.z * q.z;
+        mat.m[1][2] = 2.0f * q.y * q.z + 2.0f * q.t * q.x;
+
+        //Z軸
+        mat.m[2][0] = 2.0f * q.x * q.z + 2.0f * q.t * q.y;
+        mat.m[2][1] = 2.0f * q.y * q.z - 2.0f * q.t * q.x;
+        mat.m[2][2] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.y * q.y;
+
+        return mat;
+    }
+
+
+
 }Quaternion;
-
-//クォータニオンの計算
-Quaternion operator*(Quaternion q1, Quaternion q2);
-//回転クォータニオン
-Quaternion CreateRotationQuaternion(double radian, VECTOR Axis);
-
-//位置クォータニオン
-Quaternion CreateXYZToQuaternion(double PosX, double PosY, double PosZ);
-
-//クォータニオンから回転行列へ
-MATRIX QuaternionToMatrix(Quaternion q);
 
 //クォータニオンの計算
 Quaternion operator*(Quaternion q1, Quaternion q2)
 {
-	Quaternion ans;
-	double d1, d2, d3, d4;
+    Quaternion ans;
+    double d1, d2, d3, d4;
 
-   
+
 
     //tパラメータの計算
     d1 = q1.t * q2.t;
@@ -91,72 +158,5 @@ Quaternion operator*(Quaternion q1, Quaternion q2)
     d4 = -q1.y * q2.x;
     ans.z = d1 + d2 + d3 + d4;
 
-	return ans;
-}
-
-//回転クォータニオン
-Quaternion CreateRotationQuaternion(double radian, VECTOR Axis)
-{
-    Quaternion ans;
-    double norm;
-    double ccc, sss;
-
-    ans.t = ans.x = ans.y = ans.z = 0.0;
-
-    norm = Axis.x * Axis.x + Axis.y * Axis.y + Axis.z * Axis.z;
-
-    if (norm < 0.0001)
-    {
-        return ans;
-    }
-
-    norm = 1.0f / sqrt(norm);
-    Axis.x *= norm;
-    Axis.y *= norm;
-    Axis.z *= norm;
-
-    ccc = cos(radian / 2);
-    sss = sin(radian / 2);
-
-    ans.t = ccc;
-    ans.x = sss * Axis.x;
-    ans.y = sss * Axis.y;
-    ans.z = sss * Axis.z;
-
     return ans;
-}
-
-//位置クォータニオン
-Quaternion CreateXYZToQuaternion(double PosX, double PosY, double PosZ)
-{
-    Quaternion ans;
-
-    ans.t = 0.0;
-    ans.x = PosX;
-    ans.y = PosY;
-    ans.z = PosZ;
-
-    return ans;
-}
-
-//クォータニオンから回転行列へ
-MATRIX QuaternionToMatrix(Quaternion  q)
-{
-    MATRIX mat = MGetIdent();
-    //X軸
-    mat.m[0][0] = 1.0f - 2.0f * q.y * q.y - 2.0f * q.z * q.z;
-    mat.m[0][1] = 2.0f * q.x * q.y + 2.0f * q.t * q.z;
-    mat.m[0][2] = 2.0f * q.x * q.z - 2.0f * q.t * q.y;
-
-    //Y軸
-    mat.m[1][0] = 2.0f * q.x * q.y - 2.0f * q.t * q.z;
-    mat.m[1][1] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.z * q.z;
-    mat.m[1][2] = 2.0f * q.y * q.z + 2.0f * q.t * q.x;
-
-    //Z軸
-    mat.m[2][0] = 2.0f * q.x * q.z + 2.0f * q.t * q.y;
-    mat.m[2][1] = 2.0f * q.y * q.z - 2.0f * q.t * q.x;
-    mat.m[2][2] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.y * q.y;
-
-    return mat;
 }

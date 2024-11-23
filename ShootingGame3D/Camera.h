@@ -1,6 +1,6 @@
 #pragma once
+#include "Quaternion.h"
 
-#include <DxLib.h>
 #include "VECTORUTIL.h"
 
 class Camera{
@@ -22,12 +22,11 @@ public:
 	MATRIX Projection;
 	MATRIX Modelmat;
 	MATRIX LookAt;
-	VECTOR rotation;
+	MATRIX rotation;
 	void Init(const VECTOR& playerpos, const VECTOR& enemypos);
 	void Update(char* input, VECTOR targetpos);
 	void UpdateDirection(float in_x, float in_y);
-
-	void Update_New();
+	Quaternion camquat;
 	
 	int movetempx = 180;
 	int movetempy = 180;
@@ -82,6 +81,6 @@ public:
 		VECTOR  up = VNorm(VGet(0, 1, 0));     // 上方向
 		//単にグローバル座標系を記述するだけじゃ意味がない。カメラの座標系を使って計算する必要がある。
 private:
-	// カメラの向きを更新する (例えば回転行列を使って計算する)
+	
 	
 };
