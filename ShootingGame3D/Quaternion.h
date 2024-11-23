@@ -120,8 +120,7 @@ typedef struct Quaternion
 
 
 
-}Quaternion;
-
+};
 //クォータニオンの計算
 Quaternion operator*(Quaternion q1, Quaternion q2)
 {
