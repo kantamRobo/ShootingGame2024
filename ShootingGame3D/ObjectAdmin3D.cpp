@@ -13,7 +13,7 @@ void ObjectAdmin3D::Init3D()
 	object[0] = std::make_shared<Player3>(VGet(100.0f, 580.0f, 500.0f));
 	
 	//また後日直す。これは適当に数値を入れただけ。
-    object[0]->Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\無題.mv1",VGet(320, 240, 100), VGet(0, 0, 0));
+	auto playerhandle= object[0]->Init3D(L"..\\ShootingGame3D\\モデル\\無題.mv1", VGet(320, 240, 100), VGet(0, 0, 0));
 	object[0]->isEnemy = false;
 	for (int enemyindex = 1; enemyindex < ENEMY_INDICES; enemyindex++) {
 		auto x = 0;
@@ -22,7 +22,7 @@ void ObjectAdmin3D::Init3D()
 	
 	}
 	//また後日直す。これは適当に数値を入れただけ。
-	object[1]->Init3D(L"C:\\Users\\hiz108\\source\\repos\\ShootingGame2024\\ShootingGame3D\\モデル\\Enemy.mv1",VGet(320,240,-100),VGet(0,0,0));
+	auto enmeyhandle =object[1]->Init3D(L"..\\ShootingGame3D\\モデル\\Enemy.mv1",VGet(320,240,-100),VGet(0,0,0));
 	//x += 100;
 	object[1]->isEnemy = true;
 	camera.Init(object[0]->position, object[1]->position);

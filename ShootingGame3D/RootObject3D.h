@@ -18,7 +18,7 @@ public:
 	RootObject3D(const Sphere& in_sphere);
 	
 	std::shared_ptr<Ammo3D> ammo[256];
-	void Init3D(const TCHAR* filepath, const VECTOR& InitPos, const VECTOR& InitLocalPos);
+	int Init3D(const TCHAR* filepath, const VECTOR& InitPos, const VECTOR& InitLocalPos);
 	virtual void Draw3D(const VECTOR& vector);
 	virtual void Update(const MATRIX& transform,Camera* camera = nullptr, char* input = nullptr) = 0;
 	void Update_Core3D();

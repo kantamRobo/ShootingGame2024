@@ -90,10 +90,14 @@ void Camera::UpdateDirection(float yaw, float pitch)
 	
 	camquat.Set(position,rotation);
 
-	MMult(View, rotation);
+	auto out=MMult(out_ViewMat, rotation);
+
+	SetCameraViewMatrix(out);
 	// デバッグ用表示
+	DrawFormatString(100, 60, GetColor(0, 255, 0), L"yaw=%f", yaw);
 	DrawFormatString(100, 80, GetColor(0, 255, 0), L"pitch=%f",  pitch);
-	DrawFormatString(100, 100, GetColor(0, 255, 0), L"Yaw: x = % f", yaw);
+	DrawFormatString(100, 200, GetColor(0, 255, 0), L"camerapos:x:=%f", position.x);
+	DrawFormatString(100, 220, GetColor(0, 255, 0), L"camerapos:y = %f", position.y);
 
 	DrawFormatString(100, 120, GetColor(0, 255, 0), L"カメラ前方ベクトル: x=%f, y=%f, z=%f", forward.x, forward.y, forward.z);
 	DrawFormatString(100, 140, GetColor(0, 255, 0), L"カメラ右方ベクトル: x=%f, y=%f, z=%f", right.x, right.y, right.z);

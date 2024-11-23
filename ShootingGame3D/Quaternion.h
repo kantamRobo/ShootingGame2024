@@ -2,7 +2,6 @@
 #include <DxLib.h>
 #include <math.h>
 
-
 typedef struct Quaternion
 {
 	double t;//real
@@ -26,13 +25,13 @@ typedef struct Quaternion
 
         //ロール
         zAxis = VGet(mat.m[2][0], mat.m[2][1], mat.m[2][2]);
-        quaternion = quaternion * CreateRotationQuaternion(roll, zAxis);
+        quaternion = Quatmul(quaternion , CreateRotationQuaternion(roll, zAxis));
         //ピッチ
         xAxis = VGet(mat.m[0][0], mat.m[0][1], mat.m[0][2]);
-        quaternion = quaternion * CreateRotationQuaternion(pitch, xAxis);
+        quaternion = Quatmul(quaternion , CreateRotationQuaternion(pitch, xAxis));
         //ヨー
         yAxis = VGet(mat.m[1][0], mat.m[1][1], mat.m[1][2]);
-        quaternion = quaternion * CreateRotationQuaternion(yaw, yAxis);
+        quaternion = Quatmul(  quaternion,CreateRotationQuaternion(yaw, yAxis));
 
         matRot = QuaternionToMatrix(quaternion);
         
@@ -119,43 +118,43 @@ typedef struct Quaternion
     }
 
 
+    //クォータニオンの計算
+    Quaternion Quatmul(Quaternion q1, Quaternion q2)
+    {
+        Quaternion ans;
+        double d1, d2, d3, d4;
+
+
+
+        //tパラメータの計算
+        d1 = q1.t * q2.t;
+        d2 = -q1.x * q2.x;
+        d3 = -q1.y * q2.y;
+        d4 = -q1.z * q2.z;
+        ans.t = d1 + d2 + d3 + d4;
+
+        //xパラメータの計算
+        d1 = q1.t * q2.x;
+        d2 = q2.t * q1.x;
+        d3 = q1.y * q2.z;
+        d4 = -q1.z * q2.y;
+        ans.x = d1 + d2 + d3 + d4;
+
+        //yパラメータの計算
+        d1 = q1.t * q2.y;
+        d2 = q2.t * q1.y;
+        d3 = q1.z * q2.x;
+        d4 = -q1.x * q2.z;
+        ans.y = d1 + d2 + d3 + d4;
+
+        //zパラメータの計算
+        d1 = q1.t * q2.z;
+        d2 = q2.t * q1.z;
+        d3 = q1.x * q2.y;
+        d4 = -q1.y * q2.x;
+        ans.z = d1 + d2 + d3 + d4;
+
+        return ans;
+    }
 
 };
-//クォータニオンの計算
-Quaternion operator*(Quaternion q1, Quaternion q2)
-{
-    Quaternion ans;
-    double d1, d2, d3, d4;
-
-
-
-    //tパラメータの計算
-    d1 = q1.t * q2.t;
-    d2 = -q1.x * q2.x;
-    d3 = -q1.y * q2.y;
-    d4 = -q1.z * q2.z;
-    ans.t = d1 + d2 + d3 + d4;
-
-    //xパラメータの計算
-    d1 = q1.t * q2.x;
-    d2 = q2.t * q1.x;
-    d3 = q1.y * q2.z;
-    d4 = -q1.z * q2.y;
-    ans.x = d1 + d2 + d3 + d4;
-
-    //yパラメータの計算
-    d1 = q1.t * q2.y;
-    d2 = q2.t * q1.y;
-    d3 = q1.z * q2.x;
-    d4 = -q1.x * q2.z;
-    ans.y = d1 + d2 + d3 + d4;
-
-    //zパラメータの計算
-    d1 = q1.t * q2.z;
-    d2 = q2.t * q1.z;
-    d3 = q1.x * q2.y;
-    d4 = -q1.y * q2.x;
-    ans.z = d1 + d2 + d3 + d4;
-
-    return ans;
-}

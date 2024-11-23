@@ -9,7 +9,7 @@ RootObject3D::RootObject3D(const Sphere& in_sphere):sphere(in_sphere)
 
 
 
-void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& InitPos,const VECTOR& InitLocalPos)
+int RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& InitPos,const VECTOR& InitLocalPos)
 {
 	
 	position = InitPos;
@@ -23,6 +23,7 @@ void RootObject3D::Init3D( const TCHAR* filepath,const VECTOR& InitPos,const VEC
 		
 		ammo[i]->SetIsActive(false);
 	}
+	return handle;
 }
 
 void RootObject3D::Draw3D(const VECTOR& vector)
