@@ -101,6 +101,6 @@ void Camera::UpdateDirection(float yaw, float pitch)
 
 	DrawFormatString(100, 120, GetColor(0, 255, 0), L"カメラ前方ベクトル: x=%f, y=%f, z=%f", forward.x, forward.y, forward.z);
 	DrawFormatString(100, 140, GetColor(0, 255, 0), L"カメラ右方ベクトル: x=%f, y=%f, z=%f", right.x, right.y, right.z);
-}
 
+}
 
