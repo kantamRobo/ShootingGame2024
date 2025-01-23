@@ -2,6 +2,7 @@
 #include "Quaternion.h"
 
 #include "VECTORUTIL.h"
+#include "../プロジェクトに追加すべきファイル_VC用/DxLib.h"
 
 class Camera{
 

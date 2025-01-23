@@ -9,6 +9,7 @@ Ammo3D::Ammo3D(const VECTOR& pos)
 
 	sphere.radius = AMMO_SPHERE_RADIUS;
 	ammomodel= MV1LoadModel(L"C:\\Users\\hatte\\source\\repos\\ShootingGame2024\\ShootingGame3D\\ƒ‚ƒfƒ‹\\’e.mv1");
+
 }
 
 
@@ -19,7 +20,7 @@ void Ammo3D::Draw()
 		MV1DrawModel(ammomodel);
 		sphere.DrawDebug(position);
 	}
-
+	
 	
 }
 void Ammo3D::Update(const float AMMOVELOCITY)
@@ -31,6 +32,7 @@ void Ammo3D::Update(const float AMMOVELOCITY)
 	MV1SetPosition(ammomodel, position);
 	if (GetIsActive() == true) {
 		Move3D(AMMOVELOCITY);
+	
 	}
 	
 }
